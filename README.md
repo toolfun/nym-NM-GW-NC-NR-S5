@@ -84,7 +84,7 @@ wget -O $HOME/.okp4d/config/genesis.json https://raw.githubusercontent.com/okp4/
 ```
 okp4d config chain-id $OKP4_CHAIN_ID
 okp4d config keyring-backend test
-okp4d config node tcp://localhost:${MANDE_PORT}657
+okp4d config node tcp://localhost:${OKP4_PORT}657
 ```
 
 # unsafe reset
@@ -142,7 +142,7 @@ okp4d tx staking create-validator \
 --commission-max-change-rate="0.1" \
 --min-self-delegation="1000000" \
 --fees=1000uknow \
---from=OKP4_WALLET \
+--from=$OKP4_WALLET \
 -y
 ```
 
@@ -156,12 +156,12 @@ curl localhost:24657/status | jq .result.sync_info
 ```
 ## addresses
 ```
-okp4d keys show OKP4_WALLET --bech val -a
-okp4d keys show OKP4_WALLET --bech -a
+okp4d keys show $OKP4_WALLET --bech val -a
+okp4d keys show $OKP4_WALLET --bech -a
 ```
 ## delegate
 ```
-okp4d tx staking delegate OKP4_VALOPER 10000000uknow --from OKP4_WALLET --fees 5000uknow
+okp4d tx staking delegate $OKP4_VALOPER 10000000uknow --from $OKP4_WALLET --fees 5000uknow
 ```
 ## active validators list
 ```
