@@ -30,7 +30,9 @@ if ! [ -x "$(command -v go)" ]; then
   source ~/.bash_profile
 fi
 ```
+```
 go version
+```
 
 ### set variables
 ```
