@@ -1,5 +1,16 @@
 # Okp4 Setup
 
+### links
+- **website**    
+https://okp4.network    
+- **github**    
+https://github.com/okp4
+- **explorers**    
+https://okp4.explorers.guru    
+https://explorer.bccnodes.com/okp4
+
+____
+
 ### general
 ```sudo apt update && sudo apt upgrade -y
 sudo apt install curl -y
@@ -132,19 +143,27 @@ sudo journalctl -u okp4d -f -o cat
 okp4d keys add $OKP4_WALLET
 ```
 
+#### addresses
+```
+okp4d keys show $OKP4_WALLET --bech val -a
+```
+```
+okp4d keys show $OKP4_WALLET --bech -a
+```
+
 ### faucet
 https://faucet.okp4.network
     
 ### create validator
 ```
 okp4d tx staking create-validator \
---amount=1000000uknow \
+--amount=990000uknow \
 --pubkey=$(okp4d tendermint show-validator) \
 --moniker="$OKP4_NODENAME" \
 --commission-rate="0.06" \
 --commission-max-rate="0.25" \
 --commission-max-change-rate="0.1" \
---min-self-delegation="1000000" \
+--min-self-delegation="1" \
 --fees=1000uknow \
 --from=$OKP4_WALLET \
 -y
@@ -158,11 +177,7 @@ curl localhost:24657/status | jq
 ```
 curl localhost:24657/status | jq .result.sync_info
 ```
-#### addresses
-```
-okp4d keys show $OKP4_WALLET --bech val -a
-okp4d keys show $OKP4_WALLET --bech -a
-```
+
 #### delegate
 ```
 okp4d tx staking delegate $OKP4_VALOPER 10000000uknow --from $OKP4_WALLET --fees 5000uknow
