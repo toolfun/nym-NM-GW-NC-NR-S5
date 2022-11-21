@@ -1,56 +1,29 @@
-## 16.11.2022
-### предвар ПЛАН:                                           
-- #### Общее - пакеты, апдейт ...                      
-- #### Стоп сервис, -> обновляем                       
-- #### NM NR NC GW - гит клон и билд. мув бинарники    
-- #### NM - инит, исправить конфиг где валидаторс апи  
-- #### NR - исправил сервисник                         
-- #### GW - перебонд на новую версию    
+## 16.11.2022 & upd. 21.11.2022
+### Abbreviations:
+- **NM** - Nym Mixnode
+- **GW** - Gateway
+- **NR** - Nym Network Requestor
+- **NC** - Nym Client
 ____
 
-### ОБНОВЛЕНИЕ NYM MYXNODE 1.1.0 :
-### Апдейт и установка инструментов
-dpkg --configure -a
-apt install ufw make clang pkg-config libssl-dev build-essential git сгкд
-
-### Билд, см гайды по установке nym
-
-### После установки новой версии:
-#### Сделать init обновленной версии nym-mixnode, чтобы подтнуть нов версию (вроде можно просто исправить в конфиге, тут хз)
-nym-mixnode init --id $node_id --host $(curl ifconfig.me) --wallet-address n16uc5zvupdflqp0f9txgtl4k7dq59dyjzwqdr7c
-#### "api" Ошибка после обновления и при запуске обновленного nym v 1.1.0
-#### Нужно добавить адрес апи в конфиг.томл
-#### вручную в файле
-.nym/mixnodes/nymiru/config/config.toml
-
+### Update and install tools
 ```
-## Addresses to APIs running on validator from which the node gets the view of the network.
-validator_api_urls = [
-        'https://validator.nymtech.net/api',    
-]
+sudo apt update && sudo apt upgrade -y
+```
+```
+sudo dpkg --configure -a
+```
+```
+sudo apt install curl wget ufw make clang pkg-config libssl-dev build-essential git htop
 ```
 
-#### сделать это командой
+### Install Rust
 ```
-sed -i "s/validator_api_urls = \[/validator_api_urls = \['https:\/\/validator.nymtech.net\/api',/" $HOME/.nym/mixnodes/$node_id/config/config.toml
+sudo curl https://sh.rustup.rs -sSf | sh -s -- -y
+source $HOME/.cargo/env
 ```
 
-### ОБНОВЛЕНИЕ NYM CLIENT, NR, GW 1.1.0 :
-
-Network Requester    
-* pause your client and network requester processes    
-* replace the binaries    
-* restart the processes    
-
-Gateway    
-* pause your gateway process    
-* replace the binary with the new binary    
-* restart the process    
-
-### (Инит не делал)
-### (Менял в сервиснике NR строчку старта)
-
-stop nym
+### Download nym binaries
 ```
 cd $HOME
 rm -rf nym
@@ -59,23 +32,88 @@ cd nym
 git reset --hard
 git pull
 git checkout nym-binaries-1.1.0
-source $HOME/.bash_profile
-cargo build -p nym-client --release && cargo build -p nym-network-requester --release
+```
+
+## NYM MYXNODE v1.1.0 UPDATING
+### Build NM
+```
+cd $HOME/nym
+cargo build -p nym-mixnode --release
+sudo mv target/release/nym-mixnode /usr/local/bin/
+```
+### After installation:
+#### Open config file and check if new version is correct, must be `version = '1.1.0'`
+`nano ~/.nym/mixnodes/NAME_OF_YOUR_NM/config/config.toml`. 
+```
+[mixnode]
+# Version of the NM for which this configuration was created.
+version = '1.1.0'
+```
+#### If not there are 2 options: 
+#### 1. In a config `replace` version manually to correct one
+`nano ~/.nym/mixnodes/NAME_OF_YOUR_NM/config/config.toml`    
+
+#### 2. Or run `init` command. This will make these changes too. 
+> If nym-mixnode was installed by Nodes.Guru guide:
+```
+nym-mixnode init --id $node_id --host $(curl ifconfig.me) --wallet-address $wallet
+```
+> The template of a command, *replace* with **your** `node id` (name of your NM), and `wallet address`
+```
+nym-mixnode init --id <mixnode_name> --host $(curl ifconfig.me) --wallet-address <wallet-address>
+```
+
+#### Be sure you have these API url in config file
+`nano ~/.nym/mixnodes/NAME_OF_YOUR_NM/config/config.toml`    
+```
+## Addresses to APIs running on validator from which the node gets the view of the network.
+validator_api_urls = [
+        'https://validator.nymtech.net/api',    
+]
+```
+#### If there is empty string add it manually or run command
+```
+sed -i "s/validator_api_urls = \[/validator_api_urls = \['https:\/\/validator.nymtech.net\/api',/" $HOME/.nym/mixnodes/$node_id/config/config.toml
+```
+
+### UPDATING TO v1.1.0 NYM CLIENT, NYM NETWORK REQUESTOR, GATEWAY
+
+#### NC    
+- pause your client    
+- download new binaries and replace    
+- restart the processes    
+
+#### NR
+- pause your network requester
+- download new binaries and replace    
+- restart the processes    
+
+#### GW
+- pause your gateway  
+- download new binaries and replace    
+- restart the process    
+
+### Building GW, NC, NR
+```
+cd $HOME/nym
+cargo build -p nym-client --release && \
+cargo build -p nym-network-requester --release && \
+cargo build -p nym-gateway --release
 
 sudo mv target/release/nym-client /usr/local/bin/
 sudo mv target/release/nym-network-requester /usr/local/bin/
+sudo mv target/release/nym-gateway /usr/local/bin/
 ```
+> #### No initialization required. But if the any of the processes are failing, then you might have to run init NR again: this will not overwrite keys or configs, so don't worry
 
-> #### If the any of the processes are failing, then you might have to run init NR again: this will not overwrite keys or configs, so don't worry
-
-### Новый сервисник NR без "--"
+### Service file for NR
 ```
 [Unit]
 Description=Nym Network Requester
 
 [Service]
 User=root
-ExecStart=/usr/local/bin/nym-network-requester run enable-statistics
+ExecStart=/usr/local/bin/nym-network-requester run --enable-statistics
 KillSignal=SIGINT
 Restart=on-failure
 RestartSec=30
@@ -87,9 +125,7 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 ```
 
-> #### *Сервисник Nym-client не менял*
-
-### На всякий случай, config.toml of GW
+### Be sure the gateway config file contains the lines
 ```
 validator_nymd_urls = [
 
@@ -97,20 +133,24 @@ validator_nymd_urls = [
 
 ]
 ```
+### `Rebond the Gateway to a new version v1.1.0 in a NYM (Unbond - Stop GW - Start GW - Bond)`
+#### Change version in a config files of the GW and NC. Config files locations
+`~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml`
+`~/.nym/clients/NAME_OF_YOUR_NC/config/config.toml`
+____
 
-#=====================================================
-#-----------------------------------------------------
-### **Итого. инит делал только у миксноды, чтобы подтянулась в конфиг обновленная версия. В NC GW исправил руками в конфиг.томл**    
-### *GW надо было перебондить на новую версию 1.1.0 (Стоп - анбонд - старт - бонд)*
+> ##### `!` So init was on a mixnode only and it was not necessary. Version can be changed manually in a config file.
+____
 
-
-###############################
-### Проверка с пом socks5 клиента
-Гит клон и поменять 127.0.0.0 на 0.0.0.0    
-Билд    
-Инит    
-Ран    
-Проверка на с5-клиент сервере:    
+## UPDATE for the NR 21.11.2022
 ```
-curl -x socks5h://localhost:1080 https://nymtech.net/.wellknown/connect/healthcheck.json
+cd $HOME
+rm -rf nym
+git clone https://github.com/nymtech/nym.git
+cd nym
+git reset --hard
+git pull
+git checkout tags/nym-binaries-1.1.0-network-requester
+source $HOME/.bash_profile
+cargo build -p nym-network-requester
 ```
