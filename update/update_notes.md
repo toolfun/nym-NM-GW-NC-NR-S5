@@ -93,16 +93,60 @@ sed -i "s/validator_api_urls = \[/validator_api_urls = \['https:\/\/validator.ny
 - download new binaries and replace    
 - restart the process    
 
-### Building GW, NC, NR
+### Building NC, GW, NR
+- **For Network Requestor install or update go to the [Latest updates part](https://github.com/toolfun/nym-NM-GW-NC-NR-S5/edit/main/update/update_notes.md#latest-updates-network-requestor-21112022)**
+
+- **Client**
 ```
 cd $HOME/nym
-cargo build -p nym-client --release && \
-cargo build -p nym-network-requester --release && \
+git pull
+git checkout nym-binaries-1.1.0
+cargo build -p nym-client --release
+```
+- **Gateway**
+```
 cargo build -p nym-gateway --release
-
+```
+```
 sudo mv target/release/nym-client /usr/local/bin/
-sudo mv target/release/nym-network-requester /usr/local/bin/
 sudo mv target/release/nym-gateway /usr/local/bin/
+```
+> #### No initialization required
+
+### Be sure the gateway config file contains `nymd urls`. Open config
+`~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml`    
+#### and check
+```
+validator_nymd_urls = [
+
+        'https://rpc.nyx.nodes.guru/',
+
+]
+```
+#### Change version in a config files of the GW and NC. Config files locations
+`~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml`    
+`~/.nym/clients/NAME_OF_YOUR_NC/config/config.toml`
+
+### `!` Rebond the Gateway to a new version v1.1.0 in a NYM wallet (Unbond - Stop GW - Start GW - Bond)
+____
+
+> #### `!` So init was on a mixnode only and it was not necessary. Version can be changed manually in a config file.
+____
+
+## LATEST UPDATES (Network Requestor 21.11.2022)
+```
+cd $HOME
+rm -rf nym
+git clone https://github.com/nymtech/nym.git
+cd nym
+git reset --hard
+git pull
+git checkout tags/nym-binaries-1.1.0-network-requester
+source $HOME/.bash_profile
+cargo build -p nym-network-requester
+```
+```
+sudo mv target/release/nym-network-requester /usr/local/bin/
 ```
 > #### No initialization required. But if the any of the processes are failing, then you might have to run init NR again: this will not overwrite keys or configs, so don't worry
 
@@ -123,34 +167,4 @@ LimitNOFILE=65535
 
 [Install]
 WantedBy=multi-user.target
-```
-
-### Be sure the gateway config file contains the lines
-```
-validator_nymd_urls = [
-
-        'https://rpc.nyx.nodes.guru/',
-
-]
-```
-### `Rebond the Gateway to a new version v1.1.0 in a NYM (Unbond - Stop GW - Start GW - Bond)`
-#### Change version in a config files of the GW and NC. Config files locations
-`~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml`
-`~/.nym/clients/NAME_OF_YOUR_NC/config/config.toml`
-____
-
-> ##### `!` So init was on a mixnode only and it was not necessary. Version can be changed manually in a config file.
-____
-
-## UPDATE for the NR 21.11.2022
-```
-cd $HOME
-rm -rf nym
-git clone https://github.com/nymtech/nym.git
-cd nym
-git reset --hard
-git pull
-git checkout tags/nym-binaries-1.1.0-network-requester
-source $HOME/.bash_profile
-cargo build -p nym-network-requester
 ```
