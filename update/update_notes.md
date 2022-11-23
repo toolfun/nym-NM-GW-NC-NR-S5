@@ -148,6 +148,15 @@ cargo build -p nym-network-requester
 ```
 sudo mv target/release/nym-network-requester /usr/local/bin/
 ```
+### There is option to download Nym network requestor binarie and replace it
+```bash
+cd $HOME
+wget https://github.com/nymtech/nym/releases/download/nym-binaries-1.1.0-network-requester/nym-network-requester
+
+# Replace binarie
+mv nym-network-requester /usr/local/bin/
+```
+
 > #### No initialization required. But if the any of the processes are failing, then you might have to run init NR again: this will not overwrite keys or configs, so don't worry
 
 ### Service file for NR
