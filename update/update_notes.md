@@ -133,6 +133,38 @@ ____
 > #### `!` So init was on a mixnode only and it was not necessary. Version can be changed manually in a config file.
 ____
 
+### Socks5 external(❗) client
+##### ⚠ Be careful to protect the entrypoint properly as anyone who can reach it will be able to use it, eating your traffic
+##### Check GW via external Nym socks5 client
+```bash
+# .
+# Install Nym socks5 client on external server, and edit configuration to be able connect:
+# Git clone repo
+git clone https://github.com/nymtech/nym.git    
+
+# Change 127.0.0.1 to 0.0.0.0.  *
+nano ~/nym/clients/socks5/src/socks/server.rs    
+
+# Then build socks5 client
+cd nym
+git reset --hard
+git pull
+git checkout nym-binaries-1.1.0
+cargo build -p nym-socks5-client --release
+sudo mv target/release/nym-socks5-client /usr/local/bin/    
+
+# Init socks5 client
+nym-socks5-client init --id <socks5 client name> --provider <your service provider>
+# For example:
+# nym-socks5-client init --id tshirt --provider GegdtpNzYj4QCgpih9Kxv7ZVZxmVdxYHsDkiPsbT71XG.E8xtE8mrapjzFtyuziZSrsScAKhwZMH5wNpKWtKfzJ5Y@9Byd9VAtyYMnbVAcqdoQxJnq76XEg2dbxbiF5Aa5Jj9J --gateway 9Byd9VAtyYMnbVAcqdoQxJnq76XEg2dbxbiF5Aa5Jj9J    
+
+# Start s5 client
+./nym-socks5-client run --id <socks5 client name>
+
+# !!! Of course, be careful to protect the entrypoint properly as anyone who can reach it will be able to use it, eating your traffic!
+```
+____
+
 ## LATEST UPDATES (Network Requestor 21.11.2022)
 ```
 cd $HOME
