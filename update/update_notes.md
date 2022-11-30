@@ -1,10 +1,14 @@
-## upd. 30.11.2022 new binaries 1.1.1
+# Upd. 30.11.2022. New binaries 1.1.1
 ### Abbreviations:
 - **NM** - Nym Mixnode
 - **GW** - Gateway
 - **NR** - Nym Network Requestor
 - **NC** - Nym Client
-- **S5** - Nym Socks5 Client
+- **S5** - Nym Socks5 Client    
+
+
+### Nym binaries page
+https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.1
 ____
 
 ### Update and install tools
@@ -18,13 +22,13 @@ sudo dpkg --configure -a
 sudo apt install curl wget ufw make clang pkg-config libssl-dev build-essential git htop
 ```
 
-### Install Rust
+### Install or update Rust
 ```
 sudo curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
 ```
 
-### Download nym binaries
+### ⏬ First, clone Nym repository. And then we will build each release
 ```
 cd $HOME
 rm -rf nym
@@ -32,18 +36,26 @@ git clone https://github.com/nymtech/nym.git
 cd nym
 git reset --hard
 git pull
-git checkout nym-binaries-1.1.1
+git checkout nym-binaries-v1.1.1
 ```
 
-## NYM MYXNODE v1.1.1 UPDATING
+### 🟠 NM UPDATING
 ### Build NM
 ```
 cd $HOME/nym
 cargo build -p nym-mixnode --release
+```
+```
+sudo systemctl stop nym-mixnode
 sudo mv target/release/nym-mixnode /usr/local/bin/
 ```
+```
+sudo systemctl daemon-reload
+sudo systemctl enable nym-mixnode
+sudo systemctl restart nym-mixnode
+```
 ### After installation:
-#### Open config file and check if new version is correct, must be `version = '1.1.1'`
+#### Open config and check if new version is correct, must be `version = '1.1.1'`
 `nano ~/.nym/mixnodes/NAME_OF_YOUR_NM/config/config.toml`. 
 ```
 [mixnode]
@@ -51,69 +63,69 @@ sudo mv target/release/nym-mixnode /usr/local/bin/
 version = '1.1.1'
 ```
 #### If not there are 2 options: 
-#### 1. In a config `replace` version manually to correct one
-`nano ~/.nym/mixnodes/NAME_OF_YOUR_NM/config/config.toml`    
+#### 1. In config `replace` version manually to correct one
+`nano ~/.nym/mixnodes/YOUR_MIXNODE_NAME/config/config.toml`    
 
 #### 2. Or run `init` command. This will make these changes too. 
-> If nym-mixnode was installed by Nodes.Guru guide:
+> *Replace* <YOUR_MIXNODE_NAME> with **your** `node id` (name of your Nym mixnode), and <WALLET_ADDRESS> with your `wallet address`
 ```
-nym-mixnode init --id $node_id --host $(curl ifconfig.me) --wallet-address $wallet
-```
-> The template of a command, *replace* with **your** `node id` (name of your NM), and `wallet address`
-```
-nym-mixnode init --id <mixnode_name> --host $(curl ifconfig.me) --wallet-address <wallet-address>
+nym-mixnode init --id <YOUR_MIXNODE_NAME> --host $(curl ifconfig.me) --wallet-address <WALLET_ADDRESS>
 ```
 
-#### Be sure you have these API url in config file
-`nano ~/.nym/mixnodes/NAME_OF_YOUR_NM/config/config.toml`    
+#### Be sure you have these `API url` in config file
+`nano ~/.nym/mixnodes/YOUR_MIXNODE_NAME/config/config.toml`    
 ```
 ## Addresses to APIs running on validator from which the node gets the view of the network.
 validator_api_urls = [
         'https://validator.nymtech.net/api',    
 ]
 ```
-#### If there is empty string add it manually or run command
-```
-sed -i "s/validator_api_urls = \[/validator_api_urls = \['https:\/\/validator.nymtech.net\/api',/" $HOME/.nym/mixnodes/$node_id/config/config.toml
-```
+#### If there is empty string add it manually as it shown above
 
-### UPDATING TO v1.1.1 NYM CLIENT, NYM NETWORK REQUESTOR, GATEWAY
+### UPDATING NC, NR, GW
 
-#### NC    
-- pause your client    
-- download new binaries and replace    
-- restart the processes    
-
-#### NR
-- pause your network requester
-- download new binaries and replace    
-- restart the processes    
-
-#### GW
-- pause your gateway  
-- download new binaries and replace    
-- restart the process    
-
-### Building NC, GW, NR
-- **For Network Requestor install or update go to the [Latest updates part](https://github.com/toolfun/nym-NM-GW-NC-NR-S5/edit/main/update/update_notes.md#latest-updates-network-requestor-21112022)**
-
-- **Client**
+### 🟣 **NC**    
 ```
 cd $HOME/nym
-git pull
-git checkout nym-binaries-1.1.1
 cargo build -p nym-client --release
 ```
-- **Gateway**
+#### Change version in config of the NC
+`nano ~/.nym/clients/NAME_OF_YOUR_NC/config/config.toml`
 ```
+sudo systemctl stop nym-client
+sudo mv target/release/nym-client /usr/local/bin/
+```
+```
+sudo systemctl daemon-reload
+sudo systemctl enable nym-client
+sudo systemctl restart nym-client
+```
+
+### 🔵 **NR**    
+```
+cd $HOME/nym
+cargo build -p nym-network-requester
+```
+> No initialization required. But if the any of the processes are failing, then you might have to run init NR again: this will not overwrite keys or configs, so don't worry
+```
+sudo systemctl stop nym-network-requester
+sudo mv target/release/nym-network-requester /usr/local/bin/
+```
+```
+sudo systemctl daemon-reload
+sudo systemctl enable nym-network-requester
+sudo systemctl restart nym-network-requester
+```
+
+### 🟢 **GW**    
+```
+cd $HOME/nym
 cargo build -p nym-gateway --release
 ```
 ```
-sudo mv target/release/nym-client /usr/local/bin/
+sudo systemctl stop nym-gateway
 sudo mv target/release/nym-gateway /usr/local/bin/
 ```
-> #### No initialization required
-
 ### Be sure the gateway config file contains `nymd urls`. Open config
 `~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml`    
 #### and check
@@ -124,17 +136,15 @@ validator_nymd_urls = [
 
 ]
 ```
-#### Change version in a config files of the GW and NC. Config files locations
-`~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml`    
-`~/.nym/clients/NAME_OF_YOUR_NC/config/config.toml`
-
-### `!` Rebond the Gateway to a new version v1.1.1 in a NYM wallet (Unbond - Stop GW - Start GW - Bond)
+#### Change version in config of the GW
+`nano ~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml`    
+### ~~Rebond the Gateway to a new version v1.1.1 in a NYM wallet (Unbond - Stop GW - Start GW - Bond)~~
 ____
 
-> #### `!` So init was on a mixnode only and it was not necessary. Version can be changed manually in a config file.
+> #### `!` So **init** was on a mixnode only and it was not necessary. Version can be changed manually in a config file.
 ____
 
-### Socks5 external(❗) client
+### ⚫ Socks5 external(❗) client
 ##### ⚠ Be careful to protect the entrypoint properly as anyone who can reach it will be able to use it, eating your traffic
 ##### Check GW via external Nym socks5 client
 ```bash
@@ -150,14 +160,14 @@ nano ~/nym/clients/socks5/src/socks/server.rs
 cd nym
 git reset --hard
 git pull
-git checkout nym-binaries-1.1.1
+git checkout nym-binaries-v1.1.1
 cargo build -p nym-socks5-client --release
 sudo mv target/release/nym-socks5-client /usr/local/bin/    
 
 # Init socks5 client
 nym-socks5-client init --id <socks5 client name> --provider <your service provider>
 # For example:
-# nym-socks5-client init --id tshirt --provider GegdtpNzYj4QCgpih9Kxv7ZVZxmVdxYHsDkiPsbT71XG.E8xtE8mrapjzFtyuziZSrsScAKhwZMH5wNpKWtKfzJ5Y@9Byd9VAtyYMnbVAcqdoQxJnq76XEg2dbxbiF5Aa5Jj9J --gateway 9Byd9VAtyYMnbVAcqdoQxJnq76XEg2dbxbiF5Aa5Jj9J    
+# nym-socks5-client init --id my_socks5 --provider GegdtpNzYj4QCgpih9Kxv7ZVZxmVdxYHsDkiPsbT71XG.E8xtE8mrapjzFtyuziZSrsScAKhwZMH5wNpKWtKfzJ5Y@9Byd9VAtyYMnbVAcqdoQxJnq76XEg2dbxbiF5Aa5Jj9J --gateway 9Byd9VAtyYMnbVAcqdoQxJnq76XEg2dbxbiF5Aa5Jj9J    
 
 # Start s5 client
 ./nym-socks5-client run --id <socks5 client name>
@@ -166,31 +176,7 @@ nym-socks5-client init --id <socks5 client name> --provider <your service provid
 ```
 ____
 
-## LATEST UPDATES (Network Requestor 21.11.2022)
-```
-cd $HOME
-rm -rf nym
-git clone https://github.com/nymtech/nym.git
-cd nym
-git reset --hard
-git pull
-git checkout tags/nym-binaries-1.1.1-network-requester
-source $HOME/.bash_profile
-cargo build -p nym-network-requester
-```
-```
-sudo mv target/release/nym-network-requester /usr/local/bin/
-```
-### There is option to download Nym network requestor binarie and replace it
-```bash
-cd $HOME
-wget https://github.com/nymtech/nym/releases/download/nym-binaries-1.1.1-network-requester/nym-network-requester
-
-# Replace binarie
-mv nym-network-requester /usr/local/bin/
-```
-
-> #### No initialization required. But if the any of the processes are failing, then you might have to run init NR again: this will not overwrite keys or configs, so don't worry
+### Just...
 
 ### Service file for NR
 ```
