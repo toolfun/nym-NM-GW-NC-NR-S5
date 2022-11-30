@@ -127,7 +127,7 @@ sudo systemctl stop nym-gateway
 sudo mv target/release/nym-gateway /usr/local/bin/
 ```
 ### Be sure the gateway config file contains `nymd urls`. Open config
-`~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml`    
+`nano ~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml`    
 #### and check
 ```
 validator_nymd_urls = [
@@ -138,10 +138,7 @@ validator_nymd_urls = [
 ```
 #### Change version in config of the GW
 `nano ~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml`    
-### ~~Rebond the Gateway to a new version v1.1.1 in a NYM wallet (Unbond - Stop GW - Start GW - Bond)~~
-____
-
-> #### `!` So **init** was on a mixnode only and it was not necessary. Version can be changed manually in a config file.
+#### ~~Rebond the Gateway to a new version v1.1.1 in a NYM wallet (Unbond - Stop GW - Start GW - Bond)~~
 ____
 
 ### ⚫ Socks5 external(❗) client
