@@ -1,9 +1,10 @@
-## 16.11.2022 & upd. 21.11.2022
+## upd. 30.11.2022 new binaries 1.1.1
 ### Abbreviations:
 - **NM** - Nym Mixnode
 - **GW** - Gateway
 - **NR** - Nym Network Requestor
 - **NC** - Nym Client
+- **S5** - Nym Socks5 Client
 ____
 
 ### Update and install tools
@@ -31,10 +32,10 @@ git clone https://github.com/nymtech/nym.git
 cd nym
 git reset --hard
 git pull
-git checkout nym-binaries-1.1.0
+git checkout nym-binaries-1.1.1
 ```
 
-## NYM MYXNODE v1.1.0 UPDATING
+## NYM MYXNODE v1.1.1 UPDATING
 ### Build NM
 ```
 cd $HOME/nym
@@ -42,12 +43,12 @@ cargo build -p nym-mixnode --release
 sudo mv target/release/nym-mixnode /usr/local/bin/
 ```
 ### After installation:
-#### Open config file and check if new version is correct, must be `version = '1.1.0'`
+#### Open config file and check if new version is correct, must be `version = '1.1.1'`
 `nano ~/.nym/mixnodes/NAME_OF_YOUR_NM/config/config.toml`. 
 ```
 [mixnode]
 # Version of the NM for which this configuration was created.
-version = '1.1.0'
+version = '1.1.1'
 ```
 #### If not there are 2 options: 
 #### 1. In a config `replace` version manually to correct one
@@ -76,7 +77,7 @@ validator_api_urls = [
 sed -i "s/validator_api_urls = \[/validator_api_urls = \['https:\/\/validator.nymtech.net\/api',/" $HOME/.nym/mixnodes/$node_id/config/config.toml
 ```
 
-### UPDATING TO v1.1.0 NYM CLIENT, NYM NETWORK REQUESTOR, GATEWAY
+### UPDATING TO v1.1.1 NYM CLIENT, NYM NETWORK REQUESTOR, GATEWAY
 
 #### NC    
 - pause your client    
@@ -100,7 +101,7 @@ sed -i "s/validator_api_urls = \[/validator_api_urls = \['https:\/\/validator.ny
 ```
 cd $HOME/nym
 git pull
-git checkout nym-binaries-1.1.0
+git checkout nym-binaries-1.1.1
 cargo build -p nym-client --release
 ```
 - **Gateway**
@@ -127,7 +128,7 @@ validator_nymd_urls = [
 `~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml`    
 `~/.nym/clients/NAME_OF_YOUR_NC/config/config.toml`
 
-### `!` Rebond the Gateway to a new version v1.1.0 in a NYM wallet (Unbond - Stop GW - Start GW - Bond)
+### `!` Rebond the Gateway to a new version v1.1.1 in a NYM wallet (Unbond - Stop GW - Start GW - Bond)
 ____
 
 > #### `!` So init was on a mixnode only and it was not necessary. Version can be changed manually in a config file.
@@ -149,7 +150,7 @@ nano ~/nym/clients/socks5/src/socks/server.rs
 cd nym
 git reset --hard
 git pull
-git checkout nym-binaries-1.1.0
+git checkout nym-binaries-1.1.1
 cargo build -p nym-socks5-client --release
 sudo mv target/release/nym-socks5-client /usr/local/bin/    
 
@@ -173,7 +174,7 @@ git clone https://github.com/nymtech/nym.git
 cd nym
 git reset --hard
 git pull
-git checkout tags/nym-binaries-1.1.0-network-requester
+git checkout tags/nym-binaries-1.1.1-network-requester
 source $HOME/.bash_profile
 cargo build -p nym-network-requester
 ```
@@ -183,7 +184,7 @@ sudo mv target/release/nym-network-requester /usr/local/bin/
 ### There is option to download Nym network requestor binarie and replace it
 ```bash
 cd $HOME
-wget https://github.com/nymtech/nym/releases/download/nym-binaries-1.1.0-network-requester/nym-network-requester
+wget https://github.com/nymtech/nym/releases/download/nym-binaries-1.1.1-network-requester/nym-network-requester
 
 # Replace binarie
 mv nym-network-requester /usr/local/bin/
