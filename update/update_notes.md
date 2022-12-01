@@ -28,7 +28,7 @@ sudo curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
 ```
 
-### ⏬ First, clone Nym repository. And then we will build each release
+### ⏬ First, clone Nym repository. And then we will build each component
 ```
 cd $HOME
 rm -rf nym
@@ -138,16 +138,16 @@ validator_nymd_urls = [
 ```
 #### Change version in config of the GW
 `nano ~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml`    
-#### ~~Rebond the Gateway to a new version v1.1.1 in a NYM wallet (Unbond - Stop GW - Start GW - Bond)~~
+#### Rebond the Gateway to the new version v1.1.1 in NYM wallet (Unbond - Stop GW - Start GW - Bond)
 ____
 
 ### ⚫ Socks5 external(❗) client
 ##### ⚠ Be careful to protect the entrypoint properly as anyone who can reach it will be able to use it, eating your traffic
 ##### Check GW via external Nym socks5 client
 ```bash
-# .
-# Install Nym socks5 client on external server, and edit configuration to be able connect:
-# Git clone repo
+# Install Nym socks5 client on external server, and edit configuration to be able to connect:
+cd $HOME
+rm -rf $HOME/nym
 git clone https://github.com/nymtech/nym.git    
 
 # Change 127.0.0.1 to 0.0.0.0.  *
@@ -155,7 +155,6 @@ nano ~/nym/clients/socks5/src/socks/server.rs
 
 # Then build socks5 client
 cd nym
-git reset --hard
 git pull
 git checkout nym-binaries-v1.1.1
 cargo build -p nym-socks5-client --release
@@ -164,7 +163,7 @@ sudo mv target/release/nym-socks5-client /usr/local/bin/
 # Init socks5 client
 nym-socks5-client init --id <socks5 client name> --provider <your service provider>
 # For example:
-# nym-socks5-client init --id my_socks5 --provider GegdtpNzYj4QCgpih9Kxv7ZVZxmVdxYHsDkiPsbT71XG.E8xtE8mrapjzFtyuziZSrsScAKhwZMH5wNpKWtKfzJ5Y@9Byd9VAtyYMnbVAcqdoQxJnq76XEg2dbxbiF5Aa5Jj9J --gateway 9Byd9VAtyYMnbVAcqdoQxJnq76XEg2dbxbiF5Aa5Jj9J    
+nym-socks5-client init --id my_socks5 --provider GegdtpNzYj4QCgpih9Kxv7ZVZxmVdxYHsDkiPsbT71XG.E8xtE8mrapjzFtyuziZSrsScAKhwZMH5wNpKWtKfzJ5Y@9Byd9VAtyYMnbVAcqdoQxJnq76XEg2dbxbiF5Aa5Jj9J --gateway 9Byd9VAtyYMnbVAcqdoQxJnq76XEg2dbxbiF5Aa5Jj9J    
 
 # Start s5 client
 ./nym-socks5-client run --id <socks5 client name>
