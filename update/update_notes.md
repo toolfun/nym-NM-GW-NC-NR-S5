@@ -140,7 +140,7 @@ validator_nymd_urls = [
 `nano ~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml`    
 #### Rebond the Gateway to the new version v1.1.1 in NYM wallet (Unbond - Stop GW - Start GW - Bond)
 ____
-
+🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
 ### ⚫ Socks5 external(❗) client
 ##### ⚠ Be careful to protect the entrypoint properly as anyone who can reach it will be able to use it, eating your traffic
 ##### Check GW via external Nym socks5 client
@@ -170,9 +170,9 @@ nym-socks5-client init --id my_socks5 --provider GegdtpNzYj4QCgpih9Kxv7ZVZxmVdxY
 
 # !!! Of course, be careful to protect the entrypoint properly as anyone who can reach it will be able to use it, eating your traffic!
 ```
-____
+🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧    
 
-### Just...
+# Just...
 
 ### Service file for NR
 ```
