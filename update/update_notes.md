@@ -141,7 +141,7 @@ validator_nymd_urls = [
 #### Rebond the Gateway to the new version v1.1.1 in NYM wallet (Unbond - Stop GW - Start GW - Bond)
 ____
 🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
-### ⚫ Socks5 external(❗) client
+### ⚫ ~~Socks5 external(❗) client~~
 ##### ⚠ Be careful to protect the entrypoint properly as anyone who can reach it will be able to use it, eating your traffic
 ##### Check GW via external Nym socks5 client
 ```bash
