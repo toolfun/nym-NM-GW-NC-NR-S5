@@ -138,7 +138,8 @@ validator_nymd_urls = [
 ```
 #### Change version in config of the GW
 `nano ~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml`    
-#### Rebond the Gateway to the new version v1.1.1 in NYM wallet (Unbond - Stop GW - Start GW - Bond)
+### Rebond Gateway
+> #### Rebond gateway to v1.1.1 in NYM wallet (Unbond - Stop GW - Start GW - Bond). You will always need to rebond when upgrading gateways as this is how the network knows your gateway is available to be used
 ____
 🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
 ### ⚫ ~~Socks5 external(❗) client~~
