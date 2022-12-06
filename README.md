@@ -3,4 +3,4 @@
 #### 🟣 Nym Client
 #### 🔵  Nym Network Requester
 #### 🟢 Nym Gateway
-#### ⚫ ~~Nym SOCKS5 Client~~
+#### ⚫ Nym SOCKS5 Client
