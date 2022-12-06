@@ -139,39 +139,26 @@ validator_nymd_urls = [
 #### Change version in config of the GW
 `nano ~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml`    
 ### Rebond Gateway
-> #### Rebond gateway to v1.1.1 in NYM wallet (Unbond - Stop GW - Start GW - Bond). You will always need to rebond when upgrading gateways as this is how the network knows your gateway is available to be used
-____
-🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
-### ⚫ ~~Socks5 external(❗) client~~
-##### ⚠ Be careful to protect the entrypoint properly as anyone who can reach it will be able to use it, eating your traffic
-##### Check GW via external Nym socks5 client
+> #### Rebond gateway to v1.1.1 in NYM wallet (Unbond - Stop GW - Start GW - Bond). You will always need to rebond when upgrading gateways as this is how the network knows your gateway is available to be used    
+
+### ⚫ S5
 ```bash
-# Install Nym socks5 client on external server, and edit configuration to be able to connect:
-cd $HOME
-rm -rf $HOME/nym
-git clone https://github.com/nymtech/nym.git    
-
-# Change 127.0.0.1 to 0.0.0.0.  *
-nano ~/nym/clients/socks5/src/socks/server.rs    
-
-# Then build socks5 client
-cd nym
+cd $HOME/nym
 git pull
 git checkout nym-binaries-v1.1.1
 cargo build -p nym-socks5-client --release
 sudo mv target/release/nym-socks5-client /usr/local/bin/    
 
-# Init socks5 client
+# Init socks5 client. Replace <socks5 client name> with your any name. It is a local identifier and it never transmitted over the network
 nym-socks5-client init --id <socks5 client name> --provider <your service provider>
-# For example:
+# for example
 nym-socks5-client init --id my_socks5 --provider GegdtpNzYj4QCgpih9Kxv7ZVZxmVdxYHsDkiPsbT71XG.E8xtE8mrapjzFtyuziZSrsScAKhwZMH5wNpKWtKfzJ5Y@9Byd9VAtyYMnbVAcqdoQxJnq76XEg2dbxbiF5Aa5Jj9J --gateway 9Byd9VAtyYMnbVAcqdoQxJnq76XEg2dbxbiF5Aa5Jj9J    
 
 # Start s5 client
+cd $HOME/nym/target/release/nym-socks5-client
 ./nym-socks5-client run --id <socks5 client name>
-
-# !!! Of course, be careful to protect the entrypoint properly as anyone who can reach it will be able to use it, eating your traffic!
 ```
-🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧    
+  
 
 # Just...
 
