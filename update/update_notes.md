@@ -1,4 +1,4 @@
-# Upd. 30.11.2022. New binaries 1.1.1
+# Upd. 07.12.2022. New binaries 1.1.2
 ### Abbreviations:
 - **NM** - Nym Mixnode
 - **GW** - Gateway
@@ -8,7 +8,7 @@
 
 
 ### Nym binaries page
-https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.1
+https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.2
 ____
 
 ### Update and install tools
@@ -28,7 +28,7 @@ sudo curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
 ```
 
-### ⏬ First, clone Nym repository. And then we will build each component
+### ⏬ First, clone Nym repository on each server where you will update. And then we will build each component
 ```
 cd $HOME
 rm -rf nym
@@ -36,7 +36,7 @@ git clone https://github.com/nymtech/nym.git
 cd nym
 git reset --hard
 git pull
-git checkout nym-binaries-v1.1.1
+git checkout nym-binaries-v1.1.2
 ```
 
 ### 🟠 NM UPDATING
@@ -55,12 +55,12 @@ sudo systemctl enable nym-mixnode
 sudo systemctl restart nym-mixnode
 ```
 ### After installation:
-#### Open config and check if new version is correct, must be `version = '1.1.1'`
-`nano ~/.nym/mixnodes/NAME_OF_YOUR_NM/config/config.toml`. 
+#### Open config and check if new version is correct, must be `version = '1.1.2'`
+`nano ~/.nym/mixnodes/YOUR_MIXNODE_NAME/config/config.toml`. 
 ```
 [mixnode]
 # Version of the NM for which this configuration was created.
-version = '1.1.1'
+version = '1.1.2'
 ```
 #### If not there are 2 options: 
 #### 1. In config `replace` version manually to correct one
@@ -75,9 +75,9 @@ nym-mixnode init --id <YOUR_MIXNODE_NAME> --host $(curl ifconfig.me) --wallet-ad
 #### Be sure you have these `API url` in config file
 `nano ~/.nym/mixnodes/YOUR_MIXNODE_NAME/config/config.toml`    
 ```
-## Addresses to APIs running on validator from which the node gets the view of the network.
-validator_api_urls = [
-        'https://validator.nymtech.net/api',    
+# Addresses to APIs running on validator from which the node gets the view of the network.
+validator_api_urls = ['https://validator.nymtech.net/api',
+
 ]
 ```
 #### If there is empty string add it manually as it shown above
@@ -109,7 +109,7 @@ cargo build -p nym-network-requester
 > No initialization required. But if the any of the processes are failing, then you might have to run init NR again: this will not overwrite keys or configs, so don't worry
 ```
 sudo systemctl stop nym-network-requester
-sudo mv target/release/nym-network-requester /usr/local/bin/
+sudo mv target/debug/nym-network-requester /usr/local/bin/
 ```
 ```
 sudo systemctl daemon-reload
@@ -122,13 +122,20 @@ sudo systemctl restart nym-network-requester
 cd $HOME/nym
 cargo build -p nym-gateway --release
 ```
-```
+```bash
 sudo systemctl stop nym-gateway
 sudo mv target/release/nym-gateway /usr/local/bin/
+
+# Restart
+sudo systemctl restart nym-gateway
 ```
-### Be sure the gateway config file contains `nymd urls`. Open config
-`nano ~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml`    
-#### and check
+- #### Be sure the gateway config file contains `nymd urls`. 
+```bash
+# Replace NAME_OF_YOUR_GW to your GW name. Open config and check
+
+nano ~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml
+```
+#### Must be
 ```
 validator_nymd_urls = [
 
@@ -136,16 +143,21 @@ validator_nymd_urls = [
 
 ]
 ```
-#### Change version in config of the GW
-`nano ~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml`    
-### Rebond Gateway
-> #### Rebond gateway to v1.1.1 in NYM wallet (Unbond - Stop GW - Start GW - Bond). You will always need to rebond when upgrading gateways as this is how the network knows your gateway is available to be used    
+- #### Change version in config of the GW
+```bash
+# Replace NAME_OF_YOUR_GW to your GW name. Open file and change to correct version
+nano ~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml
+```
+
+- #### Rebond Gateway
+#### Rebond gateway to v1.1.2 in NYM wallet (Unbond - Stop GW - Start GW - Bond)
+> #### You will always need to rebond when upgrading gateways as this is how the network knows your gateway is available to be used    
 
 ### ⚫ S5
 ```bash
 cd $HOME/nym
 git pull
-git checkout nym-binaries-v1.1.1
+git checkout nym-binaries-v1.1.2
 cargo build -p nym-socks5-client --release
 sudo mv target/release/nym-socks5-client /usr/local/bin/    
 
