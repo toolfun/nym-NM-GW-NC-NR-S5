@@ -41,9 +41,10 @@ git checkout nym-binaries-v1.1.2
 
 ### 🟠 NM UPDATING
 ### Build NM
-```
+```bash
 cd $HOME/nym
-cargo build -p nym-mixnode --release
+# Builds only binary, otherwise it's not compile right
+cargo build --release --bin nym-mixnode
 ```
 ```
 sudo systemctl stop nym-mixnode
