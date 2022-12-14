@@ -1,4 +1,4 @@
-# Upd. 07.12.2022. New binaries 1.1.2
+# Upd. 13.12.2022. New binaries 1.1.3
 ### Abbreviations:
 - **NM** - Nym Mixnode
 - **GW** - Gateway
@@ -8,7 +8,7 @@
 
 
 ### Nym binaries page
-https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.2
+https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.3
 ____
 
 ### Update and install tools
@@ -36,7 +36,7 @@ git clone https://github.com/nymtech/nym.git
 cd nym
 git reset --hard
 git pull
-git checkout nym-binaries-v1.1.2
+git checkout nym-binaries-v1.1.3
 ```
 
 ### 🟠 NM UPDATING
@@ -56,12 +56,12 @@ sudo systemctl enable nym-mixnode
 sudo systemctl restart nym-mixnode
 ```
 ### After installation:
-#### Open config and check if new version is correct, must be `version = '1.1.2'`
+#### Open config and check if new version is correct, must be `version = '1.1.3'`
 `nano ~/.nym/mixnodes/YOUR_MIXNODE_NAME/config/config.toml`. 
 ```
 [mixnode]
 # Version of the NM for which this configuration was created.
-version = '1.1.2'
+version = '1.1.3'
 ```
 #### If not there are 2 options: 
 #### 1. In config `replace` version manually to correct one
@@ -151,14 +151,14 @@ nano ~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml
 ```
 
 - #### Rebond Gateway
-#### Rebond gateway to v1.1.2 in NYM wallet (Unbond - Stop GW - Start GW - Bond)
+#### Rebond gateway to v1.1.3 in NYM wallet (Unbond - Stop GW - Start GW - Bond)
 > #### You will always need to rebond when upgrading gateways as this is how the network knows your gateway is available to be used    
 
 ### ⚫ S5
 ```bash
 cd $HOME/nym
 git pull
-git checkout nym-binaries-v1.1.2
+git checkout nym-binaries-v1.1.3
 cargo build -p nym-socks5-client --release
 sudo mv target/release/nym-socks5-client /usr/local/bin/    
 
