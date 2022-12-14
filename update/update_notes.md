@@ -48,12 +48,10 @@ cargo build --release --bin nym-mixnode
 ```
 ```
 sudo systemctl stop nym-mixnode
-sudo mv target/release/nym-mixnode /usr/local/bin/
+sudo mv ~/nym/target/release/nym-mixnode /usr/local/bin/
 ```
 ```
-sudo systemctl daemon-reload
-sudo systemctl enable nym-mixnode
-sudo systemctl restart nym-mixnode
+sudo systemctl restart nym-mixnode && journalctl -u nym-mixnode -f -o cat
 ```
 ### After installation:
 #### Open config and check if new version is correct, must be `version = '1.1.3'`
