@@ -1,4 +1,4 @@
-# Upd. 13.12.2022. New binaries 1.1.3
+# Upd. 20.12.2022. New binaries 1.1.4
 ### Abbreviations:
 - **NM** - Nym Mixnode
 - **GW** - Gateway
@@ -8,7 +8,7 @@
 
 
 ### Nym binaries page
-https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.3
+https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.4
 ____
 
 ### Update and install tools
@@ -23,6 +23,7 @@ sudo apt install curl wget ufw make clang pkg-config libssl-dev build-essential 
 ```
 
 ### Install or update Rust
+> Rust & cargo >= v1.56
 ```
 sudo curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
@@ -36,7 +37,7 @@ git clone https://github.com/nymtech/nym.git
 cd nym
 git reset --hard
 git pull
-git checkout nym-binaries-v1.1.3
+git checkout nym-binaries-v1.1.4
 ```
 
 ### 🟠 NM UPDATING
@@ -54,12 +55,12 @@ sudo mv ~/nym/target/release/nym-mixnode /usr/local/bin/
 sudo systemctl restart nym-mixnode && journalctl -u nym-mixnode -f -o cat
 ```
 ### After installation:
-#### Open config and check if new version is correct, must be `version = '1.1.3'`
+#### Open config and check if new version is correct, must be `version = '1.1.4'`
 `nano ~/.nym/mixnodes/YOUR_MIXNODE_NAME/config/config.toml`. 
 ```
 [mixnode]
 # Version of the NM for which this configuration was created.
-version = '1.1.3'
+version = '1.1.4'
 ```
 #### If not there are 2 options: 
 #### 1. In config `replace` version manually to correct one
@@ -88,8 +89,9 @@ validator_api_urls = ['https://validator.nymtech.net/api',
 cd $HOME/nym
 cargo build -p nym-client --release
 ```
-#### Change version in config of the NC
+#### Change version in config of the NC. (Replace *NAME_OF_YOUR_NC*)
 `nano ~/.nym/clients/NAME_OF_YOUR_NC/config/config.toml`
+<!-- nano ~/.nym/clients/grantee_cl/config/config.toml -->
 ```
 sudo systemctl stop nym-client
 sudo mv target/release/nym-client /usr/local/bin/
@@ -142,22 +144,24 @@ validator_nymd_urls = [
 
 ]
 ```
-- #### Change version in config of the GW
+- #### Change version to actual 1.1.4 in config of the GW
 ```bash
 # Replace NAME_OF_YOUR_GW to your GW name. Open file and change to correct version
 nano ~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml
 ```
 
 - #### Rebond Gateway
-#### Rebond gateway to v1.1.3 in NYM wallet (Unbond - Stop GW - Start GW - Bond)
+#### Rebond gateway to v1.1.4 in NYM wallet (Unbond - Stop GW - Start GW - Bond)
 > #### You will always need to rebond when upgrading gateways as this is how the network knows your gateway is available to be used    
 
 ### ⚫ S5
 ```bash
 cd $HOME/nym
 git pull
-git checkout nym-binaries-v1.1.3
+git checkout nym-binaries-v1.1.4
 cargo build -p nym-socks5-client --release
+# If nym-socks5-client runs as a service, stop it and then move 
+# sudo systemctl stop nym-socks5-client
 sudo mv target/release/nym-socks5-client /usr/local/bin/    
 
 # Init socks5 client. Replace <socks5 client name> with your any name. It is a local identifier and it never transmitted over the network
