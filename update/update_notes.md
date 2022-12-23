@@ -39,6 +39,7 @@ git reset --hard
 git pull
 git checkout nym-binaries-v1.1.4
 ```
+#
 
 ### 🟠 NM UPDATING
 ### Build NM
@@ -55,32 +56,35 @@ sudo mv ~/nym/target/release/nym-mixnode /usr/local/bin/
 sudo systemctl restart nym-mixnode && journalctl -u nym-mixnode -f -o cat
 ```
 ### After installation:
-#### Open config and check if new version is correct, must be `version = '1.1.4'`
-`nano ~/.nym/mixnodes/YOUR_MIXNODE_NAME/config/config.toml`. 
+> #### Enter your mixnode name
+> `node_id=YOUR_MIXNODE_NAME`
+#### We need to update the version in the config. 2 ways
+#### 1. Open config
 ```
+nano ~/.nym/mixnodes/$node_id/config/config.toml
+```
+#### Change to new version `1.1.4`
+```bash
 [mixnode]
 # Version of the NM for which this configuration was created.
 version = '1.1.4'
 ```
-#### If not there are 2 options: 
-#### 1. In config `replace` version manually to correct one
-`nano ~/.nym/mixnodes/YOUR_MIXNODE_NAME/config/config.toml`    
-
-#### 2. Or run `init` command. This will make these changes too. 
-> *Replace* <YOUR_MIXNODE_NAME> with **your** `node id` (name of your Nym mixnode), and <WALLET_ADDRESS> with your `wallet address`
+#### 2. Or run *init* command
+> #### Enter your wallet address
+> `wallet=YOUR_WALLET_ADDRESS` For exmp. `wallet=n10lk93p495ywvmg50l80yhdzjea8zyslev8wz44`
 ```
-nym-mixnode init --id <YOUR_MIXNODE_NAME> --host $(curl ifconfig.me) --wallet-address <WALLET_ADDRESS>
+nym-mixnode init --id $node_id --host $(curl ifconfig.me) --wallet-address $wallet
 ```
-
 #### Be sure you have these `API url` in config file
-`nano ~/.nym/mixnodes/YOUR_MIXNODE_NAME/config/config.toml`    
-```
+`nano ~/.nym/mixnodes/$node_id/config/config.toml`    
+```bash
 # Addresses to APIs running on validator from which the node gets the view of the network.
 validator_api_urls = ['https://validator.nymtech.net/api',
 
 ]
 ```
-#### If there is empty string add it manually as it shown above
+#### If there is empty string add it manually
+#
 
 ### UPDATING NC, NR, GW
 
@@ -153,6 +157,8 @@ nano ~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml
 - #### Rebond Gateway
 #### Rebond gateway to v1.1.4 in NYM wallet (Unbond - Stop GW - Start GW - Bond)
 > #### You will always need to rebond when upgrading gateways as this is how the network knows your gateway is available to be used    
+
+#
 
 ### ⚫ S5
 ```bash
