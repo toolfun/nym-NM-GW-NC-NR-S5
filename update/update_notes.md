@@ -78,7 +78,9 @@ nym-mixnode init --id $node_id --host $(curl ifconfig.me) --wallet-address $wall
 `nano ~/.nym/mixnodes/$node_id/config/config.toml`    
 ```bash
 # Addresses to APIs running on validator from which the node gets the view of the network.
-validator_api_urls = ['https://validator.nymtech.net/api',
+nym_api_urls = [
+
+        'https://validator.nymtech.net/api/',
 
 ]
 ```
