@@ -1,4 +1,4 @@
-# Upd. 20.12.2022. New binaries 1.1.4
+# Upd. 10.01.2023. New binaries 1.1.5
 ### Abbreviations:
 - **NM** - Nym Mixnode
 - **GW** - Gateway
@@ -8,7 +8,7 @@
 
 
 ### Nym binaries page
-https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.4
+https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.5
 ____
 
 ### Update and install tools
@@ -35,9 +35,8 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git reset --hard
 git pull
-git checkout nym-binaries-v1.1.4
+git checkout nym-binaries-v1.1.5
 ```
 #
 
@@ -63,11 +62,11 @@ sudo systemctl restart nym-mixnode && journalctl -u nym-mixnode -f -o cat
 ```
 nano ~/.nym/mixnodes/$node_id/config/config.toml
 ```
-#### Change to new version `1.1.4`
+#### Change to new version `1.1.5`
 ```bash
 [mixnode]
 # Version of the NM for which this configuration was created.
-version = '1.1.4'
+version = '1.1.5'
 ```
 #### 2. Or run *init* command
 > #### Enter your wallet address
@@ -148,14 +147,15 @@ validator_nymd_urls = [
 
 ]
 ```
-- #### Change version to actual 1.1.4 in config of the GW
+- #### Change version to actual 1.1.5
+-  in config of the GW
 ```bash
 # Replace NAME_OF_YOUR_GW to your GW name. Open file and change to correct version
 nano ~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml
 ```
 
 - #### Rebond Gateway
-#### Rebond gateway to v1.1.4 in NYM wallet (Unbond - Stop GW - Start GW - Bond)
+#### Rebond gateway to v1.1.5 in NYM wallet (Unbond - Stop GW - Start GW - Bond)
 > #### You will always need to rebond when upgrading gateways as this is how the network knows your gateway is available to be used    
 
 #
@@ -164,7 +164,7 @@ nano ~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml
 ```bash
 cd $HOME/nym
 git pull
-git checkout nym-binaries-v1.1.4
+git checkout nym-binaries-v1.1.5
 cargo build -p nym-socks5-client --release
 # If nym-socks5-client runs as a service, stop it and then move 
 # sudo systemctl stop nym-socks5-client
