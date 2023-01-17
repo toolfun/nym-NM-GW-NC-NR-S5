@@ -23,7 +23,6 @@ sudo apt install curl wget ufw make clang pkg-config libssl-dev build-essential 
 ```
 
 ### Install or update Rust
-> Rust & cargo >= v1.56
 ```
 sudo curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
@@ -47,14 +46,7 @@ cd $HOME/nym
 # Builds only binary, otherwise it's not compile right
 cargo build --release --bin nym-mixnode
 ```
-```
-sudo systemctl stop nym-mixnode
-sudo mv ~/nym/target/release/nym-mixnode /usr/local/bin/
-```
-```
-sudo systemctl restart nym-mixnode && journalctl -u nym-mixnode -f -o cat
-```
-### After installation:
+### After build:
 > #### Enter your mixnode name
 > `node_id=YOUR_MIXNODE_NAME`
 #### We need to update the version in the config. 2 ways
@@ -70,7 +62,7 @@ version = '1.1.6'
 ```
 #### 2. Or run *init* command
 > #### Enter your wallet address
-> `wallet=YOUR_WALLET_ADDRESS` For exmp. `wallet=n10lk93p495ywvmg50l80yhdzjea8zyslev8wz44`
+> `wallet=` For exmp. `wallet=n10lk93p495ywvmg50l80yhdzjea8zyslev8wz44`
 ```
 nym-mixnode init --id $node_id --host $(curl ifconfig.me) --wallet-address $wallet
 ```
@@ -84,7 +76,15 @@ nym_api_urls = [
 
 ]
 ```
-#### If there is empty string add it manually
+> #### If there is empty string add it manually
+#### Replace binary and start
+```
+sudo systemctl stop nym-mixnode
+sudo mv ~/nym/target/release/nym-mixnode /usr/local/bin/
+```
+```
+sudo systemctl restart nym-mixnode && journalctl -u nym-mixnode -f -o cat
+```
 #
 
 ### UPDATING NC, NR, GW
@@ -94,9 +94,21 @@ nym_api_urls = [
 cd $HOME/nym
 cargo build -p nym-client --release
 ```
-#### Change version in config of the NC. (Replace *NAME_OF_YOUR_NC*)
-`nano ~/.nym/clients/NAME_OF_YOUR_NC/config/config.toml`
+<!-- #### Change version in config of the NC
+> #### Enter name of your NC, for exmp. `nym_client_name=my_client`    
+`nym_client_name=`
+```
+nano ~/.nym/clients/$nym_client_name/config/config.toml
+```
 <!-- nano ~/.nym/clients/grantee_cl/config/config.toml -->
+
+#### Init NC (init with or without --gateway flag, depends how you run it)
+> #### Enter name of your NC, for exmp. `nym_client_name=my_client`. And enter your Gateway ID    
+> `nym_client_name=`    
+> `gateway_id=`
+```
+nym-client init --id $nym_client_name --gateway $gateway_id
+```
 ```
 sudo systemctl stop nym-client
 sudo mv target/release/nym-client /usr/local/bin/
@@ -115,7 +127,7 @@ cargo build -p nym-network-requester
 > No initialization required. But if the any of the processes are failing, then you might have to run init NR again: this will not overwrite keys or configs, so don't worry
 ```
 sudo systemctl stop nym-network-requester
-sudo mv target/debug/nym-network-requester /usr/local/bin/
+sudo mv target/release/nym-network-requester /usr/local/bin/
 ```
 ```
 sudo systemctl daemon-reload
@@ -135,11 +147,14 @@ sudo mv target/release/nym-gateway /usr/local/bin/
 # Restart
 sudo systemctl restart nym-gateway
 ```
-- #### Be sure the gateway config file contains `nymd urls`. 
+- #### Be sure the gateway config file contains `nymd urls`.
+- #### Change version to actual 1.1.6
+> #### How to. Enter name of your GW, for exmp. `gateway_name=my_gateway`    
+> `gateway_name=`
 ```bash
-# Replace NAME_OF_YOUR_GW to your GW name. Open config and check
+# Open config and check
 
-nano ~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml
+nano ~/.nym/gateways/$gateway_name/config/config.toml
 ```
 #### Must be
 ```
@@ -149,11 +164,10 @@ validator_nymd_urls = [
 
 ]
 ```
-- #### Change version to actual 1.1.6
--  in config of the GW
+#### Version must be 1.1.6
 ```bash
-# Replace NAME_OF_YOUR_GW to your GW name. Open file and change to correct version
-nano ~/.nym/gateways/NAME_OF_YOUR_GW/config/config.toml
+# Version of the gateway for which this configuration was created.
+version = '1.1.6`
 ```
 
 - #### Rebond Gateway
@@ -203,3 +217,5 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 ```
+#
+
