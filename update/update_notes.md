@@ -1,4 +1,6 @@
-# Upd. 24.01.2023. New binaries 1.1.7
+## 📛📛📛 Do NOT update your mixnode to the latest update 1.1.7! Wait for fix!
+# ~Upd. 24.01.2023. New binaries 1.1.7~
+
 ### Abbreviations:
 - **NM** - Nym Mixnode
 - **GW** - Gateway
