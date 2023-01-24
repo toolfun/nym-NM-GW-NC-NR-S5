@@ -1,4 +1,4 @@
-# Upd. 17.01.2023. New binaries 1.1.6
+# Upd. 24.01.2023. New binaries 1.1.7
 ### Abbreviations:
 - **NM** - Nym Mixnode
 - **GW** - Gateway
@@ -8,7 +8,7 @@
 
 
 ### Nym binaries page
-https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.6
+https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.7
 ____
 
 ### Update and install tools
@@ -35,7 +35,7 @@ rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
 git pull
-git checkout nym-binaries-v1.1.6
+git checkout nym-binaries-v1.1.7
 ```
 #
 
@@ -54,11 +54,11 @@ cargo build --release --bin nym-mixnode
 ```
 nano ~/.nym/mixnodes/$node_id/config/config.toml
 ```
-#### Change to new version `1.1.6`
+#### Change to new version `1.1.7`
 ```bash
 [mixnode]
 # Version of the NM for which this configuration was created.
-version = '1.1.6'
+version = '1.1.7'
 ```
 #### 2. Or run *init* command
 > #### Enter your wallet address
@@ -119,7 +119,13 @@ sudo systemctl enable nym-client
 sudo systemctl restart nym-client
 ```
 
-### 🔵 **NR**    
+### 🔵 **NR**
+> Since v1.1.7 you *no longer* have to manually copy over the allowed.list sample. On startup, the network requester will try and grab a 'default' whitelist from https://nymtech.net/.wellknown/network-requester/standard-allowed-list.txt.    
+> 
+> Save your existing **allowed.list** before upgrading    
+> `$HOME/.nym/service-providers/network-requester/allowed.list`
+
+#### Build
 ```
 cd $HOME/nym
 cargo build -p nym-network-requester
@@ -148,7 +154,7 @@ sudo mv target/release/nym-gateway /usr/local/bin/
 sudo systemctl restart nym-gateway
 ```
 - #### Be sure the gateway config file contains `nymd urls`.
-- #### Change version to actual 1.1.6
+- #### Change version to actual 1.1.7
 > #### How to. Enter name of your GW, for exmp. `gateway_name=my_gateway`    
 > `gateway_name=`
 ```bash
@@ -164,14 +170,14 @@ validator_nymd_urls = [
 
 ]
 ```
-#### Version must be 1.1.6
+#### Version must be 1.1.7
 ```bash
 # Version of the gateway for which this configuration was created.
-version = '1.1.6`
+version = '1.1.7`
 ```
 
 - #### Rebond Gateway
-#### Rebond gateway to v1.1.6 in NYM wallet (Unbond - Stop GW - Start GW - Bond)
+#### Rebond gateway to v1.1.7 in NYM wallet (Unbond - Stop GW - Start GW - Bond)
 > #### You will always need to rebond when upgrading gateways as this is how the network knows your gateway is available to be used    
 
 #
@@ -180,7 +186,7 @@ version = '1.1.6`
 ```bash
 cd $HOME/nym
 git pull
-git checkout nym-binaries-v1.1.6
+git checkout nym-binaries-v1.1.7
 cargo build -p nym-socks5-client --release
 # If nym-socks5-client runs as a service, stop it and then move 
 # sudo systemctl stop nym-socks5-client
