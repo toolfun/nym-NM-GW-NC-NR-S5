@@ -1,5 +1,5 @@
-## 📛📛📛 Do NOT update your mixnode to the latest update 1.1.7! Wait for fix!
-# ~Upd. 24.01.2023. New binaries 1.1.7~
+# 🚧🚧🚧 UNDER CONSTRUCTION
+# Upd. 24.01.2023
 
 ### Abbreviations:
 - **NM** - Nym Mixnode
@@ -10,6 +10,7 @@
 
 
 ### Nym binaries page
+> ## ❗ For mixnode recommended build from the master branch as opposed to release/v1.1.8 due to the branch not yet being finalised
 https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.7
 ____
 
@@ -31,13 +32,16 @@ source $HOME/.cargo/env
 ```
 
 ### ⏬ First, clone Nym repository on each server where you will update. And then we will build each component
-```
+```bash
 cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
 git pull
-git checkout nym-binaries-v1.1.7
+# git checkout nym-binaries-v1.1.7
+# recommended build from the master branch as opposed to release/v1.1.8 due to the branch not yet being finalised
+git checkout master
+cargo build --release --bin nym-mixnode
 ```
 #
 
