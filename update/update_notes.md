@@ -1,4 +1,4 @@
-# 🚧🚧🚧 UNDER CONSTRUCTION
+
 # Upd. 24.01.2023
 
 ### Abbreviations:
