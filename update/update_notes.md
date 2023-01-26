@@ -37,9 +37,9 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git pull
 # git checkout nym-binaries-v1.1.7
-# recommended build from the master branch as opposed to release/v1.1.8 due to the branch not yet being finalised
+## recommended build from the master branch as opposed to release/v1.1.8 due to the branch not yet being finalised
+## currently builds only binary, otherwise it's not compile right
 git checkout master
 cargo build --release --bin nym-mixnode
 ```
@@ -48,30 +48,36 @@ cargo build --release --bin nym-mixnode
 ### 🟠 NM UPDATING
 ### Build NM
 ```bash
-cd $HOME/nym
-# Builds only binary, otherwise it's not compile right
+cd $HOME
+rm -rf nym
+git clone https://github.com/nymtech/nym.git
+cd nym
+# git checkout nym-binaries-v1.1.7
+## recommended build from the master branch as opposed to release/v1.1.8 due to the branch not yet being finalised
+## currently builds only binary, otherwise it's not compile right
+git checkout master
 cargo build --release --bin nym-mixnode
 ```
 ### After build:
 > #### Enter your mixnode name
 > `node_id=YOUR_MIXNODE_NAME`
 #### We need to update the version in the config. 2 ways
-#### 1. Open config
-```
-nano ~/.nym/mixnodes/$node_id/config/config.toml
-```
-#### Change to new version `1.1.7`
-```bash
-[mixnode]
-# Version of the NM for which this configuration was created.
-version = '1.1.7'
-```
-#### 2. Or run *init* command
+> #### 1. Open config
+> ```
+> nano ~/.nym/mixnodes/$node_id/config/config.toml
+> ```
+> #### Change to new version `1.1.8`
+> ```bash
+> [mixnode]
+> # Version of the NM for which this configuration was created.
+> version = '1.1.8'
+> ```
+> #### 2. Or run *init* command
 > #### Enter your wallet address
 > `wallet=` For exmp. `wallet=n10lk93p495ywvmg50l80yhdzjea8zyslev8wz44`
-```
-nym-mixnode init --id $node_id --host $(curl ifconfig.me) --wallet-address $wallet
-```
+> ```
+> nym-mixnode init --id $node_id --host $(curl ifconfig.me) --wallet-address $wallet
+> ```
 #### Be sure you have these `API url` in config file
 `nano ~/.nym/mixnodes/$node_id/config/config.toml`    
 ```bash
@@ -95,10 +101,15 @@ sudo systemctl restart nym-mixnode && journalctl -u nym-mixnode -f -o cat
 
 ### UPDATING NC, NR, GW
 
-### 🟣 **NC**    
+### 🟣 **NC**
+#### Build
 ```
-cd $HOME/nym
-cargo build -p nym-client --release
+cd $HOME
+rm -rf nym
+git clone https://github.com/nymtech/nym.git
+cd nym
+git checkout nym-binaries-v1.1.7
+cargo build --release --bin nym-client
 ```
 <!-- #### Change version in config of the NC
 > #### Enter name of your NC, for exmp. `nym_client_name=my_client`    
@@ -128,13 +139,13 @@ sudo systemctl restart nym-client
 ### 🔵 **NR**
 > Since v1.1.7 you *no longer* have to manually copy over the allowed.list sample. On startup, the network requester will try and grab a 'default' whitelist from https://nymtech.net/.wellknown/network-requester/standard-allowed-list.txt.    
 > 
-> Save your existing **allowed.list** before upgrading    
+> Save your existing **allowed.list** before upgrading, here:    
 > `$HOME/.nym/service-providers/network-requester/allowed.list`
 
 #### Build
-```
+```bash
 cd $HOME/nym
-cargo build -p nym-network-requester
+cargo build --release --bin nym-network-requester
 ```
 > No initialization required. But if the any of the processes are failing, then you might have to run init NR again: this will not overwrite keys or configs, so don't worry
 ```
@@ -150,7 +161,7 @@ sudo systemctl restart nym-network-requester
 ### 🟢 **GW**    
 ```
 cd $HOME/nym
-cargo build -p nym-gateway --release
+cargo build --release --bin nym-gateway
 ```
 ```bash
 sudo systemctl stop nym-gateway
@@ -159,7 +170,6 @@ sudo mv target/release/nym-gateway /usr/local/bin/
 # Restart
 sudo systemctl restart nym-gateway
 ```
-- #### Be sure the gateway config file contains `nymd urls`.
 - #### Change version to actual 1.1.7
 > #### How to. Enter name of your GW, for exmp. `gateway_name=my_gateway`    
 > `gateway_name=`
@@ -168,18 +178,18 @@ sudo systemctl restart nym-gateway
 
 nano ~/.nym/gateways/$gateway_name/config/config.toml
 ```
-#### Must be
+#### version must be 1.1.7
+```bash
+# Version of the gateway for which this configuration was created.
+version = '1.1.7`
+```
+- #### Be sure the gateway config file contains `nymd urls`.
 ```
 validator_nymd_urls = [
 
         'https://rpc.nyx.nodes.guru/',
 
 ]
-```
-#### Version must be 1.1.7
-```bash
-# Version of the gateway for which this configuration was created.
-version = '1.1.7`
 ```
 
 - #### Rebond Gateway
