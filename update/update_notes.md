@@ -111,6 +111,8 @@ cd nym
 git checkout nym-binaries-v1.1.7
 cargo build --release --bin nym-client
 ```
+
+
 <!-- #### Change version in config of the NC
 > #### Enter name of your NC, for exmp. `nym_client_name=my_client`    
 `nym_client_name=`
@@ -118,6 +120,8 @@ cargo build --release --bin nym-client
 nano ~/.nym/clients/$nym_client_name/config/config.toml
 ```
 <!-- nano ~/.nym/clients/grantee_cl/config/config.toml -->
+
+
 
 #### Init NC (init with or without --gateway flag, depends how you run it)
 > #### Enter name of your NC, for exmp. `nym_client_name=my_client`. And enter your Gateway ID    
@@ -131,9 +135,8 @@ sudo systemctl stop nym-client
 sudo mv target/release/nym-client /usr/local/bin/
 ```
 ```
-sudo systemctl daemon-reload
-sudo systemctl enable nym-client
 sudo systemctl restart nym-client
+journalctl -u nym-client -f -o cat
 ```
 
 ### 🔵 **NR**
@@ -153,9 +156,8 @@ sudo systemctl stop nym-network-requester
 sudo mv target/release/nym-network-requester /usr/local/bin/
 ```
 ```
-sudo systemctl daemon-reload
-sudo systemctl enable nym-network-requester
 sudo systemctl restart nym-network-requester
+journalctl -u nym-network-requester -f -o cat
 ```
 
 ### 🟢 **GW**    
@@ -203,7 +205,7 @@ validator_nymd_urls = [
 cd $HOME/nym
 git pull
 git checkout nym-binaries-v1.1.7
-cargo build -p nym-socks5-client --release
+cargo build --bin nym-socks5-client --release
 # If nym-socks5-client runs as a service, stop it and then move 
 # sudo systemctl stop nym-socks5-client
 sudo mv target/release/nym-socks5-client /usr/local/bin/    
