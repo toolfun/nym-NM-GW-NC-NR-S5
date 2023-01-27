@@ -31,18 +31,6 @@ sudo curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
 ```
 
-### ⏬ First, clone Nym repository on each server where you will update. And then we will build each component
-```bash
-cd $HOME
-rm -rf nym
-git clone https://github.com/nymtech/nym.git
-cd nym
-# git checkout nym-binaries-v1.1.7
-## recommended build from the master branch as opposed to release/v1.1.8 due to the branch not yet being finalised
-## currently builds only binary, otherwise it's not compile right
-git checkout master
-cargo build --release --bin nym-mixnode
-```
 #
 
 ### 🟠 NM UPDATING
@@ -140,9 +128,10 @@ journalctl -u nym-client -f -o cat
 ```
 
 ### 🔵 **NR**
-> Since v1.1.7 you *no longer* have to manually copy over the allowed.list sample. On startup, the network requester will try and grab a 'default' whitelist from https://nymtech.net/.wellknown/network-requester/standard-allowed-list.txt.    
+> Since v1.1.7 you *no longer* have to manually copy over the allowed.list.sample. On startup, the network requester will try and grab a 'default' whitelist from https://nymtech.net/.wellknown/network-requester/standard-allowed-list.txt    
+> Update you allowed.list to include all of the domains on this list, as well as custom domains you may have.
 > 
-> Save your existing **allowed.list** before upgrading, here:    
+> Save your existing **allowed.list** before upgrading in case if Network Requester might overwrite your custom whitelists with the default one.    
 > `$HOME/.nym/service-providers/network-requester/allowed.list`
 
 #### Build
