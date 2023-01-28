@@ -1,9 +1,10 @@
 
 # ~Upd. 24.01.2023 v1.1.8~ 
 ### ⛔ there seems to be a problem with the mixnode v1.1.7 and v1.1.8. Please stay with `v1.1.6` for now ⛔
+### Guide will be updated with v1.1.9 next week
 #
 
-### Abbreviations:
+#### Abbreviations:
 - **NM** - Nym Mixnode
 - **GW** - Gateway
 - **NR** - Nym Network Requestor
@@ -11,7 +12,7 @@
 - **S5** - Nym Socks5 Client    
 
 
-### Nym binaries page
+#### Nym binaries page
 > #### ❗ For mixnode recommended build from the master branch as opposed to release/v1.1.8 due to the branch not yet being finalised
 https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.7
 ____
