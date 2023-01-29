@@ -1,7 +1,8 @@
 
 # ~Upd. 24.01.2023 v1.1.8~ 
 ### ⛔ there seems to be a problem with the mixnode v1.1.7 and v1.1.8. Please stay with `v1.1.6` for now ⛔
-### Guide will be updated with v1.1.9 next week
+#### Guide will be updated with v1.1.9 next week. Currently manual describes how to install nym-mixnode v1.1.6 and the latest versions of the nym binaries.
+
 #
 
 #### Abbreviations:
@@ -43,10 +44,10 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-# git checkout nym-binaries-v1.1.7
-## recommended build from the master branch as opposed to release/v1.1.8 due to the branch not yet being finalised
-## currently builds only binary, otherwise it's not compile right
-git checkout master
+## git checkout master
+# recommended stable version 1.1.6
+# currently builds only binary, otherwise it's not compile right
+git checkout nym-binaries-v1.1.6
 cargo build --release --bin nym-mixnode
 ```
 ### After build:
@@ -57,15 +58,16 @@ cargo build --release --bin nym-mixnode
 > ```
 > nano ~/.nym/mixnodes/$node_id/config/config.toml
 > ```
-> #### Change to new version `1.1.8`
+> Change to current version `1.1.6`    
 > ```bash
 > [mixnode]
 > # Version of the NM for which this configuration was created.
-> version = '1.1.8'
+> version = '1.1.6'
 > ```
-> #### 2. Or run *init* command
-> #### Enter your wallet address
-> `wallet=` For exmp. `wallet=n10lk93p495ywvmg50l80yhdzjea8zyslev8wz44`
+> #### 2. Or run *init* command. 
+> Enter your wallet address, for example `wallet=n10lk93p495ywvmg50l80yhdzjea8zyslev8wz44`    
+> `wallet=`
+>
 > ```
 > nym-mixnode init --id $node_id --host $(curl ifconfig.me) --wallet-address $wallet
 > ```
@@ -88,6 +90,9 @@ sudo mv ~/nym/target/release/nym-mixnode /usr/local/bin/
 ```
 sudo systemctl restart nym-mixnode && journalctl -u nym-mixnode -f -o cat
 ```
+
+### Change mixnode version in the wallet app, in the Bonding - Node Settings section 
+
 #
 
 ### UPDATING NC, NR, GW
