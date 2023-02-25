@@ -1,7 +1,7 @@
 
-# Upd. 14.02.2023 v1.1.9 
+# Upd. 21.02.2023 v1.1.10 
 
-____
+
 
 #### Abbreviations:
 - **NM** - Nym Mixnode
@@ -12,8 +12,7 @@ ____
 
 
 #### Nym binaries page
-> #### ❗ For mixnode recommended build from the master branch as opposed to release/v1.1.9 due to the branch not yet being finalised
-https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.9
+https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.10
 ____
 
 ### Update and install tools
@@ -42,7 +41,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.9
+git checkout nym-binaries-v1.1.10
 cargo build --release --bin nym-mixnode
 ```
 ### After build:
@@ -53,11 +52,11 @@ cargo build --release --bin nym-mixnode
 > ```
 > nano ~/.nym/mixnodes/$node_id/config/config.toml
 > ```
-> Change to current version `1.1.10`    
+> Change to current version `1.1.11`    
 > ```bash
 > [mixnode]
 > # Version of the NM for which this configuration was created.
-> version = '1.1.10'
+> version = '1.1.11'
 > ```
 > #### 2. Or run *init* command. 
 > Enter your wallet address, for example `wallet=n10lk93p495ywvmg50l80yhdzjea8zyslev8wz44`    
