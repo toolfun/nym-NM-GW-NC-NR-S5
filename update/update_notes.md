@@ -166,18 +166,17 @@ nym-network-requester init --id $nr_name
 > Enter name for your old NC, for exmp. `nc_name=my_nc`    
 > `nc_name=`
 ```
-cp ~/.nym/clients/$nc_name/data/* ~/.nym/service-providers/network-requester/$nr_name/data
+cp -r ~/.nym/clients/$nc_name/data/* ~/.nym/service-providers/network-requester/$nr_name/data
 ```
 
 #### Edit configuration to match what you used on your NC. Specifically, edit the configuration file that `gateway_id, gateway_owner, gateway_listener` in the new NR config:
 ```
-~/.nym/service-providers/network-requester/$nr_name/config/config.toml
+nano ~/.nym/service-providers/network-requester/$nr_name/config/config.toml
 ```
 #### match those in the old NC config at:
 ```
-~/.nym/clients/$nc_name/client/client.toml
+nano ~/.nym/clients/$nc_name/config/config.toml
 ```
-
 
 
 
