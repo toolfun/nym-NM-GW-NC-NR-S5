@@ -91,25 +91,25 @@ sudo systemctl restart nym-mixnode && journalctl -u nym-mixnode -f -o cat
 
 ### UPDATING NC, NR, GW
 
-### 🟣 **NC**
-#### Build
+### 🟣 ~**NC**~
+Starting with v1.1.10 the Nym Client is integrated with the Nym Network Requester
+<!-- #### Build
 ```
 cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.9
+git checkout nym-binaries-v
 cargo build --release --bin nym-client
 ```
 
 
-<!-- #### Change version in config of the NC
+#### Change version in config of the NC
 > #### Enter name of your NC, for exmp. `nym_client_name=my_client`    
 `nym_client_name=`
 ```
 nano ~/.nym/clients/$nym_client_name/config/config.toml
 ```
-<!-- nano ~/.nym/clients/grantee_cl/config/config.toml -->
 
 
 
@@ -128,17 +128,25 @@ sudo mv target/release/nym-client /usr/local/bin/
 sudo systemctl restart nym-client
 journalctl -u nym-client -f -o cat
 ```
+-->
+
 
 ### 🔵 **NR**
+<!--
 > Since v1.1.9 you *no longer* have to manually copy over the allowed.list.sample. On startup, the network requester will try and grab a 'default' whitelist from https://nymtech.net/.wellknown/network-requester/standard-allowed-list.txt    
 > Update you allowed.list to include all of the domains on this list, as well as custom domains you may have.
 > 
 > Save your existing **allowed.list** before upgrading in case if Network Requester might overwrite your custom whitelists with the default one.    
 > `$HOME/.nym/service-providers/network-requester/allowed.list`
+-->
 
 #### Build
 ```bash
-cd $HOME/nym
+cd $HOME
+rm -rf nym
+git clone https://github.com/nymtech/nym.git
+cd nym
+git checkout nym-binaries-v1.1.10
 cargo build --release --bin nym-network-requester
 ```
 > No initialization required. But if the any of the processes are failing, then you might have to run init NR again: this will not overwrite keys or configs, so don't worry
@@ -153,17 +161,15 @@ journalctl -u nym-network-requester -f -o cat
 
 ### 🟢 **GW**    
 ```
-cd $HOME/nym
+cd $HOME
+rm -rf nym
+git clone https://github.com/nymtech/nym.git
+cd nym
+git checkout nym-binaries-v1.1.10
 cargo build --release --bin nym-gateway
 ```
-```bash
-sudo systemctl stop nym-gateway
-sudo mv target/release/nym-gateway /usr/local/bin/
 
-# Restart
-sudo systemctl restart nym-gateway
-```
-- #### Change version to actual 1.1.9
+- #### Change version to actual 1.1.10
 > #### How to. Enter name of your GW, for exmp. `gateway_name=my_gateway`    
 > `gateway_name=`
 ```bash
@@ -171,10 +177,10 @@ sudo systemctl restart nym-gateway
 
 nano ~/.nym/gateways/$gateway_name/config/config.toml
 ```
-#### version must be 1.1.9
+#### version must be 1.1.10
 ```bash
 # Version of the gateway for which this configuration was created.
-version = '1.1.9`
+version = '1.1.10`
 ```
 - #### Be sure the gateway config file contains `nymd urls`.
 ```
@@ -184,18 +190,29 @@ validator_nymd_urls = [
 
 ]
 ```
+### Replace the binary
+```bash
+sudo systemctl stop nym-gateway
+sudo mv target/release/nym-gateway $(which nym-gateway)
+```
+```
+# Restart
+sudo systemctl restart nym-gateway
+```
 
 - #### Rebond Gateway
-#### Rebond gateway to v1.1.9 in NYM wallet (Unbond - Stop GW - Start GW - Bond)
-> #### You will always need to rebond when upgrading gateways as this is how the network knows your gateway is available to be used    
+#### Rebond gateway to v1.1.10 in NYM wallet 
+> Unbond. Stop GW, Start GW. Bond    
+> *You will always need to rebond when upgrading gateways as this is how the network knows your gateway is available to be used*
 
 #
 
 ### ⚫ S5
+<!-- 
 ```bash
 cd $HOME/nym
 git pull
-git checkout nym-binaries-v1.1.9
+git checkout nym-binaries-v1.1.10
 cargo build --bin nym-socks5-client --release
 # If nym-socks5-client runs as a service, stop it and then move 
 # sudo systemctl stop nym-socks5-client
@@ -210,7 +227,7 @@ nym-socks5-client init --id my_socks5 --provider GegdtpNzYj4QCgpih9Kxv7ZVZxmVdxY
 cd $HOME/nym/target/release/nym-socks5-client
 ./nym-socks5-client run --id <socks5 client name>
 ```
-  
+-->  
 
 # Just...
 
