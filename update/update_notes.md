@@ -140,6 +140,11 @@ journalctl -u nym-client -f -o cat
 > `$HOME/.nym/service-providers/network-requester/allowed.list`
 -->
 
+#### Upgrading NR to v 1.1.10
+Build    
+Initialize    
+Transfer NC data to NR
+
 #### Build
 ```bash
 cd $HOME
@@ -149,7 +154,33 @@ cd nym
 git checkout nym-binaries-v1.1.10
 cargo build --release --bin nym-network-requester
 ```
-> No initialization required. But if the any of the processes are failing, then you might have to run init NR again: this will not overwrite keys or configs, so don't worry
+
+> #### Initiate the new NR. Enter name for your NR, for exmp. `nr_name=my_nr`    
+> `nr_name=`
+
+```
+nym-network-requester init --id $nr_name
+```
+
+#### Copy the old keys from your NC to the NR configuration that was created with initiate command
+> Enter name for your old NC, for exmp. `nc_name=my_nc`    
+> `nc_name=`
+```
+cp ~/.nym/clients/$nc_name/data/* ~/.nym/service-providers/network-requester/$nr_name/data
+```
+
+#### Edit configuration to match what you used on your NC. Specifically, edit the configuration file that `gateway_id, gateway_owner, gateway_listener` in the new NR config:
+```
+~/.nym/service-providers/network-requester/$nr_name/config/config.toml
+```
+#### match those in the old NC config at:
+```
+~/.nym/clients/$nc_name/client/client.toml
+```
+
+
+
+
 ```
 sudo systemctl stop nym-network-requester
 sudo mv target/release/nym-network-requester /usr/local/bin/
