@@ -177,12 +177,12 @@ nano ~/.nym/service-providers/network-requester/$nr_name/config/config.toml
 ```
 nano ~/.nym/clients/$nc_name/config/config.toml
 ```
+ExecStart=/usr/local/bin/nym-network-requester run --id $nr_name --enable-statistics
 
-
-
+#### Restart
 ```
 sudo systemctl stop nym-network-requester
-sudo mv target/release/nym-network-requester /usr/local/bin/
+sudo mv target/release/nym-network-requester $(which nym-network-requester)
 ```
 ```
 sudo systemctl restart nym-network-requester
