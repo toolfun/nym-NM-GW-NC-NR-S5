@@ -1,5 +1,5 @@
 
-# Upd. 21.02.2023 v1.1.10 
+# Upd. 22.03.2023 v1.1.13
 
 
 
@@ -12,7 +12,7 @@
 
 
 #### Nym binaries page
-https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.10
+https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.13
 ____
 
 ### Update and install tools
@@ -41,7 +41,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.10
+git checkout nym-binaries-v1.1.13
 cargo build --release --bin nym-mixnode
 ```
 ### After build:
@@ -92,7 +92,7 @@ sudo systemctl restart nym-mixnode && journalctl -u nym-mixnode -f -o cat
 ### UPDATING NC, NR, GW
 
 ### 🟣 ~**NC**~
-Starting with v1.1.10 the Nym Client is integrated with the Nym Network Requester
+Starting with v1.1.13 the Nym Client is integrated with the Nym Network Requester
 <!-- #### Build
 ```
 cd $HOME
@@ -140,7 +140,7 @@ journalctl -u nym-client -f -o cat
 > `$HOME/.nym/service-providers/network-requester/allowed.list`
 -->
 
-#### Upgrading NR to v 1.1.10
+#### Upgrading NR to v1.1.13
 Build    
 Initialize    
 Transfer NC data to NR
@@ -151,7 +151,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.10
+git checkout nym-binaries-v1.1.13
 cargo build --release --bin nym-network-requester
 ```
 
@@ -195,7 +195,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.10
+git checkout nym-binaries-v1.1.13
 cargo build --release --bin nym-gateway
 ```
 
@@ -231,7 +231,7 @@ sudo systemctl restart nym-gateway
 ```
 
 - #### Rebond Gateway
-#### Rebond gateway to v1.1.10 in NYM wallet 
+#### Rebond gateway to v1.1.13 in NYM wallet 
 > Unbond. Stop GW, Start GW. Bond    
 > *You will always need to rebond when upgrading gateways as this is how the network knows your gateway is available to be used*
 
@@ -242,7 +242,7 @@ sudo systemctl restart nym-gateway
 ```bash
 cd $HOME/nym
 git pull
-git checkout nym-binaries-v1.1.10
+git checkout nym-binaries-v1.1.13
 cargo build --bin nym-socks5-client --release
 # If nym-socks5-client runs as a service, stop it and then move 
 # sudo systemctl stop nym-socks5-client
