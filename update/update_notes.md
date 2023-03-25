@@ -84,7 +84,7 @@ sudo mv ~/nym/target/release/nym-mixnode /usr/local/bin/
 sudo systemctl restart nym-mixnode && journalctl -u nym-mixnode -f -o cat
 ```
 
-### Change mixnode version in the wallet app, in the Bonding - Node Settings section 
+### Change mixnode version to current in the wallet app (Bonding - Node Settings section)
 
 #
 
