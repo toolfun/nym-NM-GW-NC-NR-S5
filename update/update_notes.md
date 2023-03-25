@@ -21,8 +21,6 @@ sudo apt update && sudo apt upgrade -y
 ```
 ```
 sudo dpkg --configure -a
-```
-```
 sudo apt install curl wget ufw make clang pkg-config libssl-dev build-essential git htop
 ```
 
@@ -30,6 +28,7 @@ sudo apt install curl wget ufw make clang pkg-config libssl-dev build-essential 
 ```
 sudo curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
+rustup update
 ```
 
 #
@@ -52,11 +51,11 @@ cargo build --release --bin nym-mixnode
 > ```
 > nano ~/.nym/mixnodes/$node_id/config/config.toml
 > ```
-> Change to current version `1.1.11`    
+> Change to current version `1.1.14`    
 > ```bash
 > [mixnode]
 > # Version of the NM for which this configuration was created.
-> version = '1.1.11'
+> version = '1.1.14'
 > ```
 > #### 2. Or run *init* command. 
 > Enter your wallet address, for example `wallet=n10lk93p495ywvmg50l80yhdzjea8zyslev8wz44`    
@@ -199,7 +198,7 @@ git checkout nym-binaries-v1.1.13
 cargo build --release --bin nym-gateway
 ```
 
-- #### Change version to actual 1.1.10
+- #### Change version to actual 1.1.13
 > #### How to. Enter name of your GW, for exmp. `gateway_name=my_gateway`    
 > `gateway_name=`
 ```bash
@@ -207,10 +206,10 @@ cargo build --release --bin nym-gateway
 
 nano ~/.nym/gateways/$gateway_name/config/config.toml
 ```
-#### version must be 1.1.10
+#### version must be 1.1.13
 ```bash
 # Version of the gateway for which this configuration was created.
-version = '1.1.10`
+version = '1.1.13`
 ```
 - #### Be sure the gateway config file contains `nymd urls`.
 ```
