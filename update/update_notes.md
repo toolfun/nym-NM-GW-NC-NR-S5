@@ -77,10 +77,8 @@ nym_api_urls = [
 > #### If there is empty string add it manually
 #### Replace binary and start
 ```
-sudo systemctl stop nym-mixnode
-sudo mv ~/nym/target/release/nym-mixnode /usr/local/bin/
-```
-```
+sudo systemctl stop nym-mixnode & \
+sudo mv ~/nym/target/release/nym-mixnode $(which nym-mixnode) & \
 sudo systemctl restart nym-mixnode && journalctl -u nym-mixnode -f -o cat
 ```
 
