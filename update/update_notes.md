@@ -1,5 +1,5 @@
 
-# Upd. 22.03.2023 v1.1.13
+# Upd. 04.04.2023 v1.1.14
 
 
 
@@ -12,7 +12,7 @@
 
 
 #### Nym binaries page
-https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.13
+https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.14
 ____
 
 ### Update and install tools
@@ -40,7 +40,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.13
+git checkout nym-binaries-v1.1.14
 cargo build --release --bin nym-mixnode
 ```
 ### After build:
@@ -51,11 +51,11 @@ cargo build --release --bin nym-mixnode
 > ```
 > nano ~/.nym/mixnodes/$node_id/config/config.toml
 > ```
-> Change to current version `1.1.14`    
+> Change to current version `1.1.15`    
 > ```bash
 > [mixnode]
 > # Version of the NM for which this configuration was created.
-> version = '1.1.14'
+> version = '1.1.15'
 > ```
 > #### 2. Or run *init* command. 
 > Enter your wallet address, for example `wallet=n10lk93p495ywvmg50l80yhdzjea8zyslev8wz44`    
@@ -137,7 +137,7 @@ journalctl -u nym-client -f -o cat
 > `$HOME/.nym/service-providers/network-requester/allowed.list`
 -->
 
-#### Upgrading NR to v1.1.13
+#### Upgrading NR to v1.1.14
 Build    
 Initialize    
 Transfer NC data to NR
@@ -148,7 +148,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.13
+git checkout nym-binaries-v1.1.14
 cargo build --release --bin nym-network-requester
 ```
 
@@ -192,11 +192,11 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.13
+git checkout nym-binaries-v1.1.14
 cargo build --release --bin nym-gateway
 ```
 
-- #### Change version to actual 1.1.13
+- #### Change version to actual 1.1.14
 > #### How to. Enter name of your GW, for exmp. `gateway_name=my_gateway`    
 > `gateway_name=`
 ```bash
@@ -204,10 +204,10 @@ cargo build --release --bin nym-gateway
 
 nano ~/.nym/gateways/$gateway_name/config/config.toml
 ```
-#### version must be 1.1.13
+#### version must be 1.1.14
 ```bash
 # Version of the gateway for which this configuration was created.
-version = '1.1.13`
+version = '1.1.14`
 ```
 - #### Be sure the gateway config file contains `nymd urls`.
 ```
@@ -239,7 +239,7 @@ sudo systemctl restart nym-gateway
 ```bash
 cd $HOME/nym
 git pull
-git checkout nym-binaries-v1.1.13
+git checkout nym-binaries-v1.1.14
 cargo build --bin nym-socks5-client --release
 # If nym-socks5-client runs as a service, stop it and then move 
 # sudo systemctl stop nym-socks5-client
