@@ -43,10 +43,14 @@ cd nym
 git checkout nym-binaries-v1.1.14
 cargo build --release --bin nym-mixnode
 ```
+<!--
+git checkout release/v1.1.14
+-->
+
 ### After build:
+#### We need to update the version in the config. 2 ways
 > #### Enter your mixnode name
 > `node_id=YOUR_MIXNODE_NAME`
-#### We need to update the version in the config. 2 ways
 > #### 1. Open config
 > ```
 > nano ~/.nym/mixnodes/$node_id/config/config.toml
@@ -77,20 +81,21 @@ nym_api_urls = [
 > #### If there is empty string add it manually
 #### Replace binary and start
 ```
-sudo systemctl stop nym-mixnode & \
-sudo mv ~/nym/target/release/nym-mixnode $(which nym-mixnode) & \
+sudo systemctl stop nym-mixnode && \
+sudo mv ~/nym/target/release/nym-mixnode $(which nym-mixnode) && \
 sudo systemctl restart nym-mixnode && journalctl -u nym-mixnode -f -o cat
 ```
 
-### Change mixnode version to current in the wallet app (Bonding - Node Settings section)
+### Change mixnode version to the current in the wallet app (Bonding - Node Settings section)
 
 #
 
 ### UPDATING NC, NR, GW
 
 ### 🟣 ~**NC**~
-Starting with v1.1.13 the Nym Client is integrated with the Nym Network Requester
-<!-- #### Build
+> *Starting with v1.1.13 the Nym Client is integrated with the Nym Network Requester*   
+<!-- ############################
+Build
 ```
 cd $HOME
 rm -rf nym
@@ -99,17 +104,12 @@ cd nym
 git checkout nym-binaries-v
 cargo build --release --bin nym-client
 ```
-
-
 #### Change version in config of the NC
 > #### Enter name of your NC, for exmp. `nym_client_name=my_client`    
 `nym_client_name=`
 ```
 nano ~/.nym/clients/$nym_client_name/config/config.toml
 ```
-
-
-
 #### Init NC (init with or without --gateway flag, depends how you run it)
 > #### Enter name of your NC, for exmp. `nym_client_name=my_client`. And enter your Gateway ID    
 > `nym_client_name=`    
@@ -125,22 +125,26 @@ sudo mv target/release/nym-client /usr/local/bin/
 sudo systemctl restart nym-client
 journalctl -u nym-client -f -o cat
 ```
--->
+########################################### -->
 
 
 ### 🔵 **NR**
-<!--
+<!-- ########################################
 > Since v1.1.9 you *no longer* have to manually copy over the allowed.list.sample. On startup, the network requester will try and grab a 'default' whitelist from https://nymtech.net/.wellknown/network-requester/standard-allowed-list.txt    
 > Update you allowed.list to include all of the domains on this list, as well as custom domains you may have.
 > 
 > Save your existing **allowed.list** before upgrading in case if Network Requester might overwrite your custom whitelists with the default one.    
 > `$HOME/.nym/service-providers/network-requester/allowed.list`
--->
+######################################## -->
 
 #### Upgrading NR to v1.1.14
+
+<!-- ######### OLD plan for the v1.1.10 upgrade
 Build    
 Initialize    
 Transfer NC data to NR
+####### -->
+
 
 #### Build
 ```bash
@@ -152,16 +156,21 @@ git checkout nym-binaries-v1.1.14
 cargo build --release --bin nym-network-requester
 ```
 
-> #### Initiate the new NR. Enter name for your NR, for exmp. `nr_name=my_nr`    
-> `nr_name=`
-
+<!-- ################################# OLD ## for the v1.1.10 ###########################
+#### Initiate the new NR
+> Enter name for your NR, for exmp. `nr_name=my_nr`    
+```
+nr_name=
+```
 ```
 nym-network-requester init --id $nr_name
 ```
 
 #### Copy the old keys from your NC to the NR configuration that was created with initiate command
 > Enter name for your old NC, for exmp. `nc_name=my_nc`    
-> `nc_name=`
+```
+nc_name=
+```
 ```
 cp -r ~/.nym/clients/$nc_name/data/* ~/.nym/service-providers/network-requester/$nr_name/data
 ```
@@ -174,11 +183,29 @@ nano ~/.nym/service-providers/network-requester/$nr_name/config/config.toml
 ```
 nano ~/.nym/clients/$nc_name/config/config.toml
 ```
-ExecStart=/usr/local/bin/nym-network-requester run --id $nr_name --enable-statistics
+> *ExecStart=/usr/local/bin/nym-network-requester run --id $nr_name --enable-statistics*    
 
-#### Restart
+########################### END OLD ## for v1.1.10 ############################### -->
+
+
+#### Edit configuration. Change version to the current in the config file of the NR
+> Enter name for your NR, for exmp. `nr_name=my_nr`    
 ```
-sudo systemctl stop nym-network-requester
+nr_name=
+```
+```
+nano ~/.nym/service-providers/network-requester/$nr_name/config/config.toml
+```
+
+#### Remove `--enable-statistics` flag 
+```
+nano /etc/systemd/system/nym-network-requester.service
+```
+
+#### Restart new binary
+```
+sudo systemctl daemon-reload && \
+sudo systemctl stop nym-network-requester && \
 sudo mv target/release/nym-network-requester $(which nym-network-requester)
 ```
 ```
@@ -219,18 +246,28 @@ validator_nymd_urls = [
 ```
 ### Replace the binary
 ```bash
-sudo systemctl stop nym-gateway
+sudo systemctl stop nym-gateway && \
 sudo mv target/release/nym-gateway $(which nym-gateway)
 ```
+
+#### Remove `--enable-statistics` flag 
 ```
-# Restart
-sudo systemctl restart nym-gateway
+nano /etc/systemd/system/nym-gateway.service
 ```
 
-- #### Rebond Gateway
+#### Restart
+```
+sudo systemctl daemon-reload && \
+sudo systemctl restart nym-gateway && journalctl -u nym-gateway -f -o cat
+```
+
+#### 📌 The upgrade path for gateways be fixed to be like mix nodes: no need to unbond and rebond!
+
+<!-- ############################# no more Rebond
 #### Rebond gateway to v1.1.13 in NYM wallet 
 > Unbond. Stop GW, Start GW. Bond    
 > *You will always need to rebond when upgrading gateways as this is how the network knows your gateway is available to be used*
+##################################### -->
 
 #
 
@@ -265,7 +302,7 @@ Description=Nym Network Requester
 
 [Service]
 User=root
-ExecStart=/usr/local/bin/nym-network-requester run --enable-statistics
+ExecStart=/usr/local/bin/nym-network-requester run --id ${nr_name}
 KillSignal=SIGINT
 Restart=on-failure
 RestartSec=30
