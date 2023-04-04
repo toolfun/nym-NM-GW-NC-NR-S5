@@ -197,7 +197,8 @@ nr_name=
 nano ~/.nym/service-providers/network-requester/$nr_name/config/config.toml
 ```
 
-#### Remove `--enable-statistics` flag 
+#### Remove `--enable-statistics` flag
+> Operators can switch to running NR in the standard mode which doesn't gather the amounts of data sent through them
 ```
 nano /etc/systemd/system/nym-network-requester.service
 ```
@@ -244,13 +245,15 @@ validator_nymd_urls = [
 
 ]
 ```
+
 ### Replace the binary
 ```bash
 sudo systemctl stop nym-gateway && \
 sudo mv target/release/nym-gateway $(which nym-gateway)
 ```
 
-#### Remove `--enable-statistics` flag 
+#### Remove `--enable-statistics` flag
+> Operators can switch to running GW in the standard mode which doesn't gather the amounts of data sent through them
 ```
 nano /etc/systemd/system/nym-gateway.service
 ```
@@ -261,7 +264,8 @@ sudo systemctl daemon-reload && \
 sudo systemctl restart nym-gateway && journalctl -u nym-gateway -f -o cat
 ```
 
-#### 📌 The upgrade path for gateways be fixed to be like mix nodes: no need to unbond and rebond!
+#### 📌 No more need to unbond and rebond! 
+> The upgrade path for gateways now fixed to be like for mixnodes    
 
 <!-- ############################# no more Rebond
 #### Rebond gateway to v1.1.13 in NYM wallet 
@@ -272,7 +276,7 @@ sudo systemctl restart nym-gateway && journalctl -u nym-gateway -f -o cat
 #
 
 ### ⚫ S5
-<!-- 
+<!-- ########################################
 ```bash
 cd $HOME/nym
 git pull
@@ -291,9 +295,11 @@ nym-socks5-client init --id my_socks5 --provider GegdtpNzYj4QCgpih9Kxv7ZVZxmVdxY
 cd $HOME/nym/target/release/nym-socks5-client
 ./nym-socks5-client run --id <socks5 client name>
 ```
--->  
+########################################### -->  
 
-# Just...
+____
+
+### Just...
 
 ### Service file for NR
 ```
