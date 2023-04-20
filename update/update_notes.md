@@ -1,5 +1,5 @@
 
-# Upd. 04.04.2023 v1.1.14
+# Upd. 19.04.2023 v1.1.15
 
 
 
@@ -12,7 +12,7 @@
 
 
 #### Nym binaries page
-https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.14
+https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.15
 ____
 
 ### Update and install tools
@@ -40,11 +40,11 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.14
+git checkout nym-binaries-v1.1.15
 cargo build --release --bin nym-mixnode
 ```
 <!--
-git checkout release/v1.1.14
+git checkout release/v1.1.15
 -->
 
 ### After build:
@@ -55,11 +55,11 @@ git checkout release/v1.1.14
 > ```
 > nano ~/.nym/mixnodes/$node_id/config/config.toml
 > ```
-> Change to current version `1.1.15`    
+> Change to current version `1.1.16`    
 > ```bash
 > [mixnode]
 > # Version of the NM for which this configuration was created.
-> version = '1.1.15'
+> version = '1.1.16'
 > ```
 > #### 2. Or run *init* command. 
 > Enter your wallet address, for example `wallet=n10lk93p495ywvmg50l80yhdzjea8zyslev8wz44`    
@@ -137,7 +137,7 @@ journalctl -u nym-client -f -o cat
 > `$HOME/.nym/service-providers/network-requester/allowed.list`
 ######################################## -->
 
-#### Upgrading NR to v1.1.14
+#### Upgrading NR to v1.1.15
 
 <!-- ######### OLD plan for the v1.1.10 upgrade
 Build    
@@ -152,7 +152,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.14
+git checkout nym-binaries-v1.1.15
 cargo build --release --bin nym-network-requester
 ```
 
@@ -220,11 +220,11 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.14
+git checkout nym-binaries-v1.1.15
 cargo build --release --bin nym-gateway
 ```
 
-- #### Change version to actual 1.1.14
+- #### Change version to actual 1.1.15
 > #### How to. Enter name of your GW, for exmp. `gateway_name=my_gateway`    
 > `gateway_name=`
 ```bash
@@ -232,10 +232,10 @@ cargo build --release --bin nym-gateway
 
 nano ~/.nym/gateways/$gateway_name/config/config.toml
 ```
-#### version must be 1.1.14
+#### version must be 1.1.15
 ```bash
 # Version of the gateway for which this configuration was created.
-version = '1.1.14`
+version = '1.1.15`
 ```
 - #### Be sure the gateway config file contains `nymd urls`.
 ```
