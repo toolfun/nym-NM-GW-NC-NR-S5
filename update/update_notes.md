@@ -7,7 +7,6 @@
 - **NM** - Nym Mixnode
 - **GW** - Gateway
 - **NR** - Nym Network Requestor
-- **NC** - Nym Client
 - **S5** - Nym Socks5 Client    
 
 
