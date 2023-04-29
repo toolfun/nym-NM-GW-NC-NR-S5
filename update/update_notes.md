@@ -136,8 +136,6 @@ journalctl -u nym-client -f -o cat
 > `$HOME/.nym/service-providers/network-requester/allowed.list`
 ######################################## -->
 
-#### Upgrading NR to v1.1.16
-
 <!-- ######### OLD plan for the v 1_1_10 upgrade
 Build    
 Initialize    
@@ -145,7 +143,7 @@ Transfer NC data to NR
 ####### -->
 
 
-#### Build
+### Build
 ```bash
 cd $HOME
 rm -rf nym
@@ -187,7 +185,7 @@ nano ~/.nym/clients/$nc_name/config/config.toml
 ########################### END OLD ## for v 1_1_10 ############################### -->
 
 
-#### Edit configuration. Change version to the current in the config file of the NR
+### Edit configuration. Change version to the current in the config file of the NR
 > Enter name for your NR, for exmp. `nr_name=my_nr`    
 ```
 nr_name=
@@ -196,15 +194,14 @@ nr_name=
 nano ~/.nym/service-providers/network-requester/$nr_name/config/config.toml
 ```
 
-#### Remove `--enable-statistics` flag
+> Remove `--enable-statistics` flag if it was
 > Operators can switch to running NR in the standard mode which doesn't gather the amounts of data sent through them
 ```
 nano /etc/systemd/system/nym-network-requester.service
 ```
 
-#### Restart new binary
+#### Replace and restart
 ```
-sudo systemctl daemon-reload && \
 sudo systemctl stop nym-network-requester && \
 sudo mv target/release/nym-network-requester $(which nym-network-requester) && \
 sudo systemctl restart nym-network-requester
@@ -243,7 +240,7 @@ validator_nymd_urls = [
 ]
 ```
 
-#### Remove `--enable-statistics` flag
+> Remove `--enable-statistics` flag if it was
 > Operators can switch to running GW in the standard mode which doesn't gather the amounts of data sent through them
 ```
 nano /etc/systemd/system/nym-gateway.service
