@@ -1,5 +1,5 @@
 
-# Upd. 19.04.2023 v1.1.15
+# Upd. 25.04.2023 v1.1.16
 
 
 
@@ -11,7 +11,7 @@
 
 
 #### Nym binaries page
-https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.15
+https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.16
 ____
 
 ### Update and install tools
@@ -39,11 +39,11 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.15
+git checkout nym-binaries-v1.1.16
 cargo build --release --bin nym-mixnode
 ```
 <!--
-git checkout release/v1.1.15
+git checkout release/ v 1_1_15
 -->
 
 ### After build:
@@ -54,11 +54,11 @@ git checkout release/v1.1.15
 > ```
 > nano ~/.nym/mixnodes/$node_id/config/config.toml
 > ```
-> Change to current version `1.1.16`    
+> Change to current version `1.1.17`    
 > ```bash
 > [mixnode]
 > # Version of the NM for which this configuration was created.
-> version = '1.1.16'
+> version = '1.1.17'
 > ```
 > #### 2. Or run *init* command. 
 > Enter your wallet address, for example `wallet=n10lk93p495ywvmg50l80yhdzjea8zyslev8wz44`    
@@ -92,7 +92,7 @@ sudo systemctl restart nym-mixnode && journalctl -u nym-mixnode -f -o cat
 ### UPDATING NC, NR, GW
 
 ### 🟣 ~**NC**~
-> *Starting with v1.1.13 the Nym Client is integrated with the Nym Network Requester*   
+> *Starting with v 1_1_13 the Nym Client is integrated with the Nym Network Requester*   
 <!-- ############################
 Build
 ```
@@ -129,16 +129,16 @@ journalctl -u nym-client -f -o cat
 
 ### 🔵 **NR**
 <!-- ########################################
-> Since v1.1.9 you *no longer* have to manually copy over the allowed.list.sample. On startup, the network requester will try and grab a 'default' whitelist from https://nymtech.net/.wellknown/network-requester/standard-allowed-list.txt    
+> Since v 1_1_9 you *no longer* have to manually copy over the allowed.list.sample. On startup, the network requester will try and grab a 'default' whitelist from https://nymtech.net/.wellknown/network-requester/standard-allowed-list.txt    
 > Update you allowed.list to include all of the domains on this list, as well as custom domains you may have.
 > 
 > Save your existing **allowed.list** before upgrading in case if Network Requester might overwrite your custom whitelists with the default one.    
 > `$HOME/.nym/service-providers/network-requester/allowed.list`
 ######################################## -->
 
-#### Upgrading NR to v1.1.15
+#### Upgrading NR to v1.1.16
 
-<!-- ######### OLD plan for the v1.1.10 upgrade
+<!-- ######### OLD plan for the v 1_1_10 upgrade
 Build    
 Initialize    
 Transfer NC data to NR
@@ -151,11 +151,11 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.15
+git checkout nym-binaries-v1.1.16
 cargo build --release --bin nym-network-requester
 ```
 
-<!-- ################################# OLD ## for the v1.1.10 ###########################
+<!-- ################################# OLD ## for the v 1_1_10 ###########################
 #### Initiate the new NR
 > Enter name for your NR, for exmp. `nr_name=my_nr`    
 ```
@@ -184,7 +184,7 @@ nano ~/.nym/clients/$nc_name/config/config.toml
 ```
 > *ExecStart=/usr/local/bin/nym-network-requester run --id $nr_name --enable-statistics*    
 
-########################### END OLD ## for v1.1.10 ############################### -->
+########################### END OLD ## for v 1_1_10 ############################### -->
 
 
 #### Edit configuration. Change version to the current in the config file of the NR
@@ -219,11 +219,11 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.15
+git checkout nym-binaries-v1.1.16
 cargo build --release --bin nym-gateway
 ```
 
-- #### Change version to actual 1.1.15
+- #### Change version to actual 1.1.16
 > #### How to. Enter name of your GW, for exmp. `gateway_name=my_gateway`    
 > `gateway_name=`
 ```bash
@@ -231,10 +231,10 @@ cargo build --release --bin nym-gateway
 
 nano ~/.nym/gateways/$gateway_name/config/config.toml
 ```
-#### version must be 1.1.15
+#### version must be 1.1.16
 ```bash
 # Version of the gateway for which this configuration was created.
-version = '1.1.15`
+version = '1.1.16`
 ```
 - #### Be sure the gateway config file contains `nymd urls`.
 ```
@@ -267,7 +267,7 @@ sudo systemctl restart nym-gateway && journalctl -u nym-gateway -f -o cat
 > The upgrade path for gateways now fixed to be like for mixnodes    
 
 <!-- ############################# no more Rebond
-#### Rebond gateway to v1.1.13 in NYM wallet 
+#### Rebond gateway to v 1_1_13 in NYM wallet 
 > Unbond. Stop GW, Start GW. Bond    
 > *You will always need to rebond when upgrading gateways as this is how the network knows your gateway is available to be used*
 ##################################### -->
@@ -279,7 +279,7 @@ sudo systemctl restart nym-gateway && journalctl -u nym-gateway -f -o cat
 ```bash
 cd $HOME/nym
 git pull
-git checkout nym-binaries-v1.1.14
+git checkout nym-binaries-v#############
 cargo build --bin nym-socks5-client --release
 # If nym-socks5-client runs as a service, stop it and then move 
 # sudo systemctl stop nym-socks5-client
