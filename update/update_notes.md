@@ -78,7 +78,7 @@ nym_api_urls = [
 ]
 ```
 > #### If there is empty string add it manually
-#### Replace binary and start
+### Replace and restart
 ```
 sudo systemctl stop nym-mixnode && \
 sudo mv ~/nym/target/release/nym-mixnode $(which nym-mixnode) && \
@@ -200,13 +200,15 @@ nano ~/.nym/service-providers/network-requester/$nr_name/config/config.toml
 nano /etc/systemd/system/nym-network-requester.service
 ```
 
-#### Replace and restart
+### Replace and restart
 ```
 sudo systemctl stop nym-network-requester && \
 sudo mv target/release/nym-network-requester $(which nym-network-requester) && \
 sudo systemctl restart nym-network-requester
 journalctl -u nym-network-requester -f -o cat
 ```
+
+#
 
 ### 🟢 **GW**    
 ```
@@ -218,7 +220,7 @@ git checkout nym-binaries-v1.1.16
 cargo build --release --bin nym-gateway
 ```
 
-- #### Change version to actual 1.1.16
+### Change version to actual 1.1.16
 > #### How to. Enter name of your GW, for exmp. `gateway_name=my_gateway`    
 > `gateway_name=`
 ```bash
@@ -226,12 +228,12 @@ cargo build --release --bin nym-gateway
 
 nano ~/.nym/gateways/$gateway_name/config/config.toml
 ```
-#### version must be 1.1.16
+
 ```bash
 # Version of the gateway for which this configuration was created.
 version = '1.1.16`
 ```
-- #### Be sure the gateway config file contains `nymd urls`.
+### Be sure the gateway config file contains `nymd urls`.
 ```
 validator_nymd_urls = [
 
@@ -254,7 +256,7 @@ sudo systemctl daemon-reload && \
 sudo systemctl restart nym-gateway && journalctl -u nym-gateway -f -o cat
 ```
 
-#### 📌 No more need to unbond and rebond! 
+### 📌 No more need to unbond and rebond! 
 > The upgrade path for gateways now fixed to be like for mixnodes    
 
 <!-- ############################# no more Rebond
@@ -266,6 +268,8 @@ sudo systemctl restart nym-gateway && journalctl -u nym-gateway -f -o cat
 #
 
 ### ⚫ S5
+`...`
+
 <!-- ########################################
 ```bash
 cd $HOME/nym
@@ -289,7 +293,6 @@ cd $HOME/nym/target/release/nym-socks5-client
 
 ____
 
-### Just...
 
 ### Service file for NR
 ```
