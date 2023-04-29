@@ -206,9 +206,7 @@ nano /etc/systemd/system/nym-network-requester.service
 ```
 sudo systemctl daemon-reload && \
 sudo systemctl stop nym-network-requester && \
-sudo mv target/release/nym-network-requester $(which nym-network-requester)
-```
-```
+sudo mv target/release/nym-network-requester $(which nym-network-requester) && \
 sudo systemctl restart nym-network-requester
 journalctl -u nym-network-requester -f -o cat
 ```
@@ -245,20 +243,16 @@ validator_nymd_urls = [
 ]
 ```
 
-### Replace the binary
-```bash
-sudo systemctl stop nym-gateway && \
-sudo mv target/release/nym-gateway $(which nym-gateway)
-```
-
 #### Remove `--enable-statistics` flag
 > Operators can switch to running GW in the standard mode which doesn't gather the amounts of data sent through them
 ```
 nano /etc/systemd/system/nym-gateway.service
 ```
 
-#### Restart
-```
+### Replace and restart
+```bash
+sudo systemctl stop nym-gateway && \
+sudo mv target/release/nym-gateway $(which nym-gateway) && \
 sudo systemctl daemon-reload && \
 sudo systemctl restart nym-gateway && journalctl -u nym-gateway -f -o cat
 ```
