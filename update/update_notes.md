@@ -1,5 +1,5 @@
 
-# Upd. 25.04.2023 v1.1.16
+# Upd. 02.05.2023 v1.1.17
 
 
 
@@ -11,7 +11,7 @@
 
 
 #### Nym binaries page
-https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.16
+https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.17
 ____
 
 ### Update and install tools
@@ -39,7 +39,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.16
+git checkout nym-binaries-v1.1.17
 cargo build --release --bin nym-mixnode
 ```
 <!--
@@ -54,11 +54,11 @@ git checkout release/ v 1_1_15
 > ```
 > nano ~/.nym/mixnodes/$node_id/config/config.toml
 > ```
-> Change to current version `1.1.17`    
+> Change to current version `1.1.18`    
 > ```bash
 > [mixnode]
 > # Version of the NM for which this configuration was created.
-> version = '1.1.17'
+> version = '1.1.18'
 > ```
 > #### 2. Or run *init* command. 
 > Enter your wallet address, for example `wallet=n10lk93p495ywvmg50l80yhdzjea8zyslev8wz44`    
@@ -149,7 +149,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.16
+git checkout nym-binaries-v1.1.17
 cargo build --release --bin nym-network-requester
 ```
 
@@ -216,11 +216,11 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.16
+git checkout nym-binaries-v1.1.17
 cargo build --release --bin nym-gateway
 ```
 
-### Change version to actual 1.1.16
+### Change version to actual 1.1.17
 > #### How to. Enter name of your GW, for exmp. `gateway_name=my_gateway`    
 > `gateway_name=`
 ```bash
@@ -231,7 +231,7 @@ nano ~/.nym/gateways/$gateway_name/config/config.toml
 
 ```bash
 # Version of the gateway for which this configuration was created.
-version = '1.1.16`
+version = '1.1.17`
 ```
 ### Be sure the gateway config file contains `nymd urls`.
 ```
