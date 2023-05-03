@@ -143,7 +143,7 @@ Transfer NC data to NR
 ####### -->
 
 
-### Build
+### Build NR
 ```bash
 cd $HOME
 rm -rf nym
@@ -210,7 +210,8 @@ journalctl -u nym-network-requester -f -o cat
 
 #
 
-### 🟢 **GW**    
+### 🟢 **GW**
+### Build GW
 ```
 cd $HOME
 rm -rf nym
