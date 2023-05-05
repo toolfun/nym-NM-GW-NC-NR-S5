@@ -185,7 +185,8 @@ nano ~/.nym/clients/$nc_name/config/config.toml
 ########################### END OLD ## for v 1_1_10 ############################### -->
 
 
-### Edit configuration. Change version to the current in the config file of the NR
+### Edit configuration. Change version to the current 1.1.17 in the config file of the NR
+> #### How to:
 > Enter name for your NR, for exmp. `nr_name=my_nr`    
 ```
 nr_name=
@@ -193,8 +194,14 @@ nr_name=
 ```
 nano ~/.nym/service-providers/network-requester/$nr_name/config/config.toml
 ```
+> #### It should looks like
+> ```
+> [client]
+> # Version of the client for which this configuration was created.
+> version = '1.1.17'
+> ```
 
-> Remove `--enable-statistics` flag if it was
+### Remove `--enable-statistics` flag if it was in the NR service file
 > Operators can switch to running NR in the standard mode which doesn't gather the amounts of data sent through them
 ```
 nano /etc/systemd/system/nym-network-requester.service
@@ -229,11 +236,11 @@ cargo build --release --bin nym-gateway
 
 nano ~/.nym/gateways/$gateway_name/config/config.toml
 ```
-
-```bash
-# Version of the gateway for which this configuration was created.
-version = '1.1.17`
-```
+> #### It should looks like
+> ```bash
+> # Version of the gateway for which this configuration was created.
+> version = '1.1.17`
+> ```
 ### Be sure the gateway config file contains `nymd urls`.
 ```
 validator_nymd_urls = [
@@ -243,7 +250,7 @@ validator_nymd_urls = [
 ]
 ```
 
-> Remove `--enable-statistics` flag if it was
+### Remove `--enable-statistics` flag if it was in the GW service file
 > Operators can switch to running GW in the standard mode which doesn't gather the amounts of data sent through them
 ```
 nano /etc/systemd/system/nym-gateway.service
