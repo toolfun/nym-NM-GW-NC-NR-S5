@@ -228,7 +228,7 @@ git checkout nym-binaries-v1.1.18
 cargo build --release --bin nym-gateway
 ```
 
-### Change version to actual 1.1.18
+### Change version to actual 1.1.18 in the config file
 > #### How to. Enter name of your GW, for exmp. `gateway_name=my_gateway`    
 > `gateway_name=`
 ```bash
@@ -241,6 +241,7 @@ nano ~/.nym/gateways/$gateway_name/config/config.toml
 > # Version of the gateway for which this configuration was created.
 > version = '1.1.18`
 > ```
+
 ### Be sure the gateway config file contains `nymd urls`.
 ```
 validator_nymd_urls = [
@@ -249,6 +250,10 @@ validator_nymd_urls = [
 
 ]
 ```
+
+### Change version to actual 1.1.18 in the wallet
+> **Bonding** -> **Gateway Settings**
+> change version in the **Version** field
 
 ### Remove `--enable-statistics` flag if it was in the GW service file
 > Operators can switch to running GW in the standard mode which doesn't gather the amounts of data sent through them
