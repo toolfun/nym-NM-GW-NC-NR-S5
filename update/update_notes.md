@@ -1,6 +1,6 @@
 
 #### `This is how-to-update manual`
-# Upd. 16.05.2023 v1.1.19
+# Upd. 06.06.2023 v1.1.20
 
 
 #### Abbreviations:
