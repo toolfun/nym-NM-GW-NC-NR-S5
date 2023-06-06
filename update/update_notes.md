@@ -54,11 +54,11 @@ git checkout release/ v 1_1_15
 > ```
 > nano ~/.nym/mixnodes/$node_id/config/config.toml
 > ```
-> Change to current mixnode version `1.1.20`    
+> Change to current mixnode version `1.1.21`    
 > ```bash
 > [mixnode]
 > # Version of the NM for which this configuration was created.
-> version = '1.1.20'
+> version = '1.1.21'
 > ```
 > #### 2. Or run *init* command. 
 > Enter your wallet address, for example `wallet=n10lk93p495ywvmg50l80yhdzjea8zyslev8wz44`    
@@ -82,7 +82,7 @@ nym_api_urls = [
 ```
 sudo systemctl stop nym-mixnode && \
 sudo mv ~/nym/target/release/nym-mixnode $(which nym-mixnode) && \
-sudo systemctl restart nym-mixnode && journalctl -u nym-mixnode -f -o cat
+sudo systemctl restart nym-mixnode && sudo journalctl -u nym-mixnode -f -o cat
 ```
 
 ### Change mixnode version to the current in the wallet app (Bonding - Node Settings section)
@@ -122,7 +122,7 @@ sudo mv target/release/nym-client /usr/local/bin/
 ```
 ```
 sudo systemctl restart nym-client
-journalctl -u nym-client -f -o cat
+sudo journalctl -u nym-client -f -o cat
 ```
 ########################################### -->
 
@@ -212,7 +212,7 @@ nano /etc/systemd/system/nym-network-requester.service
 sudo systemctl stop nym-network-requester && \
 sudo mv target/release/nym-network-requester $(which nym-network-requester) && \
 sudo systemctl restart nym-network-requester
-journalctl -u nym-network-requester -f -o cat
+sudo journalctl -u nym-network-requester -f -o cat
 ```
 
 #
@@ -266,7 +266,7 @@ nano /etc/systemd/system/nym-gateway.service
 sudo systemctl stop nym-gateway && \
 sudo mv target/release/nym-gateway $(which nym-gateway) && \
 sudo systemctl daemon-reload && \
-sudo systemctl restart nym-gateway && journalctl -u nym-gateway -f -o cat
+sudo systemctl restart nym-gateway && sudo journalctl -u nym-gateway -f -o cat
 ```
 
 ### 📌 No more need to unbond and rebond! 
