@@ -46,6 +46,7 @@ cargo build --release --bin nym-mixnode
 git checkout release/ v 1_1_15
 -->
 
+<!-- ################################# no more discrepancy in version ###########################
 ### After build:
 #### We need to update the version in the config. 2 ways
 > #### Enter your mixnode name
@@ -54,11 +55,11 @@ git checkout release/ v 1_1_15
 > ```
 > nano ~/.nym/mixnodes/$node_id/config/config.toml
 > ```
-> Change to current mixnode version `1.1.23`    
+> Change to current mixnode version `1.1.22`    
 > ```bash
 > [mixnode]
 > # Version of the NM for which this configuration was created.
-> version = '1.1.23'
+> version = '1.1.22'
 > ```
 > #### 2. Or run *init* command. 
 > Enter your wallet address, for example `wallet=n10lk93p495ywvmg50l80yhdzjea8zyslev8wz44`    
@@ -78,6 +79,8 @@ nym_api_urls = [
 ]
 ```
 > #### If there is empty string add it manually
+######################################## no more discrepancy in version ######################## -->
+
 ### Replace and restart
 ```
 sudo systemctl stop nym-mixnode && \
