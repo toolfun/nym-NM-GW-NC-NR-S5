@@ -46,7 +46,8 @@ cargo build --release --bin nym-mixnode
 git checkout release/ v 1_1_15
 -->
 
-<!-- ################################# no more discrepancy in version ###########################
+<!-- ################################# ??????? no more discrepancy in version ###########################
+######################################## no more discrepancy in version ????????? ######################## -->
 ### After build:
 #### We need to update the version in the config. 2 ways
 > #### Enter your mixnode name
@@ -79,7 +80,6 @@ nym_api_urls = [
 ]
 ```
 > #### If there is empty string add it manually
-######################################## no more discrepancy in version ######################## -->
 
 ### Replace and restart
 ```
