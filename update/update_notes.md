@@ -56,11 +56,11 @@ git checkout release/ v 1_1_15
 > ```
 > nano ~/.nym/mixnodes/$node_id/config/config.toml
 > ```
-> Change to current mixnode version `1.1.23`    
+> Change to current mixnode version `1.1.24`    
 > ```bash
 > [mixnode]
 > # Version of the NM for which this configuration was created.
-> version = '1.1.23'
+> version = '1.1.24'
 > ```
 > #### 2. Or run *init* command. 
 > Enter your wallet address, for example `wallet=n10lk93p495ywvmg50l80yhdzjea8zyslev8wz44`    
