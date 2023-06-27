@@ -1,7 +1,12 @@
 
 #### `This is how-to-update manual`
-# Upd. 27.06.2023 v1.1.23
 
+
+## ❗ Nym team: *We're delaying the v1.1.23 release until next week now!*
+https://discord.com/channels/824256813200834580/1115884621113077831/1123262091948728472
+____
+
+#### ❗ Upd. v1.1.23 : on your own risk
 
 #### Abbreviations:
 - **NM** - Nym Mixnode
@@ -56,11 +61,11 @@ git checkout release/ v 1_1_15
 > ```
 > nano ~/.nym/mixnodes/$node_id/config/config.toml
 > ```
-> Change to current mixnode version `1.1.24`    
+> Change to current mixnode version `1.1.23`    
 > ```bash
 > [mixnode]
 > # Version of the NM for which this configuration was created.
-> version = '1.1.24'
+> version = '1.1.23'
 > ```
 > #### 2. Or run *init* command. 
 > Enter your wallet address, for example `wallet=n10lk93p495ywvmg50l80yhdzjea8zyslev8wz44`    
