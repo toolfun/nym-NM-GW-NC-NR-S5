@@ -2,12 +2,7 @@
 #### `This is how-to-update manual`
 
 
-## ❗ Nym team: *We're delaying the v1.1.23 release until next week now!*
-https://discord.com/channels/824256813200834580/1115884621113077831/1123262091948728472
-____
-
-#### ❗ Upd. v1.1.23 : on your own risk
-
+# Upd. 05.07.2013 v1.1.23 
 #### Abbreviations:
 - **NM** - Nym Mixnode
 - **GW** - Gateway
