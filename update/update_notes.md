@@ -64,12 +64,19 @@ git checkout release/ v 1_1_15
 > version = '1.1.25'
 > ```
 > #### 2. Or run *init* command.
+> <!-- #############################
 > Enter your wallet address, for example `wallet=n10lk93p495ywvmg50l80yhdzjea8zyslev8wz44`    
 > `wallet=`
 >
 > ```
 > nym-mixnode init --id $node_id --host $(curl ifconfig.me) --wallet-address $wallet
 > ```
+> ########################### -->
+
+> ```
+> nym-mixnode init --id $node_id --host $(curl ifconfig.me)
+> ```
+
 #### Be sure you have these `API url` in config file
 `nano ~/.nym/mixnodes/$node_id/config/config.toml`    
 ```bash
