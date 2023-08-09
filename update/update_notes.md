@@ -48,6 +48,7 @@ git checkout release/ v 1_1_15
 
 <!-- ################################# ??????? no more discrepancy in version ###########################
 ######################################## no more discrepancy in version ????????? ######################## -->
+
 ### After build:
 #### We need to update the version in the config. 2 ways
 > #### Enter your mixnode name
