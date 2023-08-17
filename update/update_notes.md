@@ -2,7 +2,7 @@
 #### `This is how-to-update manual`
 
 
-# Upd. 08.08.2013 v1.1.24 
+# Upd. 15.08.2013 v1.1.25
 #### Abbreviations:
 - **NM** - Nym Mixnode
 - **GW** - Gateway
@@ -11,7 +11,7 @@
 
 
 #### Nym binaries page
-https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.24
+https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.25
 ____
 
 ### Update and install tools
@@ -39,7 +39,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.24
+git checkout nym-binaries-v1.1.25
 cargo build --release --bin nym-mixnode
 ```
 <!--
@@ -57,11 +57,11 @@ git checkout release/ v 1_1_15
 > ```
 > nano ~/.nym/mixnodes/$node_id/config/config.toml
 > ```
-> Change to current mixnode version `1.1.25`    
+> Change to current mixnode version `1.1.26`    
 > ```bash
 > [mixnode]
 > # Version of the NM for which this configuration was created.
-> version = '1.1.25'
+> version = '1.1.26'
 > ```
 > #### 2. Or run *init* command.
 > <!-- #############################
@@ -160,7 +160,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.24
+git checkout nym-binaries-v1.1.25
 cargo build --release --bin nym-network-requester
 ```
 
@@ -196,7 +196,7 @@ nano ~/.nym/clients/$nc_name/config/config.toml
 ########################### END OLD ## for v 1_1_10 ############################### -->
 
 
-### Edit configuration. Change version to the current 1.1.24 in the config file of the NR
+### Edit configuration. Change version to the current 1.1.25 in the config file of the NR
 > #### How to:
 > Enter name for your NR, for exmp. `nr_name=my_nr`    
 ```
@@ -209,7 +209,7 @@ nano ~/.nym/service-providers/network-requester/$nr_name/config/config.toml
 > ```
 > [client]
 > # Version of the client for which this configuration was created.
-> version = '1.1.24'
+> version = '1.1.25'
 > ```
 
 ### Remove `--enable-statistics` flag if it was in the NR service file
@@ -235,11 +235,11 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.24
+git checkout nym-binaries-v1.1.25
 cargo build --release --bin nym-gateway
 ```
 
-### Change version to actual 1.1.24 in the config file
+### Change version to actual 1.1.25 in the config file
 > #### How to. Enter name of your GW, for exmp. `gateway_name=my_gateway`    
 > `gateway_name=`
 ```bash
@@ -250,7 +250,7 @@ nano ~/.nym/gateways/$gateway_name/config/config.toml
 > #### It should looks like
 > ```bash
 > # Version of the gateway for which this configuration was created.
-> version = '1.1.24`
+> version = '1.1.25`
 > ```
 
 ### Be sure the gateway config file contains `nymd urls`.
@@ -262,7 +262,7 @@ validator_nymd_urls = [
 ]
 ```
 
-### Change version to actual 1.1.24 in the Nym wallet
+### Change version to actual 1.1.25 in the Nym wallet
 Menu Bonding -> Gateway Settings    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett.jpg)    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett2.jpg)    
