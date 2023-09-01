@@ -66,14 +66,14 @@ git checkout release/ v 1_1_15
 > version = '1.1.28'
 > ```
 > #### 2. Or run *init* command.
-> <!-- #############################
+<!-- ###########################################################################################
 > Enter your wallet address, for example `wallet=n10lk93p495ywvmg50l80yhdzjea8zyslev8wz44`    
 > `wallet=`
 >
 > ```
 > nym-mixnode init --id $node_id --host $(curl ifconfig.me) --wallet-address $wallet
 > ```
-> ########################### -->
+
 
 > ```
 > nym-mixnode init --id $node_id --host $(curl ifconfig.me)
@@ -90,6 +90,7 @@ nym_api_urls = [
 ]
 ```
 > #### If there is empty string add it manually
+######################################################################################### -->
 
 ### Replace and restart
 ```
@@ -255,6 +256,7 @@ nano ~/.nym/gateways/$gateway_name/config/config.toml
 > version = '1.1.27`
 > ```
 
+<!-- #####################################################################################
 ### Be sure the gateway config file contains `nymd urls`.
 ```
 validator_nymd_urls = [
@@ -263,6 +265,8 @@ validator_nymd_urls = [
 
 ]
 ```
+##################################################################################### -->
+
 
 ### Change version to actual 1.1.29 in the Nym wallet
 Menu Bonding -> Gateway Settings    
