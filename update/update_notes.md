@@ -59,11 +59,11 @@ git checkout release/ v 1_1_15
 > ```
 > nano ~/.nym/mixnodes/$node_id/config/config.toml
 > ```
-> Change to current mixnode version `1.1.29`    
+> Change to current mixnode version `1.1.28`    
 > ```bash
 > [mixnode]
 > # Version of the NM for which this configuration was created.
-> version = '1.1.29'
+> version = '1.1.28'
 > ```
 > #### 2. Or run *init* command.
 > <!-- #############################
@@ -198,7 +198,7 @@ nano ~/.nym/clients/$nc_name/config/config.toml
 ########################### END OLD ## for v 1_1_10 ############################### -->
 
 
-### Edit configuration. Change version to the current 1.1.29 in the config file of the NR
+### Edit configuration. Change version to the current 1.1.27 in the config file of the NR
 > #### How to:
 > Enter name for your NR, for exmp. `nr_name=my_nr`    
 ```
@@ -211,7 +211,7 @@ nano ~/.nym/service-providers/network-requester/$nr_name/config/config.toml
 > ```
 > [client]
 > # Version of the client for which this configuration was created.
-> version = '1.1.29'
+> version = '1.1.27'
 > ```
 
 ### Remove `--enable-statistics` flag if it was in the NR service file
@@ -241,7 +241,7 @@ git checkout nym-binaries-v1.1.29-snickers
 cargo build --release --bin nym-gateway
 ```
 
-### Change version to actual 1.1.29 in the config file
+### Change version to actual 1.1.27 in the config file
 > #### How to. Enter name of your GW, for exmp. `gateway_name=my_gateway`    
 > `gateway_name=`
 ```bash
@@ -252,7 +252,7 @@ nano ~/.nym/gateways/$gateway_name/config/config.toml
 > #### It should looks like
 > ```bash
 > # Version of the gateway for which this configuration was created.
-> version = '1.1.29`
+> version = '1.1.27`
 > ```
 
 ### Be sure the gateway config file contains `nymd urls`.
