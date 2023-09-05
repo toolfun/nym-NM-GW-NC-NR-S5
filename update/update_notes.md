@@ -212,14 +212,8 @@ nano ~/.nym/service-providers/network-requester/$nr_name/config/config.toml
 > ```
 > [client]
 > # Version of the client for which this configuration was created.
-> version = '1.1.27'
+> version = '1.1.28'
 > ```
-
-### Remove `--enable-statistics` flag if it was in the NR service file
-> Operators can switch to running NR in the standard mode which doesn't gather the amounts of data sent through them
-```
-nano /etc/systemd/system/nym-network-requester.service
-```
 
 ### Replace and restart
 ```
