@@ -2,7 +2,7 @@
 #### `This is how-to-update manual`
 
 
-# Upd. 29.08.2013 v1.1.29-snickers
+# Upd. 05.09.2013 v1.1.30-twix
 #### Abbreviations:
 - **NM** - Nym Mixnode
 - **GW** - Gateway
@@ -11,7 +11,7 @@
 
 
 #### Nym binaries page
-https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.29-snickers
+https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.30-twix
 
 ____
 
