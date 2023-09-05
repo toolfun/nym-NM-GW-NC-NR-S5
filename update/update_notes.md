@@ -99,7 +99,7 @@ sudo mv ~/nym/target/release/nym-mixnode $(which nym-mixnode) && \
 sudo systemctl start nym-mixnode && sudo journalctl -u nym-mixnode -f -o cat
 ```
 
-### Change mixnode version to the current v1.1.30 in the wallet app (Bonding - Node Settings section)
+### Change mixnode version to the v1.1.30 in the wallet app (Bonding - Node Settings section)
 
 #
 
@@ -199,7 +199,7 @@ nano ~/.nym/clients/$nc_name/config/config.toml
 ########################### END OLD ## for v 1_1_10 ############################### -->
 
 
-### Edit configuration. Change version to the current 1.1.27 in the config file of the NR
+### Edit configuration. Change version to the current 1.1.28 in the config file of the NR
 > #### How to:
 > Enter name for your NR, for exmp. `nr_name=my_nr`    
 ```
@@ -236,7 +236,7 @@ git checkout nym-binaries-v1.1.30-twix
 cargo build --release --bin nym-gateway
 ```
 
-### Change version to actual 1.1.27 in the config file
+### Change version to actual 1.1.28 in the config file
 > #### How to. Enter name of your GW, for exmp. `gateway_name=my_gateway`    
 > `gateway_name=`
 ```bash
@@ -247,7 +247,7 @@ nano ~/.nym/gateways/$gateway_name/config/config.toml
 > #### It should looks like
 > ```bash
 > # Version of the gateway for which this configuration was created.
-> version = '1.1.27`
+> version = '1.1.28`
 > ```
 
 <!-- #####################################################################################
@@ -262,7 +262,7 @@ validator_nymd_urls = [
 ##################################################################################### -->
 
 
-### Change version to actual 1.1.29 in the Nym wallet
+### Change version to 1.1.30 in the Nym wallet
 Menu Bonding -> Gateway Settings    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett.jpg)    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett2.jpg)    
