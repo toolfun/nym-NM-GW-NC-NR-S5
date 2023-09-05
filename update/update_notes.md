@@ -41,7 +41,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.29-snickers
+git checkout nym-binaries-v1.1.30-twix
 cargo build --release --bin nym-mixnode
 ```
 <!--
@@ -59,11 +59,11 @@ git checkout release/ v 1_1_15
 > ```
 > nano ~/.nym/mixnodes/$node_id/config/config.toml
 > ```
-> Change to current mixnode version `1.1.28`    
+> Change to current mixnode version `1.1.29`    
 > ```bash
 > [mixnode]
 > # Version of the NM for which this configuration was created.
-> version = '1.1.28'
+> version = '1.1.29'
 > ```
 > #### 2. Or run *init* command.
 <!-- ###########################################################################################
@@ -99,7 +99,7 @@ sudo mv ~/nym/target/release/nym-mixnode $(which nym-mixnode) && \
 sudo systemctl start nym-mixnode && sudo journalctl -u nym-mixnode -f -o cat
 ```
 
-### Change mixnode version to the current in the wallet app (Bonding - Node Settings section)
+### Change mixnode version to the current v1.1.30 in the wallet app (Bonding - Node Settings section)
 
 #
 
@@ -163,7 +163,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.29-snickers
+git checkout nym-binaries-v1.1.30-twix
 cargo build --release --bin nym-network-requester
 ```
 
@@ -238,7 +238,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.29-snickers
+git checkout nym-binaries-v1.1.30-twix
 cargo build --release --bin nym-gateway
 ```
 
