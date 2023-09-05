@@ -259,19 +259,13 @@ validator_nymd_urls = [
 
 ]
 ```
-##################################################################################### -->
 
-
-### Change version to 1.1.30 in the Nym wallet
-Menu Bonding -> Gateway Settings    
-> ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett.jpg)    
-> ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett2.jpg)    
-
-### Remove `--enable-statistics` flag if it was in the GW service file
+ ### Remove `--enable-statistics` flag if it was in the GW service file
 > Operators can switch to running GW in the standard mode which doesn't gather the amounts of data sent through them
 ```
 nano /etc/systemd/system/nym-gateway.service
 ```
+##################################################################################### -->
 
 ### Replace and restart
 ```bash
@@ -280,6 +274,11 @@ sudo mv ~/nym/target/release/nym-gateway $(which nym-gateway) && \
 sudo systemctl daemon-reload && \
 sudo systemctl start nym-gateway && sudo journalctl -u nym-gateway -f -o cat
 ```
+
+### Change version to 1.1.30 in the Nym wallet
+Menu Bonding -> Gateway Settings    
+> ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett.jpg)    
+> ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett2.jpg)    
 
 ### 📌 No more need to unbond and rebond!
 > The upgrade path for gateways now fixed to be like for mixnodes    
