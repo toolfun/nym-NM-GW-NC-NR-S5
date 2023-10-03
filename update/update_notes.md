@@ -1,6 +1,6 @@
 <!-- ##################################################################
 # Mixnode
-binary v1.1.31-kitkat
+binary v2023.1-milka
 version 1.1.30
 config 1.1.30
 wallet 1.1.31
@@ -21,7 +21,7 @@ wallet 1.1.31
 #### `This is how-to-update manual`
 
 
-# Upd. 12.09.2013 v1.1.31-kitkat
+# Upd. 03.10.2013 v2023.1-milka
 #### Abbreviations:
 - **NM** - Nym Mixnode
 - **GW** - Gateway
@@ -30,7 +30,7 @@ wallet 1.1.31
 
 
 #### Nym binaries page
-https://github.com/nymtech/nym/releases/tag/nym-binaries-v1.1.31-kitkat
+https://github.com/nymtech/nym/releases/tag/nym-binaries-v2023.1-milka
 
 ____
 
@@ -60,7 +60,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.31-kitkat
+git checkout nym-binaries-v2023.1-milka
 cargo build --release --bin nym-mixnode
 ```
 <!--
