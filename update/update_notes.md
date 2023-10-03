@@ -3,18 +3,18 @@
 binary v2023.1-milka
 version 1.1.30
 config 1.1.30
-wallet 1.1.31
+wallet 
 
 # NR
-binary v1.1.31-kitkat
-version 1.1.29
-config 1.1.29
+binary v2023.1-milka
+version 1.1.30
+config 1.1.30
 
 # GW
-binary v1.1.31-kitkat
-version 1.1.29
-config 1.1.29
-wallet 1.1.31
+binary v2023.1-milka
+version 1.1.30
+config 1.1.30
+wallet 2023.1
 ################################################################## -->
 
 
@@ -180,7 +180,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.31-kitkat
+git checkout nym-binaries-v2023.1-milka
 cargo build --release --bin nym-network-requester
 ```
 
@@ -216,7 +216,7 @@ nano ~/.nym/clients/$nc_name/config/config.toml
 ########################### END OLD ## for v 1_1_10 ############################### -->
 
 
-### Edit configuration. Change version to the current 1.1.29 in the config file of the NR
+### Edit configuration. Change version to the current 1.1.30 in the config file of the NR
 > #### How to:
 > Enter name for your NR, for exmp. `nr_name=my_nr`    
 ```
@@ -229,7 +229,7 @@ nano ~/.nym/service-providers/network-requester/$nr_name/config/config.toml
 > ```
 > [client]
 > # Version of the client for which this configuration was created.
-> version = '1.1.29'
+> version = '1.1.30'
 > ```
 
 ### Replace and restart
@@ -249,11 +249,11 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v1.1.31-kitkat
+git checkout nym-binaries-v2023.1-milka
 cargo build --release --bin nym-gateway
 ```
 
-### Change version to actual 1.1.29 in the config file
+### Change version to actual 1.1.30 in the config file
 > #### How to. Enter name of your GW, for exmp. `gateway_name=my_gateway`    
 > `gateway_name=`
 ```bash
@@ -264,7 +264,7 @@ nano ~/.nym/gateways/$gateway_name/config/config.toml
 > #### It should looks like
 > ```bash
 > # Version of the gateway for which this configuration was created.
-> version = '1.1.29`
+> version = '1.1.30`
 > ```
 
 <!-- #####################################################################################
