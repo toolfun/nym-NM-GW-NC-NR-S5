@@ -1,20 +1,20 @@
 <!-- ##################################################################
 # Mixnode
 binary v2023.1-milka
-version 1.1.30
-config 1.1.30
-wallet 
+version 1.1.31
+config 1.1.31 ???
+wallet ???
 
 # NR
 binary v2023.1-milka
 version 1.1.30
-config 1.1.30
+config 1.1.30 ???
 
 # GW
 binary v2023.1-milka
 version 1.1.30
-config 1.1.30
-wallet 2023.1
+config 1.1.30 ???
+wallet ???
 ################################################################## -->
 
 
@@ -76,11 +76,11 @@ git checkout release/ v 1_1_15
 > ```
 > nano ~/.nym/mixnodes/$node_id/config/config.toml
 > ```
-> Change to current mixnode version `1.1.30`    
+> Change to current mixnode version `1.1.31`    
 > ```bash
 > [mixnode]
 > # Version of the NM for which this configuration was created.
-> version = '1.1.30'
+> version = '1.1.31'
 > ```
 > #### 2. Or run *init* command.
 <!-- ###########################################################################################
