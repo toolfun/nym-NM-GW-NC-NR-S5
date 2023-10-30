@@ -69,7 +69,28 @@ git checkout release/ v 1_1_15
 
 
 ### After build:
-#### We need to update the version in the config. 2 ways
+#### We need to update the version in the config
+```bash
+export VERSION="1.1.31"
+read -p " Enter your mixnode id: " node_id
+echo -e " You entered: \033[92m $node_id \033[0m"
+sleep 0.5
+sed -i "s/^version = .*/version = '$VERSION'/" $HOME/.nym/mixnodes/$node_id/config/config.toml
+echo -e "\033[92m Mixnode version updated \033[0m"
+```
+
+<!-- #########################################
+#### Run init command
+```bash
+> read -p " Enter your mixnode id: " node_id
+> echo -e " You entered: \033[92m $node_id \033[0m"
+> sleep 0.5
+> nym-mixnode init --id $node_id --host $(curl ifconfig.me)
+> echo -e "\033[92m Mixnode version updated \033[0m"
+> ```
+######################################## -->
+
+<!-- ###########################################################################################
 > #### Enter your mixnode name
 > `node_id=YOUR_MIXNODE_NAME`
 > #### 1. Open config
@@ -83,7 +104,7 @@ git checkout release/ v 1_1_15
 > version = '1.1.31'
 > ```
 > #### 2. Or run *init* command.
-<!-- ###########################################################################################
+
 > Enter your wallet address, for example `wallet=n10lk93p495ywvmg50l80yhdzjea8zyslev8wz44`    
 > `wallet=`
 >
