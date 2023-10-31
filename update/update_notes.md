@@ -22,11 +22,15 @@ wallet 1.1.31
 
 
 # Upd. 31.10.2013 v2023.3-kinder
-#### Abbreviations:
-- **NM** - Nym Mixnode
-- **GW** - Gateway
-- **NR** - Nym Network Requestor
-- **S5** - Nym Socks5 Client    
+#### Versions to put in the config files and in the Nym wallet
+- **NM** version 1.1.32
+- **GW** - version 1.1.31
+- **NR** -version 1.1.31
+
+> **NM** - Nym Mixnode    
+> **GW** - Gateway    
+> **NR** - Nym Network Requestor    
+#
 
 
 #### Nym binaries page
@@ -141,11 +145,10 @@ sudo systemctl start nym-mixnode && sudo journalctl -u nym-mixnode -f -o cat
 
 #
 
-### UPDATING NC, NR, GW
-
-### 🟣 ~**NC**~
+<!-- ########################################################################### NC ###############
+### 🟣 **NC UPDATING**
 > *Starting with v 1_1_13 the Nym Client is integrated with the Nym Network Requester*   
-<!-- ############################
+
 Build
 ```
 cd $HOME
@@ -176,10 +179,10 @@ sudo mv target/release/nym-client /usr/local/bin/
 sudo systemctl restart nym-client
 sudo journalctl -u nym-client -f -o cat
 ```
-########################################### -->
+########################################################################### NC ############### -->
 
 
-### 🔵 **NR**
+### 🔵 **NR UPDATING**
 <!-- ########################################
 > Since v 1_1_9 you *no longer* have to manually copy over the allowed.list.sample. On startup, the network requester will try and grab a 'default' whitelist from https://nymtech.net/.wellknown/network-requester/standard-allowed-list.txt    
 > Update you allowed.list to include all of the domains on this list, as well as custom domains you may have.
@@ -263,7 +266,7 @@ sudo journalctl -u nym-network-requester -f -o cat
 
 #
 
-### 🟢 **GW**
+### 🟢 **GW UPDATING**
 ### Build GW
 ```
 cd $HOME
@@ -331,10 +334,11 @@ Menu Bonding -> Gateway Settings
 
 #
 
+<!-- ######################################################################## S5 #################
 ### ⚫ S5
 `...`
 
-<!-- ########################################
+
 ```bash
 cd $HOME/nym
 git pull
@@ -353,11 +357,10 @@ nym-socks5-client init --id my_socks5 --provider GegdtpNzYj4QCgpih9Kxv7ZVZxmVdxY
 cd $HOME/nym/target/release/nym-socks5-client
 ./nym-socks5-client run --id <socks5 client name>
 ```
-########################################### -->  
+#############################################################################  S5  ############## -->
 
-____
-
-
+<!-- ######################################################################## Service NR #################
+### ⚫ S5
 Service file for NR
 ```
 [Unit]
@@ -377,4 +380,4 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 ```
 #
-
+#############################################################################  Service NR  ############## -->
