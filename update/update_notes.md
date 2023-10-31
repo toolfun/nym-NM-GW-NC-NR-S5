@@ -1,27 +1,27 @@
 <!-- ##################################################################
 # Mixnode
-binary v2023.1-milka
-version 1.1.31
-config 1.1.31 ???
-wallet ???
+binary v2023.3-kinder
+version 1.1.32
+config 1.1.32
+wallet 1.1.32
 
 # NR
-binary v2023.1-milka
-version 1.1.30
-config 1.1.30 ???
+binary v2023.3-kinder
+version 1.1.31
+config 1.1.31
 
 # GW
-binary v2023.1-milka
-version 1.1.30
-config 1.1.30 ???
-wallet ???
+binary v2023.3-kinder
+version 1.1.31
+config 1.1.31
+wallet 1.1.31
 ################################################################## -->
 
 
 #### `This is how-to-update manual`
 
 
-# Upd. 03.10.2013 v2023.1-milka
+# Upd. 31.10.2013 v2023.3-kinder
 #### Abbreviations:
 - **NM** - Nym Mixnode
 - **GW** - Gateway
@@ -30,7 +30,7 @@ wallet ???
 
 
 #### Nym binaries page
-https://github.com/nymtech/nym/releases/tag/nym-binaries-v2023.1-milka
+https://github.com/nymtech/nym/releases/tag/nym-binaries-v2023.3-kinder
 
 ____
 
@@ -60,7 +60,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2023.1-milka
+git checkout nym-binaries-v2023.3-kinder
 cargo build --release --bin nym-mixnode
 ```
 <!--
@@ -71,7 +71,7 @@ git checkout release/ v 1_1_15
 ### After build:
 #### We need to update the version in the config
 ```bash
-export VERSION="1.1.31"
+export VERSION="1.1.32"
 read -p " Enter your mixnode id: " node_id
 echo -e " You entered: \033[92m $node_id \033[0m"
 sleep 0.5
@@ -137,7 +137,7 @@ sudo mv ~/nym/target/release/nym-mixnode $(which nym-mixnode) && \
 sudo systemctl start nym-mixnode && sudo journalctl -u nym-mixnode -f -o cat
 ```
 
-### Change mixnode version to the v1.1.31 in the wallet app (Bonding - Node Settings section)
+### Change mixnode version to the v1.1.32 in the wallet app (Bonding - Node Settings section)
 
 #
 
@@ -201,7 +201,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2023.1-milka
+git checkout nym-binaries-v2023.3-kinder
 cargo build --release --bin nym-network-requester
 ```
 
@@ -237,7 +237,7 @@ nano ~/.nym/clients/$nc_name/config/config.toml
 ########################### END OLD ## for v 1_1_10 ############################### -->
 
 
-### Edit configuration. Change version to the current 1.1.30 in the config file of the NR
+### Edit configuration. Change version to the current 1.1.31 in the config file of the NR
 > #### How to:
 > Enter name for your NR, for exmp. `nr_name=my_nr`    
 ```
@@ -250,7 +250,7 @@ nano ~/.nym/service-providers/network-requester/$nr_name/config/config.toml
 > ```
 > [client]
 > # Version of the client for which this configuration was created.
-> version = '1.1.30'
+> version = '1.1.31'
 > ```
 
 ### Replace and restart
@@ -270,11 +270,11 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2023.1-milka
+git checkout nym-binaries-v2023.3-kinder
 cargo build --release --bin nym-gateway
 ```
 
-### Change version to actual 1.1.30 in the config file
+### Change version to actual 1.1.31 in the config file
 > #### How to. Enter name of your GW, for exmp. `gateway_name=my_gateway`    
 > `gateway_name=`
 ```bash
@@ -285,7 +285,7 @@ nano ~/.nym/gateways/$gateway_name/config/config.toml
 > #### It should looks like
 > ```bash
 > # Version of the gateway for which this configuration was created.
-> version = '1.1.30`
+> version = '1.1.31`
 > ```
 
 <!-- #####################################################################################
