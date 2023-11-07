@@ -26,7 +26,7 @@ wallet 1.1.31
 #
 
 #### Versions to put in the config files and in the Nym wallet
-- **NM** version 1.1.32
+- **NM** version 1.1.33
 - **GW** - version 1.1.31
 - **NR** -version 1.1.31
 
