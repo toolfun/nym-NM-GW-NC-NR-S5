@@ -1,9 +1,9 @@
 <!-- ##################################################################
 # Mixnode
 binary v2023.3-kinder
-version 1.1.32
-config 1.1.32
-wallet 1.1.32
+version 1.1.33
+config 1.1.33
+wallet 1.1.33
 
 # NR
 binary v2023.3-kinder
@@ -21,7 +21,10 @@ wallet 1.1.31
 #### `This is how-to-update manual`
 
 
-# Upd. 31.10.2013 v2023.3-kinder
+# Upd. 31.10.2023 v2023.3-kinder
+### 📌 Upd. 07.11.2023 v2023.4-galaxy - only for Nym mixnode
+#
+
 #### Versions to put in the config files and in the Nym wallet
 - **NM** version 1.1.32
 - **GW** - version 1.1.31
@@ -64,7 +67,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2023.3-kinder
+git checkout nym-binaries-v2023.4-galaxy
 cargo build --release --bin nym-mixnode
 ```
 <!--
@@ -75,12 +78,13 @@ git checkout release/ v 1_1_15
 ### After build:
 #### We need to update the version in the config
 ```bash
-export VERSION="1.1.32"
+export VERSION="1.1.33"
 read -p " Enter your mixnode id: " node_id
-echo -e " You entered: \033[92m $node_id \033[0m"
+echo -e " You entered: \033[92m$node_id\033[0m"
 sleep 0.5
-sed -i "s/^version = .*/version = '$VERSION'/" $HOME/.nym/mixnodes/$node_id/config/config.toml
-echo -e "\033[92m Mixnode version updated \033[0m"
+sed -i "s/^version = .*/version = '$VERSION'/" $HOME/.nym/mixnodes/$node_id/config/config.toml && \
+echo -e "\033[92m Mixnode version updated successfully \033[0m" || \
+echo -e "\033[31m Failed to update mixnode version \033[0m"
 ```
 
 <!-- #########################################
