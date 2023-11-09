@@ -1,6 +1,6 @@
 <!-- ##################################################################
 # Mixnode
-binary v2023.3-kinder
+binary v2023.4-galaxy
 version 1.1.33
 config 1.1.33
 wallet 1.1.33
@@ -21,8 +21,8 @@ wallet 1.1.31
 #### `This is how-to-update manual`
 
 
-# Upd. 31.10.2023 v2023.3-kinder
-### 📌 Upd. 07.11.2023 v2023.4-galaxy - only for Nym mixnode
+# Upd. 07.11.2023 v2023.4-galaxy
+### 🚧 under cunstruction
 #
 
 #### Versions to put in the config files and in the Nym wallet
