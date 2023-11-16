@@ -48,7 +48,7 @@ sudo apt update && sudo apt upgrade -y
 ```
 ```
 sudo dpkg --configure -a
-sudo apt install curl wget ufw make clang pkg-config libssl-dev build-essential git htop
+sudo apt install curl wget ufw make clang pkg-config libssl-dev build-essential git jq htop
 ```
 
 ### Install or update Rust
