@@ -22,8 +22,7 @@ wallet 1.1.32
 
 
 # Upd. 28.11.2023 v2023.5-rolo
-### 🚧 under cunstruction
-#
+
 
 #### Versions to put in the config files and in the Nym Wallet
 - **NM** version 1.1.34
@@ -36,7 +35,7 @@ wallet 1.1.32
 #
 
 
-#### Nym binaries page
+#### Nym binaries
 https://github.com/nymtech/nym/releases/tag/nym-binaries-v2023.5-rolo
 
 ____
