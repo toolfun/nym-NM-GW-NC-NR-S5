@@ -1,9 +1,9 @@
 <!-- ##################################################################
 # Mixnode
 binary v2023.5-rolo
-version 1.1.33
-config 1.1.33
-wallet 1.1.33
+version 1.1.34
+config 1.1.34
+wallet 1.1.34
 
 # NR
 binary v2023.5-rolo
@@ -26,7 +26,7 @@ wallet 1.1.32
 #
 
 #### Versions to put in the config files and in the Nym wallet
-- **NM** version 1.1.33
+- **NM** version 1.1.34
 - **GW** - version 1.1.32
 - **NR** -version 1.1.31
 
@@ -78,7 +78,7 @@ git checkout release/ v 1_1_15
 ### After build:
 #### We need to update the version in the config
 ```bash
-export VERSION="1.1.33"
+export VERSION="1.1.34"
 read -p " Enter your mixnode id: " node_id
 echo -e " You entered: \033[92m$node_id\033[0m"
 sleep 0.5
@@ -145,7 +145,7 @@ sudo mv ~/nym/target/release/nym-mixnode $(which nym-mixnode) && \
 sudo systemctl start nym-mixnode && sudo journalctl -u nym-mixnode -f -o cat
 ```
 
-### Change mixnode version to the v1.1.33 in the wallet app (Bonding - Node Settings section)
+### Change mixnode version to the v1.1.34 in the wallet app (Bonding - Node Settings section)
 
 #
 
