@@ -25,7 +25,7 @@ wallet 1.1.32
 ### 🚧 under cunstruction
 #
 
-#### Versions to put in the config files and in the Nym wallet
+#### Versions to put in the config files and in the Nym Wallet
 - **NM** version 1.1.34
 - **GW** - version 1.1.32
 - **NR** -version 1.1.31
@@ -145,7 +145,7 @@ sudo mv ~/nym/target/release/nym-mixnode $(which nym-mixnode) && \
 sudo systemctl start nym-mixnode && sudo journalctl -u nym-mixnode -f -o cat
 ```
 
-### Change mixnode version to the v1.1.34 in the wallet app (Bonding - Node Settings section)
+### Change mixnode version to the v1.1.34 in the Nym Wallet (Bonding - Node Settings section)
 
 #
 
@@ -320,7 +320,7 @@ sudo systemctl daemon-reload && \
 sudo systemctl start nym-gateway && sudo journalctl -u nym-gateway -f -o cat
 ```
 
-### Change version to 1.1.32 in the Nym wallet
+### Change version to 1.1.32 in the Nym Wallet
 Menu Bonding -> Gateway Settings    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett.jpg)    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett2.jpg)    
