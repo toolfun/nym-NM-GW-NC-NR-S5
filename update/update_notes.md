@@ -1,33 +1,33 @@
 <!-- ##################################################################
 # Mixnode
-binary v2023.4-galaxy
+binary v2023.5-rolo
 version 1.1.33
 config 1.1.33
 wallet 1.1.33
 
 # NR
-binary v2023.3-kinder
+binary v2023.5-rolo
 version 1.1.31
 config 1.1.31
 
 # GW
-binary v2023.3-kinder
-version 1.1.31
-config 1.1.31
-wallet 1.1.31
+binary v2023.5-rolo
+version 1.1.32
+config 1.1.32
+wallet 1.1.32
 ################################################################## -->
 
 
 #### `This is how-to-update manual`
 
 
-# Upd. 07.11.2023 v2023.4-galaxy
+# Upd. 28.11.2023 v2023.5-rolo
 ### 🚧 under cunstruction
 #
 
 #### Versions to put in the config files and in the Nym wallet
 - **NM** version 1.1.33
-- **GW** - version 1.1.31
+- **GW** - version 1.1.32
 - **NR** -version 1.1.31
 
 > **NM** - Nym Mixnode    
@@ -37,7 +37,7 @@ wallet 1.1.31
 
 
 #### Nym binaries page
-https://github.com/nymtech/nym/releases/tag/nym-binaries-v2023.3-kinder
+https://github.com/nymtech/nym/releases/tag/nym-binaries-v2023.5-rolo
 
 ____
 
@@ -67,7 +67,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2023.4-galaxy
+git checkout nym-binaries-v2023.5-rolo
 cargo build --release --bin nym-mixnode
 ```
 <!--
@@ -145,7 +145,7 @@ sudo mv ~/nym/target/release/nym-mixnode $(which nym-mixnode) && \
 sudo systemctl start nym-mixnode && sudo journalctl -u nym-mixnode -f -o cat
 ```
 
-### Change mixnode version to the v1.1.32 in the wallet app (Bonding - Node Settings section)
+### Change mixnode version to the v1.1.33 in the wallet app (Bonding - Node Settings section)
 
 #
 
@@ -208,7 +208,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2023.3-kinder
+git checkout nym-binaries-v2023.5-rolo
 cargo build --release --bin nym-network-requester
 ```
 
@@ -277,11 +277,11 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2023.3-kinder
+git checkout nym-binaries-v2023.5-rolo
 cargo build --release --bin nym-gateway
 ```
 
-### Change version to actual 1.1.31 in the config file
+### Change version to actual 1.1.32 in the config file
 > #### How to. Enter name of your GW, for exmp. `gateway_name=my_gateway`    
 > `gateway_name=`
 ```bash
@@ -292,7 +292,7 @@ nano ~/.nym/gateways/$gateway_name/config/config.toml
 > #### It should looks like
 > ```bash
 > # Version of the gateway for which this configuration was created.
-> version = '1.1.31`
+> version = '1.1.32`
 > ```
 
 <!-- #####################################################################################
@@ -320,7 +320,7 @@ sudo systemctl daemon-reload && \
 sudo systemctl start nym-gateway && sudo journalctl -u nym-gateway -f -o cat
 ```
 
-### Change version to 1.1.31 in the Nym wallet
+### Change version to 1.1.32 in the Nym wallet
 Menu Bonding -> Gateway Settings    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett.jpg)    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett2.jpg)    
