@@ -66,7 +66,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2023.5-rolo
+git checkout master
 cargo build --release --bin nym-mixnode
 ```
 <!--
@@ -207,7 +207,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2023.5-rolo
+git checkout master
 cargo build --release --bin nym-network-requester
 ```
 
@@ -276,7 +276,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2023.5-rolo
+git checkout master
 cargo build --release --bin nym-gateway
 ```
 
