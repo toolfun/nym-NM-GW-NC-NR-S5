@@ -23,17 +23,17 @@ wallet 1.1.32
 
 # Upd. 28.11.2023 v2023.5-rolo
 
+> **NM** - Nym Mixnode    
+> **GW** - Gateway    
+> **NR** - Nym Network Requestor    
 
 #### Versions to put in the config files and in the Nym Wallet
 - **NM** version 1.1.34
 - **GW** - version 1.1.32
 - **NR** -version 1.1.31
 
-> **NM** - Nym Mixnode    
-> **GW** - Gateway    
-> **NR** - Nym Network Requestor    
+> #### GW and NR yet are splited here
 #
-
 
 #### Nym binaries
 https://github.com/nymtech/nym/releases/tag/nym-binaries-v2023.5-rolo
@@ -384,3 +384,49 @@ WantedBy=multi-user.target
 ```
 #
 #############################################################################  Service NR  ############## -->
+
+
+<!-- INSTALLING NOTES
+
+cd $HOME
+rm -rf nym
+git clone https://github.com/nymtech/nym.git
+cd nym
+git checkout master
+cargo build --release --bin nym-mixnode
+
+echo 'export node_id=nymsy' >> $HOME/.bash_profile
+
+./nym-mixnode init --id $node_id --host $(curl -4 https://ifconfig.me)
+
+./nym-mixnode sign --id $node_id --contract-msg .....FWRfgwetrTGEGer........
+
+
+sudo tee <<EOF >/dev/null /etc/systemd/journald.conf
+Storage=persistent
+EOF
+sudo systemctl restart systemd-journald
+
+sudo tee <<EOF >/dev/null /etc/systemd/system/nym-mixnode.service
+[Unit]
+Description=Mixnode_nymsy
+
+[Service]
+User=$USER
+ExecStart=/usr/local/bin/nym-mixnode run --id '$node_id'
+KillSignal=SIGINT
+Restart=on-failure
+RestartSec=5
+StartLimitInterval=600
+StartLimitBurst=30
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl daemon-reload
+
+echo "DefaultLimitNOFILE=65535" | sudo tee -a /etc/systemd/system.conf
+
+INSTALLING NOTES -->
