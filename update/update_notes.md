@@ -1,42 +1,42 @@
 <!-- ##################################################################
 # Mixnode
-binary v2023.5-rolo
-version 1.1.34
-config 1.1.34
-wallet 1.1.34
+binary v2024.1-marabou
+version 1.1.35
+config 1.1.35
+wallet 1.1.35
 
 # NR
-binary v2023.5-rolo
-version 1.1.31
-config 1.1.31
+binary v2024.1-marabou
+version 1.1.33
+config 1.1.33
 
 # GW
-binary v2023.5-rolo
-version 1.1.32
-config 1.1.32
-wallet 1.1.32
+binary v2024.1-marabou
+version 1.1.33
+config 1.1.33
+wallet 1.1.33
 ################################################################## -->
 
 
 #### `This is how-to-update manual`
 
 
-# Upd. 28.11.2023 v2023.5-rolo
+# Upd. 20.02.2024 v2024.1-marabou
 
 > **NM** - Nym Mixnode    
 > **GW** - Gateway    
 > **NR** - Nym Network Requestor    
 
 #### Versions to put in the config files and in the Nym Wallet
-- **NM** version 1.1.34
-- **GW** - version 1.1.32
-- **NR** -version 1.1.31
+- **NM** version 1.1.35
+- **GW** - version 1.1.33
+- **NR** -version 1.1.33
 
 > #### GW and NR yet are splited here
 #
 
 #### Nym binaries
-https://github.com/nymtech/nym/releases/tag/nym-binaries-v2023.5-rolo
+https://github.com/nymtech/nym/releases/tag/nym-binaries-v2024.1-marabou
 
 ____
 
@@ -104,11 +104,11 @@ echo -e "\033[31m Failed to update mixnode version \033[0m"
 > ```
 > nano ~/.nym/mixnodes/$node_id/config/config.toml
 > ```
-> Change to current mixnode version `1.1.31`    
+> Change to current mixnode version `x.xx`    
 > ```bash
 > [mixnode]
 > # Version of the NM for which this configuration was created.
-> version = '1.1.31'
+> version = 'x.xx'
 > ```
 > #### 2. Or run *init* command.
 
@@ -243,7 +243,7 @@ nano ~/.nym/clients/$nc_name/config/config.toml
 ########################### END OLD ## for v 1_1_10 ############################### -->
 
 
-### Edit configuration. Change version to the current 1.1.31 in the config file of the NR
+### Edit configuration. Change version to the current 1.1.33 in the config file of the NR
 > #### How to:
 > Enter name for your NR, for exmp. `nr_name=my_nr`    
 ```
@@ -256,7 +256,7 @@ nano ~/.nym/service-providers/network-requester/$nr_name/config/config.toml
 > ```
 > [client]
 > # Version of the client for which this configuration was created.
-> version = '1.1.31'
+> version = '1.1.33'
 > ```
 
 ### Replace and restart
@@ -280,7 +280,7 @@ git checkout master
 cargo build --release --bin nym-gateway
 ```
 
-### Change version to actual 1.1.32 in the config file
+### Change version to actual 1.1.33 in the config file
 > #### How to. Enter name of your GW, for exmp. `gateway_name=my_gateway`    
 > `gateway_name=`
 ```bash
@@ -291,7 +291,7 @@ nano ~/.nym/gateways/$gateway_name/config/config.toml
 > #### It should looks like
 > ```bash
 > # Version of the gateway for which this configuration was created.
-> version = '1.1.32`
+> version = '1.1.33`
 > ```
 
 <!-- #####################################################################################
@@ -319,7 +319,7 @@ sudo systemctl daemon-reload && \
 sudo systemctl start nym-gateway && sudo journalctl -u nym-gateway -f -o cat
 ```
 
-### Change version to 1.1.32 in the Nym Wallet
+### Change version to 1.1.33 in the Nym Wallet
 Menu Bonding -> Gateway Settings    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett.jpg)    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett2.jpg)    
