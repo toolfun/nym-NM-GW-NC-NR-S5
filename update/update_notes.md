@@ -77,7 +77,7 @@ git checkout release/ v 1_1_15
 ### After build:
 #### We need to update the version in the config
 ```bash
-export VERSION="1.1.34"
+export VERSION="1.1.35"
 read -p " Enter your mixnode id: " node_id
 echo -e " You entered: \033[92m$node_id\033[0m"
 sleep 0.5
@@ -144,7 +144,7 @@ sudo mv ~/nym/target/release/nym-mixnode $(which nym-mixnode) && \
 sudo systemctl start nym-mixnode && sudo journalctl -u nym-mixnode -f -o cat
 ```
 
-### Change mixnode version to the v1.1.34 in the Nym Wallet (Bonding - Node Settings section)
+### Change mixnode version to the v1.1.35 in the Nym Wallet (Bonding - Node Settings section)
 
 #
 
