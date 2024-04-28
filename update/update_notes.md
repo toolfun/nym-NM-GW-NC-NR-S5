@@ -17,9 +17,9 @@ config 1.1.33
 wallet 1.1.33
 ################################################################## -->
 
+# `OUTDATED, will be fixed soon`
 
 #### `This is how-to-update manual`
-
 
 # Upd. 20.02.2024 v2024.1-marabou
 
