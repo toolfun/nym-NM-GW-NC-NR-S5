@@ -74,7 +74,6 @@ cargo build --release --bin nym-node
 ```bash
 sudo systemctl stop nym-node && \
 sudo mv ~/nym/target/release/nym-node $(which nym-node) && \
-sudo systemctl daemon-reload && \
 sudo systemctl start nym-node && sudo journalctl -u nym-node -f -o cat
 ```
 
@@ -83,3 +82,45 @@ Menu Bonding -> Gateway Settings
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett.jpg)    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett2.jpg)    
 
+<!-- ######################################### Service GW #############
+
+```
+[Unit]
+Description=Nym-node-GW
+
+[Service]
+User=$USER
+ExecStart=/usr/local/bin/nym-node run --id <NODE_ID> --mode exit-gateway --deny-init
+KillSignal=SIGINT
+Restart=on-failure
+RestartSec=5
+StartLimitInterval=350
+StartLimitBurst=10
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+```
+
+
+```
+[Unit]
+Description=Nym-node-mixnode
+
+[Service]
+User=$USER
+ExecStart=/usr/local/bin/nym-node run --id <NODE_ID> --mode mixnode --deny-init --public-ips <IPv4>
+KillSignal=SIGINT
+Restart=on-failure
+RestartSec=10
+StartLimitInterval=350
+StartLimitBurst=10
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+
+
+######################################### Service GW ############# -->
