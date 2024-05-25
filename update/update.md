@@ -1,6 +1,4 @@
-# 🚧🚧🚧 under construction
-
-#### `This is how-to-update manual`
+#### `This is how-to-update-only manual`
 
 # Upd. 24.05.2024 v2024.5-ragusa
 
