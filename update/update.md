@@ -1,18 +1,15 @@
 #### `This is how-to-update-only manual`
 
-# Upd. 24.05.2024 v2024.5-ragusa
+# Upd. 27.06.2024 v2024.6-chomp
 
-> **NM** - Nym node, mode Mixnode
-> **GW** - Nym node, mode Gateway
+https://github.com/nymtech/nym/releases/tag/nym-binaries-v2024.6-chomp
+> 
+> **NM** - Nym node: mixnode mode    
+> **GW** - Nym node: gateway mode
 
 <!-- ################################################################
 > **NR** - Nym node, mode Network Requestor    
 ################################################################ -->
-
-#### Nym binaries
-https://github.com/nymtech/nym/releases/tag/nym-binaries-v2024.5-ragusa
-
-____
 
 
 ### Update and install tools
