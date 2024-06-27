@@ -1,11 +1,14 @@
 #### `This is how-to-update-only manual`
-
-# Upd. 27.06.2024 v2024.6-chomp
-
-https://github.com/nymtech/nym/releases/tag/nym-binaries-v2024.6-chomp
 > 
 > **NM** - Nym node: mixnode mode    
 > **GW** - Nym node: gateway mode
+# Upd. 27.06.2024 v2024.6-chomp
+
+Releases    
+https://github.com/nymtech/nym/releases/tag/nym-binaries-v2024.6-chomp    
+Changelog    
+https://nymtech.net/operators/changelog.html
+
 
 <!-- ################################################################
 > **NR** - Nym node, mode Network Requestor    
