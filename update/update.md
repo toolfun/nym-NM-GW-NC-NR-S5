@@ -37,7 +37,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2024.5-ragusa
+git checkout master
 cargo build --release --bin nym-node
 ```
 
@@ -63,7 +63,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2024.5-ragusa
+git checkout master
 cargo build --release --bin nym-node
 ```
 
