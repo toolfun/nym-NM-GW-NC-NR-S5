@@ -52,7 +52,7 @@ sudo mv ~/nym/target/release/nym-node $(which nym-node) && \
 sudo systemctl start nym-node && sudo journalctl -u nym-node -f -o cat
 ```
 
-### Change mixnode version to the v1.1.2 in the Nym Wallet (Bonding - Node Settings section)
+### Change mixnode version to the v1.1.3 in the Nym Wallet (Bonding - Node Settings section)
 
 #
 
@@ -74,7 +74,7 @@ sudo mv ~/nym/target/release/nym-node $(which nym-node) && \
 sudo systemctl start nym-node && sudo journalctl -u nym-node -f -o cat
 ```
 
-### Change version to 1.1.2 in the Nym Wallet
+### Change version to 1.1.3 in the Nym Wallet
 Menu Bonding -> Gateway Settings    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett.jpg)    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett2.jpg)    
