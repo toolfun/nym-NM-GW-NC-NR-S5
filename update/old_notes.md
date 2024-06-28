@@ -17,20 +17,17 @@ config 1.1.33
 wallet 1.1.33
 ################################################################## -->
 
+
 # `OUTDATED 🙄`
 
-#### `This is how-to-update manual`
 
-> **NM** - Nym Mixnode    
-> **GW** - Gateway    
-> **NR** - Nym Network Requestor    
 
 #### Versions to put in the config files and in the Nym Wallet
 - **NM** version 1.1.35
 - **GW** - version 1.1.33
 - **NR** -version 1.1.33
 
-> #### GW and NR yet are splited here
+> #### GW and NR yet are splited
 #
 
 #### Nym binaries
