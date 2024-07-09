@@ -2,9 +2,18 @@
 > 
 > **NM** - Nym node: mixnode mode    
 > **GW** - Nym node: gateway mode
+
+<!-- ----------------------
+# Upd. 09.07.2024 Nym Binaries v2024.7-doubledecker
+----------------------- -->
 # Upd. 27.06.2024 v2024.6-chomp
 
 Releases    
+<!-- ----------------------
+https://github.com/nymtech/nym/releases/tag/nym-binaries-v2024.7-doubledecker    
+Changelog    
+https://github.com/nymtech/nym/blob/nym-binaries-v2024.7-doubledecker/CHANGELOG.md
+----------------------- -->
 https://github.com/nymtech/nym/releases/tag/nym-binaries-v2024.6-chomp    
 Changelog    
 https://nymtech.net/operators/changelog.html
