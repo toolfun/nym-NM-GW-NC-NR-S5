@@ -23,7 +23,7 @@ sudo apt update && sudo apt upgrade -y
 ```
 ```
 sudo dpkg --configure -a
-sudo apt install curl wget ufw make clang pkg-config libssl-dev build-essential git jq htop
+sudo apt install make clang pkg-config libssl-dev build-essential git jq
 ```
 
 ### Install or update Rust
@@ -54,7 +54,7 @@ git checkout release/ v 1_1_15
 ```
 sudo systemctl stop nym-node && \
 sudo mv ~/nym/target/release/nym-node $(which nym-node) && \
-sudo systemctl start nym-node && sudo journalctl -u nym-node -f -o cat
+sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```
 
 ### Change mixnode version to the 1.1.4 in the Nym Wallet (Bonding - Node Settings section)
@@ -76,7 +76,7 @@ cargo build --release --bin nym-node
 ```bash
 sudo systemctl stop nym-node && \
 sudo mv ~/nym/target/release/nym-node $(which nym-node) && \
-sudo systemctl start nym-node && sudo journalctl -u nym-node -f -o cat
+sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```
 
 ### Change version to 1.1.4 in the Nym Wallet
