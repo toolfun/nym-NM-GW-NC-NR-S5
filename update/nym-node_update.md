@@ -84,7 +84,7 @@ Menu Bonding -> Gateway Settings
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett.jpg)    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett2.jpg)    
 
-<!-- ######################################### Service GW #############
+<!-- ######################################### Service #############
 
 ```
 [Unit]
@@ -92,7 +92,7 @@ Description=Nym-node-GW
 
 [Service]
 User=$USER
-ExecStart=/usr/local/bin/nym-node run --id <NODE_ID> --mode exit-gateway --deny-init
+ExecStart=/usr/local/bin/nym-node run --id <NODE_ID> --mode exit-gateway --deny-init --accept-operator-terms-and-conditions
 KillSignal=SIGINT
 Restart=on-failure
 RestartSec=5
@@ -111,7 +111,7 @@ Description=Nym-node-mixnode
 
 [Service]
 User=$USER
-ExecStart=/usr/local/bin/nym-node run --id <NODE_ID> --mode mixnode --deny-init --public-ips <IPv4>
+ExecStart=/usr/local/bin/nym-node run --id <NODE_ID> --mode mixnode --deny-init --public-ips <IPv4> --accept-operator-terms-and-conditions
 KillSignal=SIGINT
 Restart=on-failure
 RestartSec=10
@@ -125,4 +125,21 @@ EOF
 ```
 
 
-######################################### Service GW ############# -->
+######################################### Service ############# -->
+
+<!-- ---------------------------- node move
+  copy old server
+nym-nodes dir, service file
+
+update
+ulimit
+ufw
+
+  change on new server
+node ID if needed
+node path if the username changed
+[example /home/<USERNAME>/.nym/nym-nodes/<NODE-ID>/data/x25519_noise.pub]
+IP
+
+
+----------------------------- node move -->
