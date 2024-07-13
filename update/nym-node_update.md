@@ -135,11 +135,11 @@ update
 ulimit
 ufw
 
-  change on new server
-node ID if needed
-node path if the username changed
+  change on new server (dir names if needed and config.toml)
+node ID - if needed
+node path - if the username has been changed
 [example /home/<USERNAME>/.nym/nym-nodes/<NODE-ID>/data/x25519_noise.pub]
 IP
-
+Location - if changed
 
 ----------------------------- node move -->
