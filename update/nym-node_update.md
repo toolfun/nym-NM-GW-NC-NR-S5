@@ -3,12 +3,12 @@
 > **NM** - Nym node: mixnode mode    
 > **GW** - Nym node: gateway mode
 
-# Upd. 09.07.2024 Nym Binaries v2024.7-doubledecker
+# Upd. 29.07.2024 Nym Binaries v2024.8-wispa
 
 Releases    
-https://github.com/nymtech/nym/releases/tag/nym-binaries-v2024.7-doubledecker    
+https://github.com/nymtech/nym/releases/tag/nym-binaries-v2024.8-wispa    
 Changelog    
-https://github.com/nymtech/nym/blob/nym-binaries-v2024.7-doubledecker/CHANGELOG.md
+https://github.com/nymtech/nym/blob/nym-binaries-v2024.8-wispa/CHANGELOG.md
 
 
 
@@ -57,7 +57,7 @@ sudo mv ~/nym/target/release/nym-node $(which nym-node) && \
 sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```
 
-### Change mixnode version to the 1.1.4 in the Nym Wallet (Bonding - Node Settings section)
+### Change mixnode version to the 1.1.5 in the Nym Wallet (Bonding - Node Settings section)
 
 #
 
@@ -79,7 +79,7 @@ sudo mv ~/nym/target/release/nym-node $(which nym-node) && \
 sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```
 
-### Change version to 1.1.4 in the Nym Wallet
+### Change version to 1.1.5 in the Nym Wallet
 Menu Bonding -> Gateway Settings    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett.jpg)    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett2.jpg)    
