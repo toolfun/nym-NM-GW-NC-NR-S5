@@ -92,25 +92,28 @@ Menu Bonding -> Gateway Settings
 <!-- ######################################### Service #############
 
 ```
+sudo tee <<EOF >/dev/null /etc/systemd/system/nym-node.service
 [Unit]
-Description=Nym-node-GW
+Description=Nym_node_exgw
 
 [Service]
 User=$USER
-ExecStart=/usr/local/bin/nym-node run --id <NODE_ID> --mode exit-gateway --deny-init --accept-operator-terms-and-conditions
+ExecStart=/usr/local/bin/nym-node run --id <NODE_ID> --mode exit-gateway --accept-operator-terms-and-conditions
 KillSignal=SIGINT
 Restart=on-failure
 RestartSec=5
 StartLimitInterval=350
-StartLimitBurst=10
+StartLimitBurst=20
 LimitNOFILE=65535
 
 [Install]
 WantedBy=multi-user.target
+EOF
 ```
 
 
 ```
+sudo tee <<EOF >/dev/null /etc/systemd/system/nym-node.service
 [Unit]
 Description=Nym-node-mixnode
 
@@ -120,6 +123,27 @@ ExecStart=/usr/local/bin/nym-node run --id <NODE_ID> --mode mixnode --deny-init 
 KillSignal=SIGINT
 Restart=on-failure
 RestartSec=10
+StartLimitInterval=350
+StartLimitBurst=10
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+
+NG:
+```
+sudo tee <<EOF >/dev/null /etc/systemd/system/nym-node.service
+[Unit]
+Description=Nym Mixnode
+
+[Service]
+User=$USER
+ExecStart=/usr/local/bin/nym-mixnode run --id '$node_id'
+KillSignal=SIGINT
+Restart=on-failure
+RestartSec=30
 StartLimitInterval=350
 StartLimitBurst=10
 LimitNOFILE=65535
