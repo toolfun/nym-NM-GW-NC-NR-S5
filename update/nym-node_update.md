@@ -126,7 +126,7 @@ just notes, general steps
 # ulimit
 # network_tunnel_manager.sh script
 # service nym-node
-# description.toml
+# description.toml (~/.nym/nym-nodes/<NODE_ID>/data/description.toml)
 
 # init (exit GW):
 # nym-node run --id <NODE_ID> --mode exit-gateway --public-ips "$(curl -4 https://ifconfig.me)" --http-bind-address 0.0.0.0:8080 --mixnet-bind-address 0.0.0.0:1789 --location <LOCATION> --accept-operator-terms-and-conditions --wireguard-enabled false
