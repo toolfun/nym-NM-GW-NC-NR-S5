@@ -3,10 +3,15 @@
 > **NM** - Nym node: mixnode mode    
 > **GW** - Nym node: gateway mode
 
-# Upd. 29.07.2024 Nym Binaries v2024.8-wispa
+<!-- 
+## Upd. 06.08.2024 Nym Binaries v2024.9-topdeck
 
-Releases    
-https://github.com/nymtech/nym/releases/tag/nym-binaries-v2024.8-wispa    
+Changelog    
+https://github.com/nymtech/nym/blob/nym-binaries-v2024.9-topdeck/CHANGELOG.md
+-->
+
+## Upd. 29.07.2024 Nym Binaries v2024.8-wispa
+
 Changelog    
 https://github.com/nymtech/nym/blob/nym-binaries-v2024.8-wispa/CHANGELOG.md
 
