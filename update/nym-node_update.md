@@ -1,20 +1,20 @@
 #### `quick update manual`
+#
 > 
 > **NM** - Nym node: mixnode mode    
 > **GW** - Nym node: gateway mode
 
+> Nym operator docs https://nymtech.net/operators
+
 <!-- 
 ## Upd. 06.08.2024 Nym Binaries v2024.9-topdeck
 
-Changelog    
-https://github.com/nymtech/nym/blob/nym-binaries-v2024.9-topdeck/CHANGELOG.md
+#### Changelog https://github.com/nymtech/nym/blob/nym-binaries-v2024.9-topdeck/CHANGELOG.md
 -->
 
-## Upd. 29.07.2024 Nym Binaries v2024.8-wispa
-
-Changelog    
-https://github.com/nymtech/nym/blob/nym-binaries-v2024.8-wispa/CHANGELOG.md
-
+# Upd. 29.07.2024 Nym Binaries v2024.8-wispa
+#### Changelog https://github.com/nymtech/nym/blob/nym-binaries-v2024.8-wispa/CHANGELOG.md
+#
 
 
 <!-- ################################################################
