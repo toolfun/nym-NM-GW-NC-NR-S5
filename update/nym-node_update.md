@@ -1,4 +1,4 @@
-#### `This is how-to-update-only manual`
+#### `quick update manual`
 > 
 > **NM** - Nym node: mixnode mode    
 > **GW** - Nym node: gateway mode
