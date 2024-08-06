@@ -89,6 +89,69 @@ Menu Bonding -> Gateway Settings
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett.jpg)    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett2.jpg)    
 
+#
+#
+#
+____
+____
+
+<!--------------------- install from scratch tl;dr
+#### install from scratch tl;dr
+```jason
+wallet 100 NYM
+apt update
+install dependencies
+ufw
+ulimit
+network_tunnel_manager.sh script
+
+init (exit GW mode):
+./nym-node run --id <NODE_ID> --mode exit-gateway --public-ips "$(curl -4 https://ifconfig.me)" --http-bind-address 0.0.0.0:8080 --mixnet-bind-address 0.0.0.0:1789 --location <LOCATION> --accept-operator-terms-and-conditions --wireguard-enabled false
+
+service nym-node
+nym-node bonding-information --id <NODE_ID>
+bond
+
+network_tunnel_manager.sh next checks (show nymtun0 and joke)
+```
+---------------------install from scratch tl;dr  -->
+
+## ( # install from scratch tl;dr )
+just notes, general steps
+```
+# wallet 100 NYM
+# apt update
+# install dependencies
+# ufw
+# ulimit
+# network_tunnel_manager.sh script
+# service nym-node
+
+# init (exit GW):
+# nym-node run --id <NODE_ID> --mode exit-gateway --public-ips "$(curl -4 https://ifconfig.me)" --http-bind-address 0.0.0.0:8080 --mixnet-bind-address 0.0.0.0:1789 --location <LOCATION> --accept-operator-terms-and-conditions --wireguard-enabled false
+
+# nym-node bonding-information --id <NODE_ID>
+# bond
+# network_tunnel_manager.sh next checks (show nymtun0 and joke)
+```
+
+<!--
+##### wallet 100 NYM
+##### apt update
+##### install dependencies
+##### ufw
+##### ulimit
+##### network_tunnel_manager.sh script
+##### service nym-node
+
+##### init (exit GW mode):
+##### nym-node run --id <NODE_ID> --mode exit-gateway --public-ips "$(curl -4 https://ifconfig.me)" --http-bind-address 0.0.0.0:8080 --mixnet-bind-address 0.0.0.0:1789 --location <LOCATION> --accept-operator-terms-and-conditions --wireguard-enabled false
+
+##### nym-node bonding-information --id <NODE_ID>
+##### bond
+##### network_tunnel_manager.sh next checks (show nymtun0 and joke)
+-->
+
 <!-- ######################################### Service #############
 
 ```
