@@ -37,6 +37,8 @@ rustup update
 #
 
 ### 🟠 NM UPDATING
+### BUILD or DOWNLOAD
+
 ### Build nym-node
 ```bash
 cd $HOME
@@ -56,6 +58,21 @@ git checkout release/ v 1_1_15
 sudo systemctl stop nym-node && \
 sudo mv ~/nym/target/release/nym-node $(which nym-node) && \
 sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
+```
+### DOWNLOAD
+### Download and restart
+```sh
+cd ~/
+NYM_VERSION='nym-binaries-v2024.9-topdeck'
+# download binary
+wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
+chmod u+x nym-node
+# stop nym-node
+sudo systemctl stop nym-node
+# backup current binary
+cp $(which nym-node) nym-node-backup
+# restart with a new binary
+sudo mv ~/nym-node $(which nym-node) && sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat -n 50
 ```
 
 ### Change mixnode version to the 1.1.6 in the Nym Wallet (Bonding - Node Settings section)
