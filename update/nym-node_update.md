@@ -148,7 +148,7 @@ just notes, general steps
 
 # nym-node bonding-information --id <NODE_ID>
 # bond
-# network_tunnel_manager.sh next checks (show nymtun0 and joke)
+# network_tunnel_manager.sh next checks (show nymtun0 and joke, and joke_wg for the GW)
 ```
 
 
@@ -219,6 +219,7 @@ EOF
 
 ######################################### Service ############# -->
 
+
 <!-- ---------------------------- node move
   copy old server
 nym-nodes dir, service file
@@ -235,3 +236,29 @@ IP
 Location - if changed
 
 ----------------------------- node move -->
+
+
+<!-- ---------------------------- Download nym-node binary and run
+cd ~/
+# download binary
+wget https://github.com/nymtech/nym/releases/download/nym-binaries-v2024.9-topdeck/nym-node
+chmod u+x nym-node
+# stop nym-node
+sudo systemctl stop nym-node
+# backup current binary
+cp $(which nym-node) nym-node-backup
+# restart with new binary
+sudo mv ~/nym-node $(which nym-node) && sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat -n 50
+
+#
+#
+
+# Reverse #
+# stop nym-node
+sudo systemctl stop nym-node
+# copy backup binary back
+cp nym-node-backup $(which nym-node)
+# restart with new binary
+sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat -n 50
+----------------------------- Download nym-node binary and run -->
+
