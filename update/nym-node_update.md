@@ -134,7 +134,7 @@ just notes, general steps
 
 
 <!-- ######################################### Service #############
-
+v1.1.6 with wg enabled
 ```
 sudo tee <<EOF >/dev/null /etc/systemd/system/nym-node.service
 [Unit]
@@ -142,7 +142,7 @@ Description=Nym_node_exgw
 
 [Service]
 User=$USER
-ExecStart=/usr/local/bin/nym-node run --id <NODE_ID> --mode exit-gateway --accept-operator-terms-and-conditions
+ExecStart=/usr/local/bin/nym-node run --id <NODE_ID> --mode exit-gateway --accept-operator-terms-and-conditions --wireguard-enabled true
 KillSignal=SIGINT
 Restart=on-failure
 RestartSec=5
