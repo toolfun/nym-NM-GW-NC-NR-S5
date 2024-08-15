@@ -9,6 +9,8 @@
 
 ## Upd. 06.08.2024 Nym Binaries v2024.9-topdeck
 #### Changelog https://github.com/nymtech/nym/blob/nym-binaries-v2024.9-topdeck/CHANGELOG.md
+Important changes:    
+enabling wireguard for gateways
 
 #
 
