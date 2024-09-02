@@ -49,7 +49,7 @@ git clone https://github.com/nymtech/nym.git
 cd nym
 git checkout master
 cargo build --release --bin nym-node
-# Uncomment below string with '--features wireguard' if a normally compiled binary doesn't work:
+# Uncomment and use below command with '--features wireguard' if a normally compiled binary doesn't work:
 # cargo build --release --bin nym-node --features wireguard
 ```
 
