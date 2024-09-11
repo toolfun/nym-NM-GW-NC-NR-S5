@@ -11,6 +11,11 @@
 
 Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.10-caramello/CHANGELOG.md    
 
+Important points for the operators ([details here](https://nymtech.net/operators/changelog.html#operators-tasks)):      
+- add description
+- new network_tunnel_manager.sh
+- setup reverse proxy and WSS    
+
 #
 
 
