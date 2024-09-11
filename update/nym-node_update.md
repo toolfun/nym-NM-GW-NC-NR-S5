@@ -7,10 +7,9 @@
 > Nym operator docs https://nymtech.net/operators
 
 
-## Upd. 06.08.2024 Nym Binaries v2024.9-topdeck
-Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.9-topdeck/CHANGELOG.md    
-Important changes:    
-- Enabling wireguard for gateways
+## Upd. 11.09.2024 Nym Binaries v2024.10-caramello
+
+Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.10-caramello/CHANGELOG.md    
 
 #
 
@@ -67,7 +66,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ### Download and restart
 ```sh
 cd ~/
-NYM_VERSION='nym-binaries-v2024.9-topdeck'
+NYM_VERSION='nym-binaries-v2024.10-caramello'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
@@ -79,7 +78,7 @@ cp $(which nym-node) nym-node-backup
 sudo mv ~/nym-node $(which nym-node) && sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat -n 50
 ```
 
-### Change mixnode version to the 1.1.6 in the Nym Wallet (Bonding - Node Settings section)
+### Change mixnode version to the 1.1.7 in the Nym Wallet (Bonding - Node Settings section)
 
 #
 
@@ -101,7 +100,7 @@ sudo mv ~/nym/target/release/nym-node $(which nym-node) && \
 sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```
 
-### Change version to 1.1.6 in the Nym Wallet
+### Change version to 1.1.7 in the Nym Wallet
 Menu Bonding -> Gateway Settings    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett.jpg)    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett2.jpg)    
@@ -155,7 +154,7 @@ just notes, general steps
 
 
 <!-- ######################################### Service #############
-v1.1.6 with wg enabled
+v1.1.7 with wg enabled
 ```
 sudo tee <<EOF >/dev/null /etc/systemd/system/nym-node.service
 [Unit]
@@ -243,7 +242,8 @@ Location - if changed
 <!-- ---------------------------- Download nym-node binary and run
 cd ~/
 # download binary
-wget https://github.com/nymtech/nym/releases/download/nym-binaries-v2024.9-topdeck/nym-node
+NYM_VERSION='nym-binaries-v2024.10-caramello'
+wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
 # stop nym-node
 sudo systemctl stop nym-node
