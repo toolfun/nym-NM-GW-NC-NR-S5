@@ -63,6 +63,7 @@ git checkout release/ v 1_1_15
 
 ### Replace and restart
 ```
+# sudo systemctl daemon-reload
 sudo systemctl stop nym-node && \
 sudo mv ~/nym/target/release/nym-node $(which nym-node) && \
 sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
@@ -100,6 +101,7 @@ cargo build --release --bin nym-node
 
 ### Replace and restart
 ```bash
+# sudo systemctl daemon-reload
 sudo systemctl stop nym-node && \
 sudo mv ~/nym/target/release/nym-node $(which nym-node) && \
 sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
