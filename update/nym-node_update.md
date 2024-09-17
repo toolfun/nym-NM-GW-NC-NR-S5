@@ -7,9 +7,10 @@
 > Nym operator docs https://nymtech.net/operators
 
 
-## Upd. 11.09.2024 Nym Binaries v2024.10-caramello
+## Upd. 11.09.2024 nym-binaries-v2024.10-caramello-patch
 
-Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.10-caramello/CHANGELOG.md    
+Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.10-caramello-patch/CHANGELOG.md    
++ Patch 
 
 Important points for the operators ([details here](https://nymtech.net/operators/changelog.html#operators-tasks)):      
 - add description
@@ -69,8 +70,8 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ### DOWNLOAD
 ### Download and restart
 ```sh
-cd ~/
-NYM_VERSION='nym-binaries-v2024.10-caramello'
+cd
+NYM_VERSION='nym-binaries-v2024.10-caramello-patch'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
@@ -247,7 +248,7 @@ Location - if changed
 <!-- ---------------------------- Download nym-node binary and run
 cd ~/
 # download binary
-NYM_VERSION='nym-binaries-v2024.10-caramello'
+NYM_VERSION='nym-binaries-v2024.10-caramello-patch'
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
 # stop nym-node
