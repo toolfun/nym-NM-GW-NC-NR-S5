@@ -7,15 +7,19 @@
 > Nym operator docs https://nymtech.net/operators
 
 
+
 ## Upd. 11.09.2024 nym-binaries-v2024.10-caramello-patch
 
 Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.10-caramello-patch/CHANGELOG.md    
-+ Patch 
 
 Important points for the operators ([details here](https://nymtech.net/operators/changelog.html#operators-tasks)):      
 - add description
 - new network_tunnel_manager.sh
 - setup reverse proxy and WSS    
+
+#### 16.09.2024 Patch
+Patch fixes **v202410-caramello** release bug where one of the used dependencies - **DefGuard**, was failing.
+Updating to this patched version and running `nym-node --mode exit-gateway` with `--wireguard-enabled true` should result in a smooth node start without the defguard_wireguard error, occuring to some operators before
 
 #
 
@@ -52,7 +56,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout master
+git checkout nym-binaries-v2024.10-caramello-patch
 cargo build --release --bin nym-node
 ```
 
