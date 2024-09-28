@@ -8,18 +8,14 @@
 
 
 
-## Upd. 11.09.2024 nym-binaries-v2024.10-caramello-patch
+## Upd. `Pre-release`
+### 24.09.2024 nym-binaries-v2024.11-wedel
 
-Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.10-caramello-patch/CHANGELOG.md    
+Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.11-wedel/CHANGELOG.md    
 
-Important points for the operators ([details here](https://nymtech.net/operators/changelog.html#operators-tasks)):      
-- add description
-- new network_tunnel_manager.sh
-- setup reverse proxy and WSS    
+Key changes for operators:
+- simplification and clarification of manuals
 
-#### 16.09.2024 Patch
-Patch fixes **v202410-caramello** release bug where one of the used dependencies - **DefGuard**, was failing.
-Updating to this patched version and running `nym-node --mode exit-gateway` with `--wireguard-enabled true` should result in a smooth node start without the defguard_wireguard error, occuring to some operators before
 
 #
 
@@ -56,7 +52,7 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2024.10-caramello-patch
+git checkout master
 cargo build --release --bin nym-node
 ```
 
@@ -75,7 +71,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ### Download and restart
 ```sh
 cd
-NYM_VERSION='nym-binaries-v2024.10-caramello-patch'
+NYM_VERSION='nym-binaries-v2024.11-wedel'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
@@ -252,7 +248,7 @@ Location - if changed
 <!-- ---------------------------- Download nym-node binary and run
 cd ~/
 # download binary
-NYM_VERSION='nym-binaries-v2024.10-caramello-patch'
+NYM_VERSION='nym-binaries-v2024.11-wedel'
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
 # stop nym-node
