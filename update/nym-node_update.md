@@ -8,8 +8,7 @@
 
 
 
-## Upd. `Pre-release`
-### 24.09.2024 nym-binaries-v2024.11-wedel
+## 24.09.2024 nym-binaries-v2024.11-wedel
 
 Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.11-wedel/CHANGELOG.md    
 
