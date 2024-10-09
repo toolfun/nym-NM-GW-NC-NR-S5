@@ -82,7 +82,7 @@ cp $(which nym-node) nym-node-backup
 sudo mv ~/nym-node $(which nym-node) && sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat -n 50
 ```
 
-### Change mixnode version to the 1.1.7 in the Nym Wallet (Bonding - Node Settings section)
+### Change mixnode version to the 1.1.8 in the Nym Wallet (Bonding - Node Settings section)
 
 #
 
@@ -105,7 +105,7 @@ sudo mv ~/nym/target/release/nym-node $(which nym-node) && \
 sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```
 
-### Change version to 1.1.7 in the Nym Wallet
+### Change version to 1.1.8 in the Nym Wallet
 Menu Bonding -> Gateway Settings    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett.jpg)    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett2.jpg)    
@@ -159,7 +159,7 @@ just notes, general steps
 
 
 <!-- ######################################### Service #############
-v1.1.7 with wg enabled
+--------------- with wg enabled
 ```
 sudo tee <<EOF >/dev/null /etc/systemd/system/nym-node.service
 [Unit]
