@@ -5,10 +5,11 @@
 > **GW** - Nym node: gateway mode
 
 > Nym operator docs https://nymtech.net/operators
+> #### These are just notes on how to update. Please refer to the official documentation to install nym node
 
+#
 
-
-## 24.09.2024 nym-binaries-v2024.11-wedel
+# 24.09.2024 nym-binaries-v2024.11-wedel
 
 Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.11-wedel/CHANGELOG.md    
 
@@ -45,6 +46,7 @@ rustup update
 ### 🟠 NM UPDATING
 ### BUILD or DOWNLOAD
 
+- ### BUILD
 ### Build nym-node
 ```bash
 cd $HOME
@@ -53,6 +55,11 @@ git clone https://github.com/nymtech/nym.git
 cd nym
 git checkout master
 cargo build --release --bin nym-node
+```
+
+### Show builded binary info
+```
+~/nym/target/release/nym-node build-info
 ```
 
 <!--
@@ -66,19 +73,28 @@ sudo systemctl stop nym-node && \
 sudo mv ~/nym/target/release/nym-node $(which nym-node) && \
 sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```
-### DOWNLOAD
-### Download and restart
+- ### DOWNLOAD
+### Download nym-node binary
 ```sh
 cd
 NYM_VERSION='nym-binaries-v2024.11-wedel'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
+```
+
+### Check downloaded binary info
+```
+nym-node build-info
+```
+
+### Restart with the new version
+```
 # stop nym-node
 sudo systemctl stop nym-node
 # backup current binary
 cp $(which nym-node) nym-node-backup
-# restart with a new binary
+# restart with the new binary
 sudo mv ~/nym-node $(which nym-node) && sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat -n 50
 ```
 
