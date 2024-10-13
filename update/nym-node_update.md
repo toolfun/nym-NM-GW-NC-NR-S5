@@ -4,6 +4,8 @@
 > **NM** - Nym node: mixnode mode    
 > **GW** - Nym node: gateway mode
 
+> The current design requires working with sudo privileges 
+
 > Nym operator docs https://nymtech.net/operators
 > #### These are just notes on how to update. Please refer to the official documentation to install nym node
 
@@ -171,7 +173,10 @@ just notes, general steps
 # nym-node bonding-information --id <NODE_ID>
 # bond
 # network_tunnel_manager.sh next checks (show nymtun0 and joke, and joke_wg for the GW)
+# reverse proxy & wss
 ```
+
+
 
 
 <!-- ######################################### Service #############
