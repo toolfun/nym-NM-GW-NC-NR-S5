@@ -11,21 +11,22 @@
 
 #
 
-# 24.09.2024 nym-binaries-v2024.11-wedel
 
+<!-- PRE RELEASE -----------------
+----------------------------------
+17.10.2024 Nym Binaries v2024.12-aero Pre-release
+Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.12-aero/CHANGELOG.md
+----------------------------------
+------------------- PRE RELEASE -->
+
+
+# 24.09.2024 nym-binaries-v2024.11-wedel
 Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.11-wedel/CHANGELOG.md    
 
 Key changes for operators:
 - simplification and clarification of manuals
 
-
 #
-
-
-<!-- ################################################################
-> **NR** - Nym node, mode Network Requestor    
-################################################################ -->
-
 
 ### Update and install tools
 ```
