@@ -87,11 +87,12 @@ chmod u+x nym-node
 
 ### Check downloaded binary info
 ```
-nym-node build-info
+./nym-node build-info
 ```
 
 ### Restart with the new version
 ```
+cd
 # stop nym-node
 sudo systemctl stop nym-node
 # backup current binary
