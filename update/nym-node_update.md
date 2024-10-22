@@ -12,19 +12,11 @@
 #
 
 
-<!-- PRE RELEASE -----------------
-----------------------------------
-17.10.2024 Nym Binaries v2024.12-aero Pre-release
+# 17.10.2024 Nym Binaries v2024.12-aero
 Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.12-aero/CHANGELOG.md
-----------------------------------
-------------------- PRE RELEASE -->
-
-
-# 24.09.2024 nym-binaries-v2024.11-wedel
-Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.11-wedel/CHANGELOG.md    
 
 Key changes for operators:
-- simplification and clarification of manuals
+- The faster the operators upgrade to this latest release, the better. Nym team started another round of load and speed testing.
 
 #
 
@@ -80,7 +72,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ### Download nym-node binary
 ```sh
 cd
-NYM_VERSION='nym-binaries-v2024.11-wedel'
+NYM_VERSION='nym-binaries-v2024.12-aero'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
@@ -102,7 +94,7 @@ cp $(which nym-node) nym-node-backup
 sudo mv ~/nym-node $(which nym-node) && sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat -n 50
 ```
 
-### Change mixnode version to the 1.1.8 in the Nym Wallet (Bonding - Node Settings section)
+### Change mixnode version to the 1.1.9 in the Nym Wallet (Bonding - Node Settings section)
 
 #
 
@@ -125,7 +117,7 @@ sudo mv ~/nym/target/release/nym-node $(which nym-node) && \
 sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```
 
-### Change version to 1.1.8 in the Nym Wallet
+### Change version to 1.1.9 in the Nym Wallet
 Menu Bonding -> Gateway Settings    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett.jpg)    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett2.jpg)    
