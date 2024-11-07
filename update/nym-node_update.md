@@ -12,8 +12,8 @@
 #
 
 
-# 17.10.2024 Nym Binaries v2024.12-aero `latest`
-Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.12-aero/CHANGELOG.md
+# 07.11.2024 Nym-node patch from release/2024.12-aero `latest`
+Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.12.1-aero/CHANGELOG.md
 
 Key changes for operators:
 - The faster the operators upgrade to this latest release, the better. Nym team started another round of load and speed testing.
@@ -48,7 +48,8 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout master
+# git checkout master
+git checkout nym-binaries-v2024.12.1-aero
 cargo build --release --bin nym-node
 ```
 
@@ -71,7 +72,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ### Download nym-node binary
 ```sh
 cd
-NYM_VERSION='nym-binaries-v2024.12-aero'
+NYM_VERSION='nym-binaries-v2024.12.1-aero'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
@@ -93,7 +94,7 @@ cp $(which nym-node) nym-node-backup
 sudo mv ~/nym-node $(which nym-node) && sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat -n 50
 ```
 
-### Change mixnode version to the 1.1.9 in the Nym Wallet (Bonding - Node Settings section)
+### Change mixnode version to the 1.1.9-1 in the Nym Wallet (Bonding - Node Settings section)
 
 #
 
@@ -104,7 +105,8 @@ cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout master
+# git checkout master
+git checkout nym-binaries-v2024.12.1-aero
 cargo build --release --bin nym-node
 ```
 
@@ -115,7 +117,7 @@ sudo mv ~/nym/target/release/nym-node $(which nym-node) && \
 sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```
 
-### Change version to 1.1.9 in the Nym Wallet
+### Change version to 1.1.9-1 in the Nym Wallet
 Menu Bonding -> Gateway Settings    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett.jpg)    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett2.jpg)    
