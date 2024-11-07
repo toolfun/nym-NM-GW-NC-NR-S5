@@ -12,7 +12,7 @@
 #
 
 
-# 17.10.2024 Nym Binaries v2024.12-aero
+# 17.10.2024 Nym Binaries v2024.12-aero `latest`
 Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.12-aero/CHANGELOG.md
 
 Key changes for operators:
@@ -62,8 +62,7 @@ git checkout release/ v 1_1_15
 -->
 
 ### Replace and restart
-```
-# sudo systemctl daemon-reload
+```bash
 sudo systemctl stop nym-node && \
 sudo mv ~/nym/target/release/nym-node $(which nym-node) && \
 sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
@@ -111,7 +110,6 @@ cargo build --release --bin nym-node
 
 ### Replace and restart
 ```bash
-# sudo systemctl daemon-reload
 sudo systemctl stop nym-node && \
 sudo mv ~/nym/target/release/nym-node $(which nym-node) && \
 sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
