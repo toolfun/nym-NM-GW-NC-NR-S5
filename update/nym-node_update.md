@@ -1,22 +1,23 @@
 #### `quick update manual`
 #
+<!-- ########################################################################################################## DEL
 > 
 > **NM** - Nym node: mixnode mode    
 > **GW** - Nym node: gateway mode
+########################################################################################################## DEL -->
 
-> The current design requires working with sudo privileges 
-
-> Nym operator docs https://nymtech.net/operators
+> The current design requires working with root privileges    
+> Nym operator docs https://nymtech.net/operators    
 > #### These are just notes on how to update. Please refer to the official documentation to install nym node
 
-#
 
 
-# 07.11.2024 Nym-node patch from release/2024.12-aero `latest`
-Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.12.1-aero/CHANGELOG.md
+
+# 19.11.2024 Nym Binaries v2024.13-magura `latest`
+Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.13-magura/CHANGELOG.md
 
 Key changes for operators:
-- The faster the operators upgrade to this latest release, the better. Nym team started another round of load and speed testing.
+https://nymtech.net/docs/operators/changelog#operators-updates--tooling
 
 #
 
@@ -38,18 +39,18 @@ rustup update
 
 #
 
-### 🟠 NM UPDATING
-### BUILD or DOWNLOAD
+### UPDATING
+#### BUILD or DOWNLOAD
 
-- ### BUILD
-### Build nym-node
+- #### BUILD
+#### Build nym-node
 ```bash
 cd $HOME
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
 # git checkout master
-git checkout nym-binaries-v2024.12.1-aero
+git checkout nym-binaries-v2024.13-magura
 cargo build --release --bin nym-node
 ```
 
@@ -72,7 +73,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ### Download nym-node binary
 ```sh
 cd
-NYM_VERSION='nym-binaries-v2024.12.1-aero'
+NYM_VERSION='nym-binaries-v2024.13-magura'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
@@ -94,6 +95,8 @@ cp $(which nym-node) nym-node-backup
 sudo mv ~/nym-node $(which nym-node) && sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat -n 50
 ```
 
+
+<!-- ########################################################################################################## TO DELETE -----------------------------------
 ### Change mixnode version to the 1.1.9-1 in the Nym Wallet (Bonding - Node Settings section)
 
 #
@@ -106,7 +109,7 @@ rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
 # git checkout master
-git checkout nym-binaries-v2024.12.1-aero
+git checkout nym-binaries-v2024.13-magura
 cargo build --release --bin nym-node
 ```
 
@@ -121,6 +124,9 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 Menu Bonding -> Gateway Settings    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett.jpg)    
 > ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett2.jpg)    
+
+########################################################################################################## ---- TO DELETE ---------------------------------- -->
+
 
 #
 #
