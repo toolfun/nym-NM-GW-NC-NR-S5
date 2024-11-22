@@ -11,8 +11,6 @@
 > #### These are just notes on how to update. Please refer to the official documentation to install nym node
 
 
-
-
 # 22.11.2024 Nym Binaries v2024.13-magura-patched `latest`
 Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.13-magura-patched/CHANGELOG.md
 
@@ -21,14 +19,14 @@ https://nymtech.net/docs/operators/changelog#operators-updates--tooling
 
 #
 
-### Update and install tools
-```
-sudo apt update && sudo apt upgrade -y
-```
-```
-sudo dpkg --configure -a
-sudo apt install make clang pkg-config libssl-dev build-essential git jq
-```
+> ##### Update and install tools
+> ```
+> sudo apt update && sudo apt upgrade -y
+> ```
+> ```
+> sudo dpkg --configure -a
+> sudo apt install make clang pkg-config libssl-dev build-essential git jq
+> ```
 
 ### Install or update Rust
 ```
