@@ -44,6 +44,7 @@ rustup update
 #### Build nym-node
 ```bash
 cd $HOME
+rustup update
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
@@ -161,16 +162,15 @@ just notes, general steps
 # install dependencies
 # ufw
 # ulimit
-# network_tunnel_manager.sh script
-# service nym-node
-# description.toml (~/.nym/nym-nodes/<NODE_ID>/data/description.toml)
 
 # init (exit GW):
 # nym-node run --id <NODE_ID> --mode exit-gateway --public-ips "$(curl -4 https://ifconfig.me)" --http-bind-address 0.0.0.0:8080 --mixnet-bind-address 0.0.0.0:1789 --location <LOCATION> --accept-operator-terms-and-conditions --wireguard-enabled false
+# description.toml (~/.nym/nym-nodes/<NODE_ID>/data/description.toml)
+# service nym-node
 
 # nym-node bonding-information --id <NODE_ID>
 # bond
-# network_tunnel_manager.sh next checks (show nymtun0 and joke, and joke_wg for the GW)
+# network_tunnel_manager.sh script
 # reverse proxy & wss
 ```
 
