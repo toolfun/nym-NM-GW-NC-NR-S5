@@ -133,27 +133,6 @@ Menu Bonding -> Gateway Settings
 ____
 ____
 
-<!--------------------- install from scratch tl;dr
-#### install from scratch tl;dr
-```jason
-wallet 100 NYM
-apt update
-install dependencies
-ufw
-ulimit
-network_tunnel_manager.sh script
-
-init (exit GW mode):
-./nym-node run --id <NODE_ID> --mode exit-gateway --public-ips "$(curl -4 https://ifconfig.me)" --http-bind-address 0.0.0.0:8080 --mixnet-bind-address 0.0.0.0:1789 --location <LOCATION> --accept-operator-terms-and-conditions --wireguard-enabled false
-
-service nym-node
-nym-node bonding-information --id <NODE_ID>
-bond
-
-network_tunnel_manager.sh next checks (show nymtun0 and joke)
-```
----------------------install from scratch tl;dr  -->
-
 ## ( # install from scratch tl;dr )
 just notes, general steps
 ```
@@ -164,17 +143,19 @@ just notes, general steps
 # ulimit
 
 # init (exit GW):
-# nym-node run --id <NODE_ID> --mode exit-gateway --public-ips "$(curl -4 https://ifconfig.me)" --http-bind-address 0.0.0.0:8080 --mixnet-bind-address 0.0.0.0:1789 --location <LOCATION> --accept-operator-terms-and-conditions --wireguard-enabled false
+# nym-node run --id <NODE_ID> --mode exit-gateway --public-ips "$(curl -4 https://ifconfig.me)" --http-bind-address 0.0.0.0:8080 --mixnet-bind-address 0.0.0.0:1789 --location <LOCATION> --accept-operator-terms-and-conditions --wireguard-enabled true
+### we didn't configure reverse proxy and wss, hence skipping '--hostname ""' flag
 # description.toml (~/.nym/nym-nodes/<NODE_ID>/data/description.toml)
-# service nym-node
 
-# nym-node bonding-information --id <NODE_ID>
-# bond
+# service nym-node
+# start nym-node
+# bond [ nym-node bonding-information --id <NODE_ID> ]
+
 # network_tunnel_manager.sh script
 # reverse proxy & wss
+# fill 'hostname =' in the config.toml
+### restart
 ```
-
-
 
 
 <!-- ######################################### Service #############
