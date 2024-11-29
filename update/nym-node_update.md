@@ -11,6 +11,10 @@
 > #### These are just notes on how to update. Please refer to the official documentation to install nym node
 
 
+<!-- #############################
+nym-binaries-v2024.13-magura-drift
+############################## -->
+
 # 22.11.2024 Nym Binaries v2024.13-magura-patched `latest`
 Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.13-magura-patched/CHANGELOG.md
 
