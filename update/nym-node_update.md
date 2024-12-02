@@ -12,11 +12,13 @@
 
 
 <!-- #############################
-nym-binaries-v2024.13-magura-drift
+PRE-RELEASE :
+
 ############################## -->
 
+
 # 02.12.2024 Nym-node patch `latest`
-Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.13-magura-drift/CHANGELOG.md
+Changelog:
 
 <!-- #############################
 Key changes for operators:
