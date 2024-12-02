@@ -15,11 +15,14 @@
 nym-binaries-v2024.13-magura-drift
 ############################## -->
 
-# 22.11.2024 Nym Binaries v2024.13-magura-patched `latest`
-Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.13-magura-patched/CHANGELOG.md
+# 02.12.2024 Nym-node patch `latest`
+Changelog: https://github.com/nymtech/nym/blob/nym-binaries-v2024.13-magura-drift/CHANGELOG.md
 
+<!-- #############################
 Key changes for operators:
-https://nymtech.net/docs/operators/changelog#operators-updates--tooling
+
+############################## -->
+
 
 #
 
@@ -53,7 +56,7 @@ rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
 # git checkout master
-git checkout nym-binaries-v2024.13-magura-patched
+git checkout nym-binaries-v2024.13-magura-drift
 cargo build --release --bin nym-node
 ```
 
@@ -76,7 +79,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ### Download nym-node binary
 ```sh
 cd
-NYM_VERSION='nym-binaries-v2024.13-magura-patched'
+NYM_VERSION='nym-binaries-v2024.13-magura-drift'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
@@ -112,7 +115,7 @@ rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
 # git checkout master
-git checkout nym-binaries-v2024.13-magura-patched
+git checkout nym-binaries-v2024.13-magura-drift
 cargo build --release --bin nym-node
 ```
 
