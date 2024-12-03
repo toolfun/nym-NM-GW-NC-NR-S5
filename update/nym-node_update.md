@@ -18,7 +18,7 @@ PRE-RELEASE :
 
 
 # 02.12.2024 Nym-node patch `latest`
-Changelog:
+Changelog: https://nymtech.net/docs/operators/changelog
 
 <!-- #############################
 Key changes for operators:
