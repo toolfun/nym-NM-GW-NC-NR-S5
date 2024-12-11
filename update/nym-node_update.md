@@ -34,7 +34,7 @@ Key changes for operators:
 > ```
 > ```
 > sudo dpkg --configure -a
-> sudo apt install make clang pkg-config libssl-dev build-essential git jq
+> sudo apt install ufw git jq pkg-config libssl-dev build-essential ca-certificates
 > ```
 
 ### Install or update Rust
