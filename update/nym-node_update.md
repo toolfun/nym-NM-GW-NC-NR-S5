@@ -13,7 +13,8 @@
 
 <!-- #############################
 PRE-RELEASE :
-
+# 16.12.2024 Nym Binaries v2024.14-crunch `latest`
+Changelog: https://nymtech.net/docs/operators/changelog
 ############################## -->
 
 
