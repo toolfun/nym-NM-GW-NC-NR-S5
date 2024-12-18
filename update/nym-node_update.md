@@ -13,17 +13,18 @@
 
 <!-- #############################
 PRE-RELEASE :
-# 16.12.2024 Nym Binaries v2024.14-crunch `latest`
+# 
 Changelog: https://nymtech.net/docs/operators/changelog
 ############################## -->
 
 
-# 16.12.2024 Nym Binaries v2024.14-crunch `latest`
-Changelog: https://nymtech.net/docs/operators/changelog
+# 18.12.2024 Nym Node Patch - Crunch `latest`
+Changelog: https://nymtech.net/docs/operators/changelog    
+"_We need everyone to upgrade as soon as they can. Thanks!_"
 
 <!-- #############################
 Key changes for operators:
-
+"_We need everyone to upgrade as soon as they can. Thanks!_"
 ############################## -->
 
 
@@ -59,7 +60,7 @@ rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
 # git checkout master
-git checkout nym-binaries-v2024.14-crunch
+git checkout nym-binaries-v2024.14-crunch-patched
 cargo build --release --bin nym-node
 ```
 
@@ -82,7 +83,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ### Download nym-node binary
 ```sh
 cd
-NYM_VERSION='nym-binaries-v2024.14-crunch'
+NYM_VERSION='nym-binaries-v2024.14-crunch-patched'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
@@ -118,7 +119,7 @@ rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
 # git checkout master
-git checkout nym-binaries-v2024.14-crunch
+git checkout nym-binaries-v2024.14-crunch-patched
 cargo build --release --bin nym-node
 ```
 
