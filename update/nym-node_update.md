@@ -6,21 +6,21 @@
 > **GW** - Nym node: gateway mode
 ########################################################################################################## DEL -->
 
-> The current design requires working with root privileges    
+> The current design requires working with root or sudo    
 > Nym operator docs https://nymtech.net/operators    
 > #### These are just notes on how to update. Please refer to the official documentation to install nym node
 
 
 <!-- #############################
-PRE-RELEASE :
+PRE-RELEASE : Nym Binaries v2025.1-reeses 'latest'
 # 
 Changelog: https://nymtech.net/docs/operators/changelog
 ############################## -->
 
 
-# 18.12.2024 Nym Node Patch - Crunch `latest`
+# 16.01.2025 Nym Binaries v2025.1-reeses 'Pre-release'
+### _"upgrading before it's tagged as latest is on your own risk"_
 Changelog: https://nymtech.net/docs/operators/changelog    
-"_We need everyone to upgrade as soon as they can. Thanks!_"
 
 <!-- #############################
 Key changes for operators:
@@ -60,7 +60,7 @@ rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
 # git checkout master
-git checkout nym-binaries-v2024.14-crunch-patched
+git checkout nym-binaries-v2025.1-reeses
 cargo build --release --bin nym-node
 ```
 
@@ -83,7 +83,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ### Download nym-node binary
 ```sh
 cd
-NYM_VERSION='nym-binaries-v2024.14-crunch-patched'
+NYM_VERSION='nym-binaries-v2025.1-reeses'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
@@ -119,7 +119,7 @@ rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
 # git checkout master
-git checkout nym-binaries-v2024.14-crunch-patched
+git checkout nym-binaries-v2025.1-reeses
 cargo build --release --bin nym-node
 ```
 
