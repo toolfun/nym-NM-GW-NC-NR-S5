@@ -19,7 +19,7 @@ Changelog: https://nymtech.net/docs/operators/changelog
 
 
 # 20.01.2025 Nym Binaries v2025.1-reeses `latest`
-### _"upgrading before it's tagged as latest is on your own risk"_
+### 🎗 make new backup after the upgrade. there are config changes
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 <!-- #############################
