@@ -18,7 +18,7 @@ Changelog: https://nymtech.net/docs/operators/changelog
 ############################## -->
 
 
-# 16.01.2025 Nym Binaries v2025.1-reeses 'Pre-release'
+# 20.01.2025 Nym Binaries v2025.1-reeses `latest`
 ### _"upgrading before it's tagged as latest is on your own risk"_
 Changelog: https://nymtech.net/docs/operators/changelog    
 
