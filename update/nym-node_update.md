@@ -12,7 +12,8 @@
 
 
 <!-- #############################
-PRE-RELEASE : Nym Binaries v2025.1-reeses 'latest'
+PRE-RELEASE : Nym Binaries v2025.2-hu 'latest'    
+tag/nym-binaries-v2025.2-hu
 # 
 Changelog: https://nymtech.net/docs/operators/changelog
 ############################## -->
