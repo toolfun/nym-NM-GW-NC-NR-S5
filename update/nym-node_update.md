@@ -19,8 +19,7 @@ Changelog: https://nymtech.net/docs/operators/changelog
 ############################## -->
 
 
-# 20.01.2025 Nym Binaries v2025.1-reeses `latest`
-### 🎗 make new backup after the upgrade. there are config changes
+# 04.02.2025 Nym Binaries v2025.2-hu 'latest'  
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 <!-- #############################
@@ -61,7 +60,7 @@ rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
 # git checkout master
-git checkout nym-binaries-v2025.1-reeses
+git checkout 4c2bf3642
 cargo build --release --bin nym-node
 ```
 
@@ -84,7 +83,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ### Download nym-node binary
 ```sh
 cd
-NYM_VERSION='nym-binaries-v2025.1-reeses'
+NYM_VERSION='nym-binaries-v2025.2-hu'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
@@ -112,7 +111,7 @@ sudo mv ~/nym-node $(which nym-node) && sudo systemctl restart nym-node && sudo 
 
 #
 
-### 🟢 **GW UPDATING**
+### 🟢 nym-node gateway mode
 ### Build nym-node
 ```
 cd $HOME
@@ -120,7 +119,7 @@ rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
 # git checkout master
-git checkout nym-binaries-v2025.1-reeses
+git checkout 4c2bf3642
 cargo build --release --bin nym-node
 ```
 
