@@ -12,14 +12,17 @@
 
 
 <!-- #############################
-PRE-RELEASE : Nym Binaries v2025.2-hu 'latest'    
-tag/nym-binaries-v2025.2-hu
+#
+PRE-RELEASE : Nym Binaries v2025.3-ruta 'latest'    
+tag/nym-binaries-v2025.3-ruta
 # 
 Changelog: https://nymtech.net/docs/operators/changelog
+#
+#
 ############################## -->
 
 
-# 04.02.2025 Nym Binaries v2025.2-hu 'latest'  
+# 18.02.2025 Nym Binaries v2025.3-ruta `v1.5.0` `latest`   
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 <!-- #############################
@@ -59,8 +62,7 @@ rustup update
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-# git checkout master
-git checkout 4c2bf3642
+git checkout master
 cargo build --release --bin nym-node
 ```
 
@@ -83,7 +85,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ### Download nym-node binary
 ```sh
 cd
-NYM_VERSION='nym-binaries-v2025.2-hu'
+NYM_VERSION='nym-binaries-v2025.3-ruta'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
