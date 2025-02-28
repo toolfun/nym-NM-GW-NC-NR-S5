@@ -96,6 +96,10 @@ chmod u+x nym-node
 ./nym-node build-info
 ```
 
+```
+mv nym-node /usr/local/bin/
+```
+
 ### Restart with the new version
 ```
 cd
