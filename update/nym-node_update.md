@@ -13,8 +13,8 @@
 
 <!-- #############################
 #
-PRE-RELEASE : Nym Binaries v2025.3-ruta 'latest'    
-tag/nym-binaries-v2025.3-ruta
+PRE-RELEASE : Nym Binaries v2025.4-dorina 'latest'    
+tag/nym-binaries-v2025.4-dorina
 # 
 Changelog: https://nymtech.net/docs/operators/changelog
 #
@@ -30,29 +30,16 @@ Key changes for operators:
 "_We need everyone to upgrade as soon as they can. Thanks!_"
 ############################## -->
 
-
-#
-
-> ##### Update and install tools
-> ```
-> sudo apt update && sudo apt upgrade -y
-> ```
-> ```
-> sudo dpkg --configure -a
-> sudo apt install ufw git jq pkg-config libssl-dev build-essential ca-certificates
-> ```
-
-### Install or update Rust
-```
-sudo curl https://sh.rustup.rs -sSf | sh -s -- -y
-source $HOME/.cargo/env
-rustup update
-```
-
 #
 
 ### UPDATING
-#### BUILD or DOWNLOAD
+
+### Update rust
+```
+rustup update
+```
+
+#### BUILD or DOWNLOAD nym binarie
 
 - #### BUILD
 #### Build nym-node
@@ -85,7 +72,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ### Download nym-node binary
 ```sh
 cd
-NYM_VERSION='nym-binaries-v2025.3-ruta'
+NYM_VERSION='nym-binaries-v2025.4-dorina'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
@@ -175,6 +162,26 @@ just notes, general steps
 ```
 
 
+#
+
+
+> ### Pre-installation
+> ##### Update and install tools
+> ```
+> sudo apt update && sudo apt upgrade -y
+> ```
+> ```
+> sudo dpkg --configure -a
+> sudo apt install ufw git jq pkg-config libssl-dev build-essential ca-certificates
+> ```
+> 
+> ### Install or update Rust
+> ```
+> sudo curl https://sh.rustup.rs -sSf | sh -s -- -y
+> source $HOME/.cargo/env
+> rustup update
+> ```
+
 <!-- ######################################### Service #############
 --------------- with wg enabled
 ```
@@ -196,8 +203,6 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-
-
 ```
 sudo tee <<EOF >/dev/null /etc/systemd/system/nym-node.service
 [Unit]
@@ -217,31 +222,7 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-
-NG:
-```
-sudo tee <<EOF >/dev/null /etc/systemd/system/nym-node.service
-[Unit]
-Description=Nym Mixnode
-
-[Service]
-User=$USER
-ExecStart=/usr/local/bin/nym-mixnode run --id '$node_id'
-KillSignal=SIGINT
-Restart=on-failure
-RestartSec=30
-StartLimitInterval=350
-StartLimitBurst=10
-LimitNOFILE=65535
-
-[Install]
-WantedBy=multi-user.target
-EOF
-```
-
-
 ######################################### Service ############# -->
-
 
 <!-- ---------------------------- node move
   copy old server
