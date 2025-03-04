@@ -33,18 +33,12 @@ Key changes for operators:
 #
 
 ### UPDATING
-
-### Update rust
-```
-rustup update
-```
-
 #### BUILD or DOWNLOAD nym binarie
 
 - #### BUILD
 #### Build nym-node
 ```bash
-cd $HOME
+cd
 rustup update
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
@@ -72,6 +66,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ### Download nym-node binary
 ```sh
 cd
+rustup update
 NYM_VERSION='nym-binaries-v2025.4-dorina'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
@@ -88,7 +83,7 @@ mv nym-node /usr/local/bin/
 ```
 
 ### Restart with the new version
-```
+```sh
 cd
 # stop nym-node
 sudo systemctl stop nym-node
