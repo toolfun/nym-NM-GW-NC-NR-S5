@@ -22,7 +22,7 @@ Changelog: https://nymtech.net/docs/operators/changelog
 ############################## -->
 
 
-# 18.02.2025 Nym Binaries v2025.3-ruta `v1.5.0` `latest`   
+# 04.03.2025 Nym Binaries v2025.4-dorina `v1.6.0` `latest`   
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 <!-- #############################
@@ -88,7 +88,7 @@ cd
 # stop nym-node
 sudo systemctl stop nym-node
 # backup current binary
-cp $(which nym-node) nym-node-backup
+cp $(which nym-node) nym-node-backup-$(date +%d-%m-%Y)
 # restart with the new binary
 sudo mv ~/nym-node $(which nym-node) && sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat -n 50
 ```
