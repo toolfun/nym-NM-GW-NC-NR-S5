@@ -22,7 +22,7 @@ Changelog: https://nymtech.net/docs/operators/changelog
 ############################## -->
 
 
-# 06.03.2025 Nym Binaries v2025.4-dorina-patched `v1.6.1` `latest`   
+# 06.03.2025 Nym Binaries v2025.4-dorina-patched `v1.6.2` `latest`   
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 <!-- #############################
