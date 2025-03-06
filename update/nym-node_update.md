@@ -13,8 +13,8 @@
 
 <!-- #############################
 #
-PRE-RELEASE : Nym Binaries v2025.4-dorina 'latest'    
-tag/nym-binaries-v2025.4-dorina
+PRE-RELEASE : Nym Binaries ... 'latest'    
+tag/nym-binaries-v2025.4-dorina-patched
 # 
 Changelog: https://nymtech.net/docs/operators/changelog
 #
@@ -22,7 +22,7 @@ Changelog: https://nymtech.net/docs/operators/changelog
 ############################## -->
 
 
-# 04.03.2025 Nym Binaries v2025.4-dorina `v1.6.0` `latest`   
+# 06.03.2025 Nym Binaries v2025.4-dorina-patched `v1.6.1` `latest`   
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 <!-- #############################
@@ -67,7 +67,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```sh
 cd
 rustup update
-NYM_VERSION='nym-binaries-v2025.4-dorina'
+NYM_VERSION='nym-binaries-v2025.4-dorina-patched'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
