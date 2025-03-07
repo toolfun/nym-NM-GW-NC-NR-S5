@@ -43,7 +43,7 @@ rustup update
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout master
+git checkout nym-binaries-v2025.4-dorina-patched
 cargo build --release --bin nym-node
 ```
 
