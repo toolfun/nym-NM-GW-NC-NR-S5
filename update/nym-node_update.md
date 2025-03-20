@@ -14,7 +14,7 @@
 <!-- #############################
 #
 PRE-RELEASE : Nym Binaries ... 'latest'    
-tag/nym-binaries-v2025.4-dorina-patched
+tag/nym-binaries-v2025.5-chokito
 # 
 Changelog: https://nymtech.net/docs/operators/changelog
 #
@@ -22,7 +22,7 @@ Changelog: https://nymtech.net/docs/operators/changelog
 ############################## -->
 
 
-# 06.03.2025 Nym Binaries v2025.4-dorina-patched `v1.6.2` `latest`   
+# 20.03.2025 Nym Binaries v2025.5-chokito `v1.7.0` `latest`   
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 <!-- #############################
@@ -43,7 +43,7 @@ rustup update
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2025.4-dorina-patched
+git checkout nym-binaries-v2025.5-chokito
 cargo build --release --bin nym-node
 ```
 
@@ -67,7 +67,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```sh
 cd
 rustup update
-NYM_VERSION='nym-binaries-v2025.4-dorina-patched'
+NYM_VERSION='nym-binaries-v2025.5-chokito'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
@@ -76,10 +76,6 @@ chmod u+x nym-node
 ### Check downloaded binary info
 ```
 ./nym-node build-info
-```
-
-```
-mv nym-node /usr/local/bin/
 ```
 
 ### Restart with the new version
