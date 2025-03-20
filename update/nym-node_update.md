@@ -25,10 +25,11 @@ Changelog: https://nymtech.net/docs/operators/changelog
 # 20.03.2025 Nym Binaries v2025.5-chokito `v1.7.0` `latest`   
 Changelog: https://nymtech.net/docs/operators/changelog    
 
-<!-- #############################
-Key changes for operators:
-"_We need everyone to upgrade as soon as they can. Thanks!_"
-############################## -->
+
+Key notes for operators:
+- Wireguard exit policy setup    
+- Virtualising dedicated server with KVM guide    
+
 
 #
 
