@@ -14,7 +14,7 @@
 <!-- #############################
 #
 PRE-RELEASE : Nym Binaries ... 'latest'    
-tag/nym-binaries-v2025.5-chokito
+tag/nym-binaries-v2025.6-chuckles
 # 
 Changelog: https://nymtech.net/docs/operators/changelog
 #
@@ -22,7 +22,7 @@ Changelog: https://nymtech.net/docs/operators/changelog
 ############################## -->
 
 
-# 20.03.2025 Nym Binaries v2025.5-chokito `v1.7.0` `latest`   
+# 02.04.2025 Nym Binaries v2025.6-chuckles `v1.8.0` `latest`   
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 
@@ -44,7 +44,7 @@ rustup update
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2025.5-chokito
+git checkout nym-binaries-v2025.6-chuckles
 cargo build --release --bin nym-node
 ```
 
@@ -68,7 +68,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```sh
 cd
 rustup update
-NYM_VERSION='nym-binaries-v2025.5-chokito'
+NYM_VERSION='nym-binaries-v2025.6-chuckles'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
