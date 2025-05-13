@@ -14,7 +14,7 @@
 <!-- #############################
 #
 PRE-RELEASE : Nym Binaries ... 'latest'    
-tag/nym-binaries-v2025.8-tourist
+tag/nym-binaries-v2025.9-appenzeller
 # 
 Changelog: https://nymtech.net/docs/operators/changelog
 #
@@ -22,7 +22,7 @@ Changelog: https://nymtech.net/docs/operators/changelog
 ############################## -->
 
 
-# 30.04.2025 Nym Binaries v2025.8-tourist `v1.10.0` `latest`   
+# 14.05.2025 Nym Binaries v2025.9-appenzeller `v1.11.0` `latest`   
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 
@@ -44,7 +44,7 @@ rustup update
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2025.8-tourist
+git checkout nym-binaries-v2025.9-appenzeller
 cargo build --release --bin nym-node
 ```
 
@@ -68,7 +68,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```sh
 cd
 rustup update
-NYM_VERSION='nym-binaries-v2025.8-tourist'
+NYM_VERSION='nym-binaries-v2025.9-appenzeller'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
