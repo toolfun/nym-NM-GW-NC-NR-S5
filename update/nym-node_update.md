@@ -22,7 +22,7 @@ Changelog: https://nymtech.net/docs/operators/changelog
 ############################## -->
 
 
-# 14.05.2025 Nym Binaries v2025.9-appenzeller `v1.11.0` `latest`   
+# 16.05.2025 Nym Binaries v2025.9-appenzeller `v1.11.0` `latest`   
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 
