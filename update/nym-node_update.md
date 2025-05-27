@@ -13,8 +13,9 @@
 
 <!-- #############################
 #
+27.05.2025
 PRE-RELEASE : Nym Binaries ... 'latest'    
-tag/nym-binaries-v2025.9-appenzeller
+tag/nym-binaries-v2025.10-brie
 # 
 Changelog: https://nymtech.net/docs/operators/changelog
 #
