@@ -23,14 +23,8 @@ Changelog: https://nymtech.net/docs/operators/changelog
 ############################## -->
 
 
-# 16.05.2025 Nym Binaries v2025.9-appenzeller `v1.11.0` `latest`   
+# 27.05.2025 Nym Binaries v2025.10-brie `v1.12.0` `latest`   
 Changelog: https://nymtech.net/docs/operators/changelog    
-
-
-Key notes for operators:
-- Wireguard exit policy setup    
-- Virtualising dedicated server with KVM guide    
-
 
 #
 
@@ -45,7 +39,7 @@ rustup update
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2025.9-appenzeller
+git checkout nym-binaries-v2025.10-brie
 cargo build --release --bin nym-node
 ```
 
@@ -61,7 +55,7 @@ git checkout release/ v 1_1_15
 ### Replace and restart
 ```bash
 sudo systemctl stop nym-node && \
-sudo mv ~/nym/target/release/nym-node $(which nym-node) && \
+sudo mv ~/nym/target/release/nym-node /usr/local/bin/nym-node && \
 sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```
 - ### DOWNLOAD
@@ -69,7 +63,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```sh
 cd
 rustup update
-NYM_VERSION='nym-binaries-v2025.9-appenzeller'
+NYM_VERSION='nym-binaries-v2025.10-brie'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
@@ -88,7 +82,7 @@ sudo systemctl stop nym-node
 # backup current binary
 cp $(which nym-node) nym-node-backup-$(date +%d-%m-%Y)
 # restart with the new binary
-sudo mv ~/nym-node $(which nym-node) && sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat -n 50
+sudo mv ~/nym-node /usr/local/bin/nym-node && sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat -n 50
 ```
 
 
