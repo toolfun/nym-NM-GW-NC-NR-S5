@@ -15,7 +15,7 @@
 #
 27.05.2025
 PRE-RELEASE : Nym Binaries ... 'latest'    
-tag/nym-binaries-v2025.12-dolcelatte
+tag/nym-binaries-v2025.13-emmental
 # 
 Changelog: https://nymtech.net/docs/operators/changelog
 #
@@ -23,7 +23,7 @@ Changelog: https://nymtech.net/docs/operators/changelog
 ############################## -->
 
 
-# 09.07.2025 Nym Binaries v2025.12-dolcelatte `v1.14.0` `latest`   
+# 22.07.2025 Nym Binaries v2025.13-emmental `v1.15.0` `latest`   
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 #
@@ -39,7 +39,7 @@ rustup update
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2025.12-dolcelatte
+git checkout nym-binaries-v2025.13-emmental
 cargo build --release --bin nym-node
 ```
 
@@ -63,7 +63,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```sh
 cd
 rustup update
-NYM_VERSION='nym-binaries-v2025.12-dolcelatte'
+NYM_VERSION='nym-binaries-v2025.13-emmental'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
