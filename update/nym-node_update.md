@@ -15,7 +15,7 @@
 #
 27.05.2025
 PRE-RELEASE : Nym Binaries ... 'latest'    
-tag/nym-binaries-v2025.17-isabirra
+tag/nym-binaries-v2025.18-jarlsberg
 # 
 Changelog: https://nymtech.net/docs/operators/changelog
 #
@@ -23,7 +23,7 @@ Changelog: https://nymtech.net/docs/operators/changelog
 ############################## -->
 
 
-# 02.10.2025Nym Binaries v2025.17-isabirra `v1.18.0` `latest`   
+# 02.10.2025 Nym Binaries v2025.18-jarlsberg `v1.19.0` `latest`   
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 #
@@ -63,7 +63,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```sh
 cd
 rustup update
-NYM_VERSION='nym-binaries-v2025.17-isabirra'
+NYM_VERSION='nym-binaries-v2025.18-jarlsberg'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
