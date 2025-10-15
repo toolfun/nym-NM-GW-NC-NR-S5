@@ -39,7 +39,7 @@ rustup update
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2025.17-isabirra
+git checkout nym-binaries-v2025.18-jarlsberg
 cargo build --release --bin nym-node
 ```
 
