@@ -15,7 +15,7 @@
 #
 27.05.2025
 PRE-RELEASE : Nym Binaries ... 'latest'    
-tag/nym-binaries-v2025.18-jarlsberg
+tag/nym-binaries-v2025.19-kase
 # 
 Changelog: https://nymtech.net/docs/operators/changelog
 #
@@ -23,7 +23,7 @@ Changelog: https://nymtech.net/docs/operators/changelog
 ############################## -->
 
 
-# 02.10.2025 Nym Binaries v2025.18-jarlsberg `v1.19.0` `latest`   
+# 31.10.2025 Nym Binaries v2025.19-kase `v1.20.0` `latest`   
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 #
@@ -39,7 +39,7 @@ rustup update
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2025.18-jarlsberg
+git checkout nym-binaries-v2025.19-kase
 cargo build --release --bin nym-node
 ```
 
@@ -63,7 +63,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```sh
 cd
 rustup update
-NYM_VERSION='nym-binaries-v2025.18-jarlsberg'
+NYM_VERSION='nym-binaries-v2025.19-kase'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
