@@ -26,6 +26,8 @@ Changelog: https://nymtech.net/docs/operators/changelog
 # 31.10.2025 Nym Binaries v2025.19-kase `v1.20.0` `latest`   
 Changelog: https://nymtech.net/docs/operators/changelog    
 
+This time operators needs to deploy [QUIC Transport Bridge](https://nym.com/docs/operators/nodes/nym-node/configuration#quic-transport-bridge-deployment)
+
 #
 
 ### UPDATING
