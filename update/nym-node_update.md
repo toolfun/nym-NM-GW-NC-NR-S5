@@ -15,7 +15,7 @@
 #
 27.05.2025
 PRE-RELEASE : Nym Binaries ... 'latest'    
-tag/nym-binaries-v2025.19-kase
+tag/nym-binaries-v2025.20-leerdammer
 # 
 Changelog: https://nymtech.net/docs/operators/changelog
 #
@@ -23,10 +23,8 @@ Changelog: https://nymtech.net/docs/operators/changelog
 ############################## -->
 
 
-# 31.10.2025 Nym Binaries v2025.19-kase `v1.20.0` `latest`   
+# 12.11.2025 Nym Binaries v2025.20-leerdammer `v1.21.0` `latest`   
 Changelog: https://nymtech.net/docs/operators/changelog    
-
-This time operators needs to deploy [QUIC Transport Bridge](https://nym.com/docs/operators/nodes/nym-node/configuration#quic-transport-bridge-deployment)
 
 #
 
@@ -41,7 +39,7 @@ rustup update
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2025.19-kase
+git checkout nym-binaries-v2025.20-leerdammer
 cargo build --release --bin nym-node
 ```
 
@@ -65,7 +63,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```sh
 cd
 rustup update
-NYM_VERSION='nym-binaries-v2025.19-kase'
+NYM_VERSION='nym-binaries-v2025.20-leerdammer'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
