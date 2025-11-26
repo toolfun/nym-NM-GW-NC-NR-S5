@@ -15,7 +15,7 @@
 #
 27.05.2025
 PRE-RELEASE : Nym Binaries ... 'latest'    
-tag/nym-binaries-v2025.20-leerdammer
+tag/nym-binaries-v2025.21-mozzarella
 # 
 Changelog: https://nymtech.net/docs/operators/changelog
 #
@@ -23,7 +23,7 @@ Changelog: https://nymtech.net/docs/operators/changelog
 ############################## -->
 
 
-# 12.11.2025 Nym Binaries v2025.20-leerdammer `v1.21.0` `latest`   
+# 26.11.2025 Nym Binaries v2025.21-mozzarella `v1.22.0` `latest`   
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 #
@@ -39,7 +39,7 @@ rustup update
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2025.20-leerdammer
+git checkout nym-binaries-v2025.21-mozzarella
 cargo build --release --bin nym-node
 ```
 
@@ -63,7 +63,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```sh
 cd
 rustup update
-NYM_VERSION='nym-binaries-v2025.20-leerdammer'
+NYM_VERSION='nym-binaries-v2025.21-mozzarella'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
