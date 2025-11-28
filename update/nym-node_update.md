@@ -77,12 +77,10 @@ chmod u+x nym-node
 ### Restart with the new version
 ```sh
 cd
-# stop nym-node
-sudo systemctl stop nym-node
-# backup current binary
-cp $(which nym-node) nym-node-backup-$(date +%d-%m-%Y)
-# restart with the new binary
-sudo mv ~/nym-node /usr/local/bin/nym-node && sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat -n 50
+sudo systemctl stop nym-node &&\
+sudo mv ~/nym-node /usr/local/bin/nym-node &&\
+sudo systemctl restart nym-node &&\
+sudo journalctl -u nym-node -f -o cat -n 50
 ```
 
 
