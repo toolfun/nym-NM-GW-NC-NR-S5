@@ -1,10 +1,4 @@
 #### `quick update manual`
-#
-<!-- ########################################################################################################## DEL
-> 
-> **NM** - Nym node: mixnode mode    
-> **GW** - Nym node: gateway mode
-########################################################################################################## DEL -->
 
 > The current design requires working with root or sudo    
 > Nym operator docs https://nymtech.net/operators    
