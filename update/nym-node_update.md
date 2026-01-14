@@ -34,7 +34,7 @@ cargo build --release --bin nym-node
 <!-- ########################################################################################################## REPLACE WITH
 ```bash
 cd
-rustup update
+# rustup update
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
