@@ -10,19 +10,6 @@
 > Nym operator docs https://nymtech.net/operators    
 > #### These are just notes on how to update. Please refer to the official documentation to install nym node
 
-
-<!-- #############################
-#
-27.05.2025
-PRE-RELEASE : Nym Binaries ... 'latest'    
-tag/nym-binaries-v2025.21-mozzarella
-# 
-Changelog: https://nymtech.net/docs/operators/changelog
-#
-#
-############################## -->
-
-
 # 26.11.2025 Nym Binaries v2025.21-mozzarella `v1.22.0` `latest`   
 Changelog: https://nymtech.net/docs/operators/changelog    
 
@@ -42,6 +29,20 @@ cd nym
 git checkout nym-binaries-v2025.21-mozzarella
 cargo build --release --bin nym-node
 ```
+
+
+<!-- ########################################################################################################## REPLACE WITH
+```bash
+cd
+rustup update
+rm -rf nym
+git clone https://github.com/nymtech/nym.git
+cd nym
+git checkout nym-binaries-v2026.1-niolo
+cargo build --release --bin nym-node
+```
+########################################################################################################## REPLACE WITH -->
+
 
 ### Show builded binary info
 ```
