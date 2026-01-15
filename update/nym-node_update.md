@@ -1,10 +1,12 @@
 #### `quick update manual`
 
+#
+
 > The current design requires working with root or sudo    
 > Nym operator docs https://nymtech.net/operators    
 > #### These are just notes on how to update. Please refer to the official documentation to install nym node
 
-# 26.11.2025 Nym Binaries v2025.21-mozzarella `v1.22.0` `latest`   
+# 15.01.2026 Nym Binaries v2026.1-niolo `v1.23.0` `latest`   
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 #
@@ -16,18 +18,6 @@ Changelog: https://nymtech.net/docs/operators/changelog
 #### Build nym-node
 ```bash
 cd
-rustup update
-rm -rf nym
-git clone https://github.com/nymtech/nym.git
-cd nym
-git checkout nym-binaries-v2025.21-mozzarella
-cargo build --release --bin nym-node
-```
-
-
-<!-- ########################################################################################################## REPLACE WITH
-```bash
-cd
 # rustup update
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
@@ -35,8 +25,6 @@ cd nym
 git checkout nym-binaries-v2026.1-niolo
 cargo build --release --bin nym-node
 ```
-########################################################################################################## REPLACE WITH -->
-
 
 ### Show builded binary info
 ```
@@ -58,7 +46,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```sh
 cd
 rustup update
-NYM_VERSION='nym-binaries-v2025.21-mozzarella'
+NYM_VERSION='nym-binaries-v2026.1-niolo'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
@@ -80,36 +68,6 @@ sudo journalctl -u nym-node -f -o cat -n 50
 
 
 <!-- ########################################################################################################## TO DELETE -----------------------------------
-### Change mixnode version to the 1.1.9-1 in the Nym Wallet (Bonding - Node Settings section)
-
-#
-
-### 🟢 nym-node gateway mode
-### Build nym-node
-```
-cd $HOME
-rm -rf nym
-git clone https://github.com/nymtech/nym.git
-cd nym
-# git checkout master
-git checkout 4c2bf3642
-cargo build --release --bin nym-node
-```
-
-### Replace and restart
-```bash
-sudo systemctl stop nym-node && \
-sudo mv ~/nym/target/release/nym-node $(which nym-node) && \
-sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
-```
-
-### Change version to 1.1.9-1 in the Nym Wallet
-Menu Bonding -> Gateway Settings    
-> ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett.jpg)    
-> ![](https://github.com/toolfun/_pics/blob/988df446b0c9c368b68d03503a56b8b74362b505/gwsett2.jpg)    
-
-########################################################################################################## ---- TO DELETE ---------------------------------- -->
-
 
 #
 #
@@ -161,6 +119,8 @@ just notes, general steps
 > source $HOME/.cargo/env
 > rustup update
 > ```
+########################################################################################################## ---- TO DELETE end ---------------------------------- -->
+
 
 <!-- ######################################### Service #############
 --------------- with wg enabled
