@@ -42,6 +42,7 @@ sudo mv ~/nym/target/release/nym-node /usr/local/bin/nym-node && \
 sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```
 - ### DOWNLOAD
+> ! *The binary you downloaded may not match the architecture of your system*    
 ### Download nym-node binary
 ```sh
 cd
