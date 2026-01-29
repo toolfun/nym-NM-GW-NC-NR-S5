@@ -8,7 +8,11 @@
 
 # 29.01.2026 Nym Binaries v2026.2-oscypek `v1.24.0` `latest`   
 Changelog: https://nymtech.net/docs/operators/changelog    
-! IMPORTANT [To prevent *foreign constraint bug* we need to do a little sqlite tweak](https://nym.com/docs/operators/changelog#oscypek-special-update)
+
+! IMPORTANT:    
+1. [To prevent *foreign constraint bug* we need to do a little sqlite tweak](https://nym.com/docs/operators/changelog#oscypek-special-update)    
+2. [Rerun NTM to implement NIP-7](https://nym.com/docs/operators/changelog#update-nym-exit-policy)
+
 
 #
 
