@@ -66,7 +66,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ### Download nym-node binary
 ```sh
 cd
-rustup update
+# rustup update
 NYM_VERSION='nym-binaries-v2026.2-oscypek'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
