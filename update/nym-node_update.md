@@ -37,6 +37,21 @@ git checkout release/ v 1_1_15
 -->
 
 ### Replace and restart
+> Upgrade with debug command (for 1.24.0 version)    
+
+load your Nym Node ID:    
+```
+node_id="..."    
+```
+```bash
+sudo systemctl stop nym-node && \
+sudo mv ~/nym/target/release/nym-node /usr/local/bin/nym-node && \
+# the debug command
+nym-node debug reset-providers-gateway-dbs --id $node_id && \
+sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat -n 50
+```
+
+> Regular upgrade
 ```bash
 sudo systemctl stop nym-node && \
 sudo mv ~/nym/target/release/nym-node /usr/local/bin/nym-node && \
