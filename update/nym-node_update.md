@@ -6,8 +6,9 @@
 > Nym operator docs https://nymtech.net/operators    
 > #### These are just notes on how to update. Please refer to the official documentation to install nym node
 
-# 15.01.2026 Nym Binaries v2026.1-niolo `v1.23.0` `latest`   
+# 29.01.2026 Nym Binaries v2026.2-oscypek `v1.24.0` `latest`   
 Changelog: https://nymtech.net/docs/operators/changelog    
+! IMPORTANT [To prevent *foreign constraint bug* we need to do a little sqlite tweak](https://nym.com/docs/operators/changelog#oscypek-special-update)
 
 #
 
@@ -22,7 +23,7 @@ cd
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2026.1-niolo
+git checkout nym-binaries-v2026.2-oscypek
 cargo build --release --bin nym-node
 ```
 
@@ -47,7 +48,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat
 ```sh
 cd
 rustup update
-NYM_VERSION='nym-binaries-v2026.1-niolo'
+NYM_VERSION='nym-binaries-v2026.2-oscypek'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
