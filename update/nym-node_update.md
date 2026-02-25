@@ -7,6 +7,12 @@
 > #### These are just notes on how to update. Please refer to the official documentation to install nym node
 
 # 11.02.2026 Nym Binaries v2026.3-parmigiano `v1.25.0` `latest`   
+<!--
+25.02.2026 Nym Binaries v2026.4-quark `v1.25.0` `latest`    
+-->
+<!--
+nym-binaries-v2026.4-quark
+-->
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 #
