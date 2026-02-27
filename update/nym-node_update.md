@@ -6,13 +6,7 @@
 > Nym operator docs https://nymtech.net/operators    
 > #### These are just notes on how to update. Please refer to the official documentation to install nym node
 
-# 11.02.2026 Nym Binaries v2026.3-parmigiano `v1.25.0` `latest`   
-<!--
-25.02.2026 Nym Binaries v2026.4-quark `v1.25.0` `latest`    
--->
-<!--
-nym-binaries-v2026.4-quark
--->
+# 25.02.2026 Nym Binaries v2026.4-quark `v1.25.0` `latest`    
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 #
@@ -28,7 +22,7 @@ cd
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2026.3-parmigiano
+git checkout nym-binaries-v2026.4-quark
 cargo build --release --bin nym-node
 ```
 
@@ -54,7 +48,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat -n 50
 ```sh
 cd
 # rustup update
-NYM_VERSION='nym-binaries-v2026.3-parmigiano'
+NYM_VERSION='nym-binaries-v2026.4-quark'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
