@@ -6,8 +6,14 @@
 > Nym operator docs https://nymtech.net/operators    
 > #### These are just notes on how to update. Please refer to the official documentation to install nym node
 
-# 27.02.2026 Nym Binaries v2026.4-quark `v1.25.0` `latest`    
+# 27.02.2026 Nym Binaries v2026.4-quark `v1.26.0` `latest`    
 Changelog: https://nymtech.net/docs/operators/changelog    
+
+<!--
+# xx.03.2026 Nym Binaries v2026.5-raclette `v1.27.0` `latest`    
+
+nym-binaries-v2026.5-raclette
+-->
 
 #
 
