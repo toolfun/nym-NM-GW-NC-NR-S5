@@ -22,9 +22,9 @@ nym-binaries-v2026.5-raclette
 
 - #### BUILD
 #### Build nym-node
+> rustc version 1.91.1
 ```bash
 cd
-# rustup update
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
