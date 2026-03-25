@@ -12,9 +12,9 @@ Changelog: https://nymtech.net/docs/operators/changelog
 
 
 <!--
-# xx.03.2026 Nym Binaries v2026.5-raclette `v1.27.0` `latest`    
+# xx.03.2026 Nym Binaries v2026.6-stilton `v1.28.0` `latest`    
 
-nym-binaries-v2026.5-raclette
+nym-binaries-v2026.6-stilton
 -->
 
 #
@@ -30,7 +30,7 @@ cd
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2026.5-raclette
+git checkout nym-binaries-v2026.6-stilton
 cargo build --release --bin nym-node
 ```
 
@@ -56,7 +56,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat -n 50
 ```sh
 cd
 # rustup update
-NYM_VERSION='nym-binaries-v2026.5-raclette'
+NYM_VERSION='nym-binaries-v2026.6-stilton'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
