@@ -6,8 +6,8 @@
 > Nym operator docs https://nymtech.net/operators    
 > #### These are just notes on how to update. Please refer to the official documentation to install nym node
 
-# 12.03.2026 Nym Binaries v2026.5-raclette `v1.27.0` `latest`   
-For operators: new NTM and opening new ports. See the changelog.    
+# 26.03.2026 Nym Binaries v2026.6-stilton `v1.28.0` `latest`  
+For operators: For gateways and WireGuard nodes NTM is now the single port manager. See the changelog.    
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 
@@ -30,7 +30,7 @@ cd
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2026.5-raclette
+git checkout nym-binaries-v2026.6-stilton
 cargo build --release --bin nym-node
 ```
 
@@ -55,7 +55,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat -n 50
 ### Download nym-node binary
 ```sh
 cd
-NYM_VERSION='nym-binaries-v2026.5-raclette'
+NYM_VERSION='nym-binaries-v2026.6-stilton'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
