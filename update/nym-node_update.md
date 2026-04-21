@@ -12,9 +12,9 @@ Changelog: https://nymtech.net/docs/operators/changelog
 
 
 <!--
-# xx.04.2026 Nym Binaries v2026.7-tola `v1.29.0` `latest`    
+# xx.04.2026 Nym Binaries v2026.8-urda `v1.30.0` `latest`    
 
-nym-binaries-v2026.7-tola
+nym-binaries-v2026.8-urda
 -->
 
 #
