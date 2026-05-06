@@ -11,9 +11,9 @@ Changelog: https://nymtech.net/docs/operators/changelog
 
 
 <!--
-# 22.04.2026 Nym Binaries v2026.8-urda `v1.30.0` `latest`    
+# xx.05.2026 Nym Binaries v2026.9-venaco `v1.31.0` `latest`    
 
-nym-binaries-v2026.8-urda
+nym-binaries-v2026.9-venaco
 -->
 
 #
