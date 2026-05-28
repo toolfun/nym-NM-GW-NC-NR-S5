@@ -6,7 +6,7 @@
 > Nym operator docs https://nymtech.net/operators    
 > #### These are just notes on how to update. Please refer to the official documentation to install nym node
 
-# 27.05.2026 Nym Binaries v2026.10-waterloo `v1.32.0` `Pre-release`
+# 28.05.2026 Nym Binaries v2026.10-waterloo `v1.32.0` `latest`
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 
