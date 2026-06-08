@@ -14,6 +14,8 @@ Changelog: https://nymtech.net/docs/operators/changelog
 # xx.06.2026 Nym Binaries v2026.11-xynomizithra `v1.33.0` `latest`    
 
 nym-binaries-v2026.11-xynomizithra
+
+rustc version 1.92.0
 -->
 
 #
@@ -23,7 +25,7 @@ nym-binaries-v2026.11-xynomizithra
 
 - #### BUILD
 #### Build nym-node
-> rustc version 1.92.0
+> rustc version 1.91.1
 ```bash
 cd
 rm -rf nym
