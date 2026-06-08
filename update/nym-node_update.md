@@ -23,7 +23,7 @@ nym-binaries-v2026.11-xynomizithra
 
 - #### BUILD
 #### Build nym-node
-> rustc version 1.91.1
+> rustc version 1.92.0
 ```bash
 cd
 rm -rf nym
