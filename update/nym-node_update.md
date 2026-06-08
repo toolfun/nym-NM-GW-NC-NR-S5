@@ -11,9 +11,9 @@ Changelog: https://nymtech.net/docs/operators/changelog
 
 
 <!--
-# xx.05.2026 Nym Binaries v2026.10-waterloo `v1.32.0` `latest`    
+# xx.06.2026 Nym Binaries v2026.11-xynomizithra `v1.33.0` `latest`    
 
-nym-binaries-v2026.10-waterloo
+nym-binaries-v2026.11-xynomizithra
 -->
 
 #
