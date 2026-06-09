@@ -6,7 +6,7 @@
 > Nym operator docs https://nymtech.net/operators    
 > #### These are just notes on how to update. Please refer to the official documentation to install nym node
 
-# 28.05.2026 Nym Binaries v2026.10-waterloo `v1.32.0` `latest`
+# 09.06.2026 Nym Binaries v2026.11-xynomizithra `v1.33.0` `latest`
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 
@@ -25,13 +25,13 @@ rustc version 1.92.0
 
 - #### BUILD
 #### Build nym-node
-> rustc version 1.91.1
+> rustc version 1.92.0
 ```bash
 cd
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2026.10-waterloo
+git checkout nym-binaries-v2026.11-xynomizithra
 cargo build --release --bin nym-node
 ```
 
@@ -56,7 +56,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat -n 50
 ### Download nym-node binary
 ```sh
 cd
-NYM_VERSION='nym-binaries-v2026.10-waterloo'
+NYM_VERSION='nym-binaries-v2026.11-xynomizithra'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
