@@ -11,9 +11,9 @@ Changelog: https://nymtech.net/docs/operators/changelog
 
 
 <!--
-# xx.06.2026 Nym Binaries v2026.11-xynomizithra `v1.34.0` `latest`    
+# xx.06.2026 Nym Binaries v2026.13-ziller `v1.35.0` `latest`    
 
-nym-binaries-v2026.12-yaroslavsky
+nym-binaries-v2026.13-ziller
 rustc version 1.92.0
 -->
 
