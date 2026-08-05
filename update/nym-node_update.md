@@ -11,9 +11,9 @@ Changelog: https://nymtech.net/docs/operators/changelog
 
 
 <!--
-# xx.08.2026 Nym Binaries `v1.3.0` `latest`    
+# xx.08.2026 Nym Binaries v2026.15-bydgoszcz `v1.3.7` `latest`    
 
-nym-binaries-v2026.14-amsterdam
+nym-binaries-v2026.15-bydgoszcz
 rustc version 1.92.0
 -->
 
