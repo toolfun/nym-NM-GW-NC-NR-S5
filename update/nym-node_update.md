@@ -6,14 +6,14 @@
 > Nym operator docs https://nymtech.net/operators    
 > #### These are just notes on how to update. Please refer to the official documentation to install nym node
 
-# 06.08.2026 Nym Binaries v2026.15-bydgoszcz `v1.3.7` `latest`
+# 06.08.2026 Nym Binaries v2026.15-bydgoszcz `v1.37.0` `latest`
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 
 <!--
-# xx.08.2026 Nym Binaries v2026.15-bydgoszcz `v1.3.7` `latest`    
+# xx.08.2026 Nym Binaries v2026.16-como `v1.38.0` `latest`    
 
-nym-binaries-v2026.15-bydgoszcz
+nym-binaries-v2026.16-como
 rustc version 1.97.0
 -->
 
