@@ -6,7 +6,7 @@
 > Nym operator docs https://nymtech.net/operators    
 > #### These are just notes on how to update. Please refer to the official documentation to install nym node
 
-# 06.08.2026 Nym Binaries v2026.15-bydgoszcz `v1.37.0` `latest`
+# 20.08.2026 Nym Binaries v2026.16-como `v1.38.0` `latest`
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 
@@ -30,7 +30,7 @@ cd
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2026.15-bydgoszcz
+git checkout nym-binaries-v2026.16-como
 cargo build --release --bin nym-node
 ```
 
@@ -55,7 +55,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat -n 50
 ### Download nym-node binary
 ```sh
 cd
-NYM_VERSION='nym-binaries-v2026.15-bydgoszcz'
+NYM_VERSION='nym-binaries-v2026.16-como'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
