@@ -11,9 +11,9 @@ Changelog: https://nymtech.net/docs/operators/changelog
 
 
 <!--
-# xx.08.2026 Nym Binaries v2026.16-como `v1.38.0` `latest`    
+# xx.08.2026 Nym Binaries v2026.17-djibouti `v1.39.0` `latest`    
 
-nym-binaries-v2026.16-como
+nym-binaries-v2026.17-djibouti
 rustc version 1.97.0
 -->
 
