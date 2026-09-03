@@ -6,12 +6,12 @@
 > Nym operator docs https://nymtech.net/operators    
 > #### These are just notes on how to update. Please refer to the official documentation to install nym node
 
-# 20.08.2026 Nym Binaries v2026.16-como `v1.38.0` `latest`
+# 03.09.2026 Nym Binaries v2026.17-djibouti `v1.39.0` `latest`
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 
 <!--
-# xx.08.2026 Nym Binaries v2026.17-djibouti `v1.39.0` `latest`    
+# xx.09.2026 Nym Binaries v2026.17-djibouti `v1.39.0` `latest`    
 
 nym-binaries-v2026.17-djibouti
 rustc version 1.97.0
@@ -30,7 +30,7 @@ cd
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git checkout nym-binaries-v2026.16-como
+git nym-binaries-v2026.17-djibouti
 cargo build --release --bin nym-node
 ```
 
