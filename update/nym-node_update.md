@@ -30,7 +30,7 @@ cd
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git nym-binaries-v2026.18-essaouria
+git checkout nym-binaries-v2026.18-essaouria
 cargo build --release --bin nym-node
 ```
 
