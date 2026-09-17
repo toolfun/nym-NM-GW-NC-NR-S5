@@ -6,12 +6,12 @@
 > Nym operator docs https://nymtech.net/operators    
 > #### These are just notes on how to update. Please refer to the official documentation to install nym node
 
-# 03.09.2026 Nym Binaries v2026.17-djibouti `v1.39.0` `latest`
+# 17.09.2026 Nym Binaries v2026.18-essaouria `v1.40.0` `latest`
 Changelog: https://nymtech.net/docs/operators/changelog    
 
 
 <!--
-# xx.09.2026 Nym Binaries v2026.17-djibouti `v1.39.0` `latest`    
+# xx.09.2026 Nym Binaries v2026.18-essaouria `v1.40.0` `latest`    
 
 nym-binaries-v2026.17-djibouti
 rustc version 1.97.0
@@ -30,7 +30,7 @@ cd
 rm -rf nym
 git clone https://github.com/nymtech/nym.git
 cd nym
-git nym-binaries-v2026.17-djibouti
+git nym-binaries-v2026.18-essaouria
 cargo build --release --bin nym-node
 ```
 
@@ -55,7 +55,7 @@ sudo systemctl restart nym-node && sudo journalctl -u nym-node -f -o cat -n 50
 ### Download nym-node binary
 ```sh
 cd
-NYM_VERSION='nym-binaries-v2026.16-como'
+NYM_VERSION='nym-binaries-v2026.18-essaouria'
 # download binary
 wget https://github.com/nymtech/nym/releases/download/$NYM_VERSION/nym-node
 chmod u+x nym-node
