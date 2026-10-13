@@ -12,9 +12,9 @@ Changelog: https://nymtech.net/docs/operators/changelog
 
 <!--
 #
-# 01.10.2026 Nym Binaries v2026.19-fuqing `v1.41.0` `latest`    
+# 13.10.2026 Nym Binaries v2026.20-glasgow `v1.42.0` `latest`    
 
-nym-binaries-v2026.19-fuqing
+nym-binaries-v2026.20-glasgow
 rustc version 1.97.0
 -->
 
