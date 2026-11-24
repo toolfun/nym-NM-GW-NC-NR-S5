@@ -12,10 +12,10 @@ Changelog: https://nymtech.net/docs/operators/changelog
 
 <!--
 #
-# xx.11.2026 nym-binaries-v2026.22-istanbul `v1.44.0` `latest`    
+# xx.11.2026 Nym Binaries v2026.23-jakarta `v1.45.0` `latest`    
 
-nym-binaries-v2026.22-istanbul
-rustc version 1.97.0
+nym-binaries-v2026.23-jakarta
+rustc version 1.98.1
 -->
 
 #
